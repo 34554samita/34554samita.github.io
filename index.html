@@ -1,35 +1,105 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">  
-<title>หน้าแนะนำตัวของฉัน</title>
-<style>
-body {
-  font-family: "Itim", cursive;
-background-color: #CDE9DC; color: #333;
-text-align: center; padding: 50px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-}
-.card {
-background: white; border-radius: 50px;
-box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-max-width: 500px; margin: 0 auto; padding: 30px;
+  <title>My Portfolio | Home</title>
 
-}
-h1 { color: #2c3e50; }
-p { font-size: 20px; line-height: 1.6; }
-</style>
+  <!-- Google Font: Itim -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Itim&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS กลาง -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="card">
-<h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน ✨ </h1>
-<p>สวัสดีค่ะ! 💖 ฉันชื่อ <strong>สมิตา บุญนาค(Samita Boonnark)</strong></p>
-<p>ขณะนี้กำลังศึกษา/สนใจด้าน Engineering & Medical Technology🧪 </p>
-<p>นี่คือเว็บไซต์แรกของฉันที่โฮสต์บน GitHub Pages!</p>
-  <a href="portfolio.html" style="display:inline-block; background:#3498db; color:white; padding:10px 20px; text-decoration:none; border-radius:5px; margin-top:15px;"> ดูแฟ้มสะสมงานของฉัน 💨 </a>
-</div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+
+    <a href="index.html" class="logo">
+      My Portfolio <span>♡</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">หน้าแรก</a></li>
+      <li><a href="about.html">เกี่ยวกับฉัน</a></li>
+      <li><a href="Personal Profile.html">ประวัติส่วนตัว</a></li>
+      <li><a href="works.html">ผลงาน</a></li>
+      <li><a href="contact.html">ติดต่อ</a></li>
+    </ul>
+
+  </nav>
+
+
+  <!-- Hero -->
+  <main class="hero">
+
+    <div class="hero-text fade-in">
+
+      <p class="hello">✿ สวัสดีค่ะ / ครับ!</p>
+
+      <h1>
+        ฉัน <span>นางสาวสมิตา บุญนาค (Samita Boonnark)</span> ♡
+      </h1>
+
+      <p class="description">
+        กำลังศึกษาอยู่ระดับชั้นมัธยมศึกษาปีที่6
+        แผนการเรียนเตรียมวิศวกรรมศาสตร์ (Pre-Engineering)
+        <br>
+        ยินดีต้อนรับเข้าสู่เว็บไซต์ Portfolio ของฉันนะ!
+      </p>
+
+      <div class="buttons">
+
+        <a href="about.html" class="btn btn-primary">
+          รู้จักฉันมากขึ้น ✨
+        </a>
+
+        <a href="works.html" class="btn btn-outline">
+          ดูผลงาน 🎨
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- Profile -->
+    <div class="profile-container float">
+
+      <img
+        src=""
+        alt="รูปโปรไฟล์"
+        class="profile"
+      >
+
+      <div class="bubble bubble-one">
+        Nice to meet you! ♡
+      </div>
+
+      <div class="bubble bubble-two">
+        Have a nice day ✿
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+    Made with 💙 & lots of love ♡
+    <br>
+    © 2026 Your Name
+  </footer>
+
 </body>
 </html>
