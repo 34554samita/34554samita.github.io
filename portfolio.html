@@ -20,31 +20,43 @@ body {
     color: #333;
 }
 
-/* เมนูด้านขวา */
+```html
+<!-- เมนูด้านบนขวา -->
 
+<div class="menu">
+    <a href="#profile">ประวัติส่วนตัว</a>
+    <a href="#study">การศึกษาต่อ</a>
+    <a href="#portfolio">ผลงาน</a>
+    <a href="#contact">ติดต่อ</a>
+</div>
+```
+
+แล้วใน `<style>` ให้เปลี่ยนส่วน `.menu` เดิมทั้งหมดเป็น:
+
+```css
 .menu {
     position: fixed;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 20px;
+    right: 25px;
     background: white;
-    padding: 15px;
-    border-radius: 20px;
+    padding: 10px 18px;
+    border-radius: 25px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 100;
+    display: flex;
+    gap: 20px;
 }
 
 .menu a {
-    display: block;
     color: #2c3e50;
     text-decoration: none;
-    margin: 12px 5px;
     font-size: 17px;
 }
 
 .menu a:hover {
     color: #3498db;
 }
+```
 
 /* เนื้อหาเดิม */
 
