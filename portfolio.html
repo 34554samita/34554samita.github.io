@@ -16,53 +16,46 @@ body {
     font-family: "Itim", cursive;
     background-color: #CDE9DC;
     text-align: center;
-    padding: 30px;
+    padding: 0;
+    margin: 0;
     color: #333;
 }
 
-```html
-<!-- เมนูด้านบนขวา -->
+/* ===== แถบเมนูด้านบน ===== */
 
-<div class="menu">
-    <a href="#profile">ประวัติส่วนตัว</a>
-    <a href="#study">การศึกษาต่อ</a>
-    <a href="#portfolio">ผลงาน</a>
-    <a href="#contact">ติดต่อ</a>
-</div>
-```
-
-แล้วใน `<style>` ให้เปลี่ยนส่วน `.menu` เดิมทั้งหมดเป็น:
-
-```css
 .menu {
     position: fixed;
-    top: 20px;
-    right: 25px;
-    background: white;
-    padding: 10px 18px;
-    border-radius: 25px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background-color: white;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 100;
     display: flex;
-    gap: 20px;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 40px;
+    box-sizing: border-box;
+    z-index: 1000;
 }
 
 .menu a {
-    color: #2c3e50;
+    color: #333;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 18px;
+    margin-left: 30px;
 }
 
 .menu a:hover {
     color: #3498db;
 }
-```
 
-/* เนื้อหาเดิม */
+/* ===== เนื้อหา ===== */
 
 .container {
     max-width: 800px;
     margin: 0 auto;
+    padding-top: 65px;
 }
 
 section {
@@ -73,6 +66,8 @@ section h2 {
     color: #2c3e50;
 }
 
+/* ===== กล่องข้อมูล ===== */
+
 .project-card {
     background: white;
     padding: 20px;
@@ -82,10 +77,16 @@ section h2 {
     text-align: left;
 }
 
+.project-card h3 {
+    color: #2c3e50;
+}
+
 .project-card p {
     font-size: 20px;
     line-height: 1.6;
 }
+
+/* ===== ปุ่ม ===== */
 
 .btn {
     display: inline-block;
@@ -94,7 +95,7 @@ section h2 {
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 </style>
@@ -102,17 +103,23 @@ section h2 {
 
 <body>
 
-<!-- เมนูด้านขวา -->
+<!-- ===== แถบเมนู ===== -->
 
 <div class="menu">
-    <a href="#profile">👤 ประวัติส่วนตัว</a>
-    <a href="#study">🎓 การศึกษาต่อ</a>
-    <a href="#portfolio">📂 ผลงาน</a>
-    <a href="#contact">📩 ติดต่อ</a>
+
+    <a href="#profile">ประวัติส่วนตัว</a>
+
+    <a href="#study">การศึกษาต่อ</a>
+
+    <a href="#portfolio">ผลงาน</a>
+
+    <a href="#contact">ติดต่อ</a>
+
 </div>
 
 
 <div class="container">
+
 
 <!-- ===== ประวัติส่วนตัว ===== -->
 
@@ -249,7 +256,7 @@ section h2 {
 </section>
 
 
-<!-- ปุ่มกลับหน้าแรก -->
+<!-- ===== ปุ่มกลับหน้าแรก ===== -->
 
 <a href="index.html" class="btn">
 &lt;&lt; กลับหน้าแรก
