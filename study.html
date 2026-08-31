@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
+
 <meta charset="UTF-8">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+
 <title>ความสนใจในการศึกษาต่อ</title>
+
 <style>
+
 body {
     font-family: "Itim", cursive;
     background-color: #CDE9DC;
@@ -14,6 +21,9 @@ body {
     margin: 0;
     padding-top: 80px;
 }
+
+/* แถบเมนูด้านบน */
+
 .menu {
     position: fixed;
     top: 0;
@@ -21,72 +31,216 @@ body {
     width: 100%;
     height: 65px;
     background: white;
+
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 40px;
+
     z-index: 1000;
 }
+
 .menu a {
     color: #333;
     text-decoration: none;
     font-size: 18px;
-    margin-left: 30px;
+    margin-left: 40px;
 }
+
+/* ระยะห่างจากขอบขวาของคำว่า ติดต่อ */
+
+.menu a:last-child {
+    margin-right: 70px;
+}
+
 .menu a:hover {
     color: #3498db;
 }
+
+
+/* ส่วนเนื้อหา */
+
 .container {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
     padding: 30px;
 }
+
+
+/* กล่องแต่ละคณะ */
+
 .project-card {
     background: white;
+
     padding: 20px;
     margin: 20px 0;
+
     border-radius: 8px;
+
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
     text-align: left;
 }
+
+
+/* ข้อความในกล่อง */
+
 .project-card p {
     font-size: 20px;
     line-height: 1.6;
 }
+
+
+/* หัวข้อหลัก */
+
 h1 {
     color: #2c3e50;
 }
+
+
+/* หัวข้อของแต่ละคณะ */
+
+.project-card h2 {
+    color: #2c3e50;
+}
+
 </style>
+
 </head>
+
+
 <body>
+
+
+<!-- ========================= -->
+<!-- แถบเมนู -->
+<!-- ========================= -->
+
 <div class="menu">
-    <a href="profile.html">ประวัติส่วนตัว</a>
-    <a href="study.html">การศึกษาต่อ</a>
-    <a href="portfolio.html">ผลงาน</a>
-    <a href="contact.html">ติดต่อ</a>
+
+    <a href="profile.html">
+        ประวัติส่วนตัว
+    </a>
+
+    <a href="study.html">
+        การศึกษาต่อ
+    </a>
+
+    <a href="portfolio.html">
+        ผลงาน
+    </a>
+
+    <a href="contact.html">
+        ติดต่อ
+    </a>
+
 </div>
+
+
+
+<!-- ========================= -->
+<!-- เนื้อหาหลัก -->
+<!-- ========================= -->
+
 <div class="container">
+
+
 <h1>ความสนใจในการศึกษาต่อ 🎓</h1>
+
+
+
+<!-- ========================= -->
+<!-- กรอบที่ 1 : วิศวกรรมชีวการแพทย์ -->
+<!-- ========================= -->
+
 <div class="project-card">
-<p>
-ฉันมีความสนใจในการศึกษาต่อด้าน
-<strong>วิศวกรรมชีวการแพทย์
-(Biomedical Engineering)</strong>
-</p>
-<p>
-เป็นศาสตร์ที่ผสมผสานระหว่าง
-วิศวกรรมศาสตร์ วิทยาศาสตร์
-และเทคโนโลยีทางการแพทย์
-</p>
-<p>
-ฉันสนใจการนำความรู้ด้านวิศวกรรม
-และเทคโนโลยีมาพัฒนาอุปกรณ์
-หรือนวัตกรรมที่สามารถช่วยแก้ไขปัญหา
-และพัฒนาคุณภาพชีวิตของผู้คน
-</p>
+
+    <h2>🧬 วิศวกรรมชีวการแพทย์</h2>
+
+    <p>
+        ฉันมีความสนใจในการศึกษาต่อด้าน
+        <strong>
+            วิศวกรรมชีวการแพทย์
+            (Biomedical Engineering)
+        </strong>
+    </p>
+
+    <p>
+        เป็นศาสตร์ที่ผสมผสานระหว่าง
+        วิศวกรรมศาสตร์ วิทยาศาสตร์
+        และเทคโนโลยีทางการแพทย์
+    </p>
+
+    <p>
+        ฉันสนใจการนำความรู้ด้านวิศวกรรม
+        และเทคโนโลยีมาพัฒนาอุปกรณ์
+        หรือนวัตกรรมที่สามารถช่วยแก้ไขปัญหา
+        และพัฒนาคุณภาพชีวิตของผู้คน
+    </p>
+
 </div>
+
+
+
+<!-- ========================= -->
+<!-- กรอบที่ 2 : เภสัชศาสตร์ -->
+<!-- ========================= -->
+
+<div class="project-card">
+
+    <h2>💊 คณะเภสัชศาสตร์</h2>
+
+    <p>
+        ฉันมีความสนใจในด้าน
+        <strong>
+            เภสัชศาสตร์ (Pharmacy)
+        </strong>
+        เพราะเป็นศาสตร์ที่เกี่ยวข้องกับยา
+        การดูแลสุขภาพ และการรักษาผู้ป่วย
+    </p>
+
+    <p>
+        ฉันสนใจการเรียนรู้เกี่ยวกับยา
+        การออกฤทธิ์ของยา
+        และการนำความรู้ไปใช้เพื่อช่วยดูแล
+        และพัฒนาสุขภาพของผู้คน
+    </p>
+
 </div>
+
+
+
+<!-- ========================= -->
+<!-- กรอบที่ 3 : สหเวชศาสตร์ -->
+<!-- ========================= -->
+
+<div class="project-card">
+
+    <h2>🧪 คณะสหเวชศาสตร์</h2>
+
+    <p>
+        ฉันมีความสนใจในด้าน
+        <strong>
+            สหเวชศาสตร์ (Allied Health Sciences)
+        </strong>
+        ซึ่งเกี่ยวข้องกับการตรวจวินิจฉัย
+        การฟื้นฟู และการดูแลสุขภาพ
+    </p>
+
+    <p>
+        ฉันสนใจการนำความรู้ทางวิทยาศาสตร์
+        และเทคโนโลยีมาประยุกต์ใช้
+        ในการดูแลสุขภาพ
+        และช่วยส่งเสริมคุณภาพชีวิตของผู้คน
+    </p>
+
+</div>
+
+
+</div>
+
 </body>
+
 </html>
