@@ -1,73 +1,48 @@
-```html
 <!DOCTYPE html>
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
-
-<title>แฟ้มสะสมงานของฉัน</title>
-
+<title>ประวัติส่วนตัว</title>
 <style>
-
 body {
     font-family: "Itim", cursive;
     background-color: #CDE9DC;
-    text-align: center;
-    padding: 0;
-    margin: 0;
     color: #333;
+    margin: 0;
+    padding-top: 80px;
 }
-
-/* ===== แถบเมนูด้านบน ===== */
-
 .menu {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 65px;
-    background-color: white;
+    background: white;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 0 40px;
-    box-sizing: border-box;
+    padding-right: 40px;
     z-index: 1000;
 }
-
 .menu a {
     color: #333;
     text-decoration: none;
     font-size: 18px;
     margin-left: 30px;
 }
-
 .menu a:hover {
     color: #3498db;
 }
-
-/* ===== เนื้อหา ===== */
-
 .container {
     max-width: 800px;
     margin: 0 auto;
-    padding-top: 65px;
+    text-align: center;
+    padding: 30px;
 }
-
-section {
-    padding: 50px 0;
-}
-
-section h2 {
-    color: #2c3e50;
-}
-
-/* ===== กล่องข้อมูล ===== */
-
 .project-card {
     background: white;
     padding: 20px;
@@ -76,198 +51,38 @@ section h2 {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-align: left;
 }
-
-.project-card h3 {
-    color: #2c3e50;
-}
-
 .project-card p {
     font-size: 20px;
     line-height: 1.6;
 }
-
-/* ===== ปุ่ม ===== */
-
-.btn {
-    display: inline-block;
-    background: #2c3e50;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin: 20px 0;
+h1 {
+    color: #2c3e50;
 }
-
 </style>
 </head>
-
 <body>
-
-<!-- ===== แถบเมนู ===== -->
-
 <div class="menu">
-
-    <a href="#profile">ประวัติส่วนตัว</a>
-
-    <a href="#study">การศึกษาต่อ</a>
-
-    <a href="#portfolio">ผลงาน</a>
-
-    <a href="#contact">ติดต่อ</a>
-
+    <a href="profile.html">ประวัติส่วนตัว</a>
+    <a href="study.html">การศึกษาต่อ</a>
+    <a href="portfolio.html">ผลงาน</a>
+    <a href="contact.html">ติดต่อ</a>
 </div>
-
-
 <div class="container">
-
-
-<!-- ===== ประวัติส่วนตัว ===== -->
-
-<section id="profile">
-
-<h2>ประวัติส่วนตัว 👤</h2>
-
+<h1>ประวัติส่วนตัว 👤</h1>
 <div class="project-card">
-
-<p>
-<strong>ชื่อ :</strong>
-สมิตา บุญนาค (Samita Boonnark)
-</p>
-
-<p>
-<strong>ระดับการศึกษา :</strong>
-มัธยมศึกษาปีที่ 6
-</p>
-
+<p><strong>ชื่อ :</strong> สมิตา บุญนาค (Samita Boonnark)</p>
+<p><strong>ระดับการศึกษา :</strong> มัธยมศึกษาปีที่ 6</p>
 <p>
 <strong>ความสนใจ :</strong>
 วิทยาศาสตร์ เทคโนโลยี วิศวกรรมศาสตร์
 และนวัตกรรมทางการแพทย์
 </p>
-
 <p>
 <strong>งานอดิเรก :</strong>
 เรียนรู้สิ่งใหม่ ๆ ทำโครงงาน
 และศึกษาด้านเทคโนโลยี
 </p>
-
 </div>
-
-</section>
-
-
-<!-- ===== ความสนใจในการศึกษาต่อ ===== -->
-
-<section id="study">
-
-<h2>ความสนใจในการศึกษาต่อ 🎓</h2>
-
-<div class="project-card">
-
-<p>
-ฉันมีความสนใจในการศึกษาต่อด้าน
-<strong>วิศวกรรมชีวการแพทย์
-(Biomedical Engineering)</strong>
-</p>
-
-<p>
-เป็นศาสตร์ที่ผสมผสานระหว่าง
-วิศวกรรมศาสตร์ วิทยาศาสตร์
-และเทคโนโลยีทางการแพทย์
-</p>
-
-<p>
-ฉันสนใจการนำความรู้ด้านวิศวกรรม
-และเทคโนโลยีมาพัฒนาอุปกรณ์
-หรือนวัตกรรมที่สามารถช่วยแก้ไขปัญหา
-และพัฒนาคุณภาพชีวิตของผู้คน
-</p>
-
 </div>
-
-</section>
-
-
-<!-- ===== ผลงาน ===== -->
-
-<section id="portfolio">
-
-<h2>ผลงานและกิจกรรม 📂</h2>
-
-<div class="project-card">
-
-<h3>1. โครงงาน/ชิ้นงานวิทยาศาสตร์ 🧪</h3>
-
-<p>
-รายละเอียดชิ้นงาน :
-สามารถใส่รายละเอียดเกี่ยวกับโครงงาน
-และสิ่งที่ได้เรียนรู้จากการทำงาน
-</p>
-
-</div>
-
-
-<div class="project-card">
-
-<h3>2. โครงงานด้านเทคโนโลยี 💻</h3>
-
-<p>
-รายละเอียดชิ้นงาน :
-สามารถใส่รายละเอียดเกี่ยวกับโครงงาน
-หรือโปรแกรมที่เคยพัฒนา
-</p>
-
-</div>
-
-
-<div class="project-card">
-
-<h3>3. กิจกรรม/เกียรติบัตรที่ได้รับ 🏆</h3>
-
-<p>
-รายละเอียด :
-รวบรวมกิจกรรม การแข่งขัน
-และเกียรติบัตรที่ได้รับ
-</p>
-
-</div>
-
-</section>
-
-
-<!-- ===== ติดต่อ ===== -->
-
-<section id="contact">
-
-<h2>ติดต่อ 📩</h2>
-
-<div class="project-card">
-
-<p>
-📧 Email : chttngtta@gmail.com
-</p>
-
-<p>
-📱 Instagram : @onlytortor
-</p>
-
-<p>
-📞 Tel. : 087-100-1454
-</p>
-
-</div>
-
-</section>
-
-
-<!-- ===== ปุ่มกลับหน้าแรก ===== -->
-
-<a href="index.html" class="btn">
-&lt;&lt; กลับหน้าแรก
-</a>
-
-</div>
-
 </body>
 </html>
-
