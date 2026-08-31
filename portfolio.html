@@ -1,33 +1,377 @@
+```html
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<title>แฟ้มสะสมงานของฉัน </title>
-<style>
-body { font-family: sans-serif; background-color: #CDE9DC; text-align: center;
-padding: 30px; }
-.container { max-width: 800px; margin: 0 auto; }
-.project-card { background: white; padding: 20px; margin: 20px 0; border-radius:
-8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: left; }
-.btn { display: inline-block; background: #2c3e50; color: white; padding: 10px
-20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
-</style>
+    <meta charset="UTF-8">
+
+    <!-- ฟอนต์ Itim จาก Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+
+    <title>เว็บไซต์แนะนำตัวของฉัน</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Itim", cursive;
+            background-color: #CDE9DC;
+            color: #333;
+        }
+
+        /* ===== แถบเมนูด้านบน ===== */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px 30px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        /* ===== ส่วนเนื้อหา ===== */
+        section {
+            padding: 70px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        /* ===== หน้าแรก ===== */
+        #home {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .intro-card {
+            background: white;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 650px;
+            width: 100%;
+            padding: 45px 30px;
+            text-align: center;
+        }
+
+        .intro-card h1 {
+            color: #2c3e50;
+            font-size: 35px;
+        }
+
+        .intro-card p {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        /* ===== หัวข้อแต่ละส่วน ===== */
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        /* ===== กล่องข้อมูล ===== */
+        .info-card {
+            background: white;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card p {
+            font-size: 19px;
+            line-height: 1.7;
+        }
+
+        /* ===== ผลงาน ===== */
+        .project-card {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .project-card h3 {
+            color: #2c3e50;
+        }
+
+        .project-card p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* ===== ปุ่ม ===== */
+        .btn {
+            display: inline-block;
+            background: #2c3e50;
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #3498db;
+        }
+
+        /* ===== ติดต่อ ===== */
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            font-size: 19px;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            color: #555;
+        }
+
+        /* ===== สำหรับโทรศัพท์ ===== */
+        @media (max-width: 600px) {
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                font-size: 15px;
+            }
+
+            .intro-card h1 {
+                font-size: 27px;
+            }
+
+            .intro-card p {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 50px 15px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<div class="container">
-<h1> แฟ้มสะสมงาน 📂 (Portfolio)</h1>
-<p>นี่คือพื้นที่รวบรวมผลงานและกิจกรรมที่ภูมิใจค่ะ 💌 </p>
-<!-- กล่องผลงานชิ้นที่ 1 -->
-<div class="project-card">
-<h3>1. โครงงาน/ชิ้นงานวิทยาศาสตร์ </h3>
-<p>รายละเอียดชิ้นงาน : เขียนอธิบายสั้นๆ ว่าทำอะไร ได้เรียนรู้อะไรจากงานนี้บ้าง </p>
-</div>
-<!-- กล่องผลงานชิ้นที่ 2 -->
-<div class="project-card">
-<h3>2. กิจกรรม/เกียรติบัตรที่ได้รับ</h3>
-<p>รายละเอียดชิ้นงาน : เข้าร่วมการประกวด หรือกิจกรรมของโรงเรียน...</p>
-</div>
-<!-- ปุ่มกดกลับหน้าแรก -->
-<a href="index.html" class="btn"> <<กลับหน้าแรก</a>
-</div>
+
+    <!-- ===== แถบเมนู ===== -->
+    <nav>
+        <ul>
+            <li><a href="#home">หน้าแรก 🏠</a></li>
+            <li><a href="#profile">ประวัติส่วนตัว 👤</a></li>
+            <li><a href="#study">การศึกษาต่อ 🎓</a></li>
+            <li><a href="#portfolio">ผลงาน 📂</a></li>
+            <li><a href="#contact">ติดต่อ 📩</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- ===== หน้าแรก ===== -->
+    <section id="home">
+
+        <div class="intro-card">
+
+            <h1>ยินดีต้อนรับสู่เว็บไซต์ของฉัน ✨</h1>
+
+            <p>
+                สวัสดีค่ะ! 💖
+                ฉันชื่อ <strong>สมิตา บุญนาค</strong>
+                (Samita Boonnark)
+            </p>
+
+            <p>
+                นักเรียนที่มีความสนใจด้าน
+                <strong>Engineering & Medical Technology 🧪</strong>
+            </p>
+
+            <p>
+                เว็บไซต์นี้จัดทำขึ้นเพื่อแนะนำตัว
+                ประวัติ ความสนใจ ผลงาน และกิจกรรมต่าง ๆ
+                ของฉัน
+            </p>
+
+            <a href="#profile" class="btn">
+                รู้จักฉันมากขึ้น 💨
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== ประวัติส่วนตัว ===== -->
+    <section id="profile">
+
+        <h2>ประวัติส่วนตัว 👤</h2>
+
+        <div class="info-card">
+
+            <p>
+                <strong>ชื่อ :</strong>
+                สมิตา บุญนาค (Samita Boonnark)
+            </p>
+
+            <p>
+                <strong>ระดับการศึกษา :</strong>
+                มัธยมศึกษาตอนต้น
+            </p>
+
+            <p>
+                <strong>ความสนใจ :</strong>
+                วิทยาศาสตร์ เทคโนโลยี วิศวกรรมศาสตร์
+                และนวัตกรรมทางการแพทย์
+            </p>
+
+            <p>
+                <strong>งานอดิเรก :</strong>
+                เรียนรู้สิ่งใหม่ ๆ ทำโครงงาน
+                และศึกษาด้านเทคโนโลยี
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== ความสนใจในการศึกษาต่อ ===== -->
+    <section id="study">
+
+        <h2>ความสนใจในการศึกษาต่อ 🎓</h2>
+
+        <div class="info-card">
+
+            <p>
+                ฉันมีความสนใจในการศึกษาต่อในด้าน
+                <strong>วิศวกรรมชีวการแพทย์ (Biomedical Engineering)</strong>
+                ซึ่งเป็นศาสตร์ที่ผสมผสานระหว่างวิศวกรรมศาสตร์
+                วิทยาศาสตร์ และเทคโนโลยีทางการแพทย์
+            </p>
+
+            <p>
+                ฉันสนใจการนำความรู้ด้านวิศวกรรมและเทคโนโลยี
+                มาพัฒนาอุปกรณ์หรือนวัตกรรมที่สามารถช่วย
+                แก้ไขปัญหาและพัฒนาคุณภาพชีวิตของผู้คน
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== ผลงาน ===== -->
+    <section id="portfolio">
+
+        <h2>ผลงานและกิจกรรม 📂</h2>
+
+        <div class="project-card">
+
+            <h3>1. โครงงาน/ชิ้นงานวิทยาศาสตร์ 🧪</h3>
+
+            <p>
+                รายละเอียดชิ้นงาน :
+                สามารถใส่รายละเอียดเกี่ยวกับโครงงาน
+                วิธีการทำ และสิ่งที่ได้รับจากการทำโครงงาน
+            </p>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <h3>2. โครงงานด้านเทคโนโลยี 💻</h3>
+
+            <p>
+                รายละเอียดชิ้นงาน :
+                สามารถใส่รายละเอียดเกี่ยวกับโครงงาน
+                ด้านเทคโนโลยีหรือโปรแกรมที่เคยพัฒนา
+            </p>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <h3>3. กิจกรรมและเกียรติบัตร 🏆</h3>
+
+            <p>
+                รายละเอียด :
+                รวบรวมกิจกรรม การแข่งขัน
+                และเกียรติบัตรที่ได้รับ
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== ติดต่อ ===== -->
+    <section id="contact">
+
+        <h2>ติดต่อ 📩</h2>
+
+        <div class="info-card contact">
+
+            <p>
+                หากต้องการติดต่อ สามารถติดต่อฉันได้ที่
+            </p>
+
+            <p>
+                📧 Email : your-email@example.com
+            </p>
+
+            <p>
+                📱 Instagram : @your_instagram
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== Footer ===== -->
+    <footer>
+        © 2026 Samita Boonnark | My Personal Website 💖
+    </footer>
+
 </body>
 </html>
+```
