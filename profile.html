@@ -2,6 +2,7 @@
 <html lang="th">
 
 <head>
+
 <meta charset="UTF-8">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +13,10 @@
 <title>ประวัติส่วนตัว</title>
 
 <style>
+
+/* ========================= */
+/* ตั้งค่าพื้นฐาน */
+/* ========================= */
 
 * {
     box-sizing: border-box;
@@ -73,98 +78,157 @@ body {
 
 
 /* ========================= */
-/* ส่วนหลักของหน้า */
+/* แถวที่ 1 */
+/* รูป 40% + ข้อมูล 60% */
 /* ========================= */
 
-.profile-section {
+.section-one {
     width: 100%;
-
-    min-height: calc(100vh - 65px);
+    min-height: 600px;
 
     display: flex;
-
-    background-color: #CDE9DC;
+    align-items: stretch;
 }
 
 
-/* ========================= */
-/* รูปด้านซ้าย 40% */
-/* ========================= */
+/* รูป IMG_2882 ฝั่งซ้าย 40% */
 
-.profile-image {
+.image-left {
     width: 40%;
-
-    height: calc(100vh - 65px);
-
     overflow: hidden;
 }
 
-.profile-image img {
+.image-left img {
     width: 100%;
     height: 100%;
 
     object-fit: cover;
-
-    object-position: left center;
+    object-position: center;
 }
 
 
-/* ========================= */
-/* ข้อมูลด้านขวา 60% */
-/* ========================= */
+/* กรอบข้อมูลฝั่งขวา 60% */
 
-.profile-content {
+.content-right {
     width: 60%;
 
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
     padding: 50px;
+
+    display: flex;
+    align-items: center;
 }
 
-
-/* ========================= */
-/* หัวข้อประวัติส่วนตัว */
-/* ========================= */
-
-.profile-content h1 {
-    color: #2c3e50;
-
-    font-size: 40px;
-
-    margin: 0 0 25px 0;
-
-    text-align: center;
-}
-
-
-/* ========================= */
-/* กรอบข้อมูล */
-/* ========================= */
-
-.project-card {
+.card {
     background: white;
 
-    padding: 30px;
+    width: 100%;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    text-align: left;
+}
+
+
+/* ========================= */
+/* ข้อความในกรอบแรก */
+/* ========================= */
+
+.card h2 {
+    color: #2c3e50;
+
+    font-size: 30px;
+
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.card h3 {
+    color: #2c3e50;
+
+    font-size: 23px;
+
+    margin-top: 25px;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    margin: 8px 0;
+}
+
+
+/* ========================= */
+/* แถวที่ 2 */
+/* ข้อมูล 60% + รูป 40% */
+/* ========================= */
+
+.section-two {
+    width: 100%;
+    min-height: 600px;
+
+    display: flex;
+    align-items: stretch;
+}
+
+
+/* กรอบข้อมูลฝั่งซ้าย 60% */
+
+.content-left {
+    width: 60%;
+
+    padding: 50px;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* รูป IMG_2883 ฝั่งขวา 40% */
+
+.image-right {
+    width: 40%;
+    overflow: hidden;
+}
+
+.image-right img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* ========================= */
+/* คติประจำใจ */
+/* ========================= */
+
+.motto {
+    background: white;
+
+    width: 70%;
+    max-width: 700px;
+
+    margin: 60px auto;
+
+    padding: 28px 40px;
 
     border-radius: 20px;
 
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 
-    text-align: left;
+    text-align: center;
 
-    width: 100%;
-}
+    font-size: 25px;
 
-.project-card p {
-    font-size: 20px;
-
-    line-height: 1.6;
-
-    margin: 12px 0;
+    color: #2c3e50;
 }
 
 
@@ -174,24 +238,6 @@ body {
 
 @media (max-width: 800px) {
 
-    .profile-section {
-        flex-direction: column;
-    }
-
-    .profile-image {
-        width: 100%;
-        height: 50vh;
-    }
-
-    .profile-content {
-        width: 100%;
-        padding: 30px;
-    }
-
-    .profile-content h1 {
-        font-size: 32px;
-    }
-
     .menu {
         padding-right: 20px;
     }
@@ -200,6 +246,33 @@ body {
         width: auto;
         margin-left: 15px;
         font-size: 16px;
+    }
+
+    .section-one,
+    .section-two {
+        flex-direction: column;
+    }
+
+    .image-left,
+    .image-right,
+    .content-left,
+    .content-right {
+        width: 100%;
+    }
+
+    .image-left,
+    .image-right {
+        height: 450px;
+    }
+
+    .content-left,
+    .content-right {
+        padding: 30px;
+    }
+
+    .motto {
+        width: 90%;
+        font-size: 21px;
     }
 
 }
@@ -237,36 +310,29 @@ body {
 </div>
 
 
-<!-- ========================= -->
-<!-- ส่วนโปรไฟล์ -->
-<!-- ========================= -->
+<!-- ================================================== -->
+<!-- ส่วนที่ 1 : รูปซ้าย 40% + ประวัติส่วนตัวขวา 60% -->
+<!-- ================================================== -->
 
-<div class="profile-section">
+<div class="section-one">
 
 
-    <!-- ========================= -->
-    <!-- รูปภาพ 40% -->
-    <!-- ========================= -->
+    <!-- รูป IMG_2882 -->
 
-    <div class="profile-image">
+    <div class="image-left">
 
         <img src="IMG_2882.jpeg" alt="รูปโปรไฟล์">
 
     </div>
 
 
-    <!-- ========================= -->
-    <!-- ข้อมูล 60% -->
-    <!-- ========================= -->
+    <!-- กรอบประวัติส่วนตัว -->
 
-    <div class="profile-content">
+    <div class="content-right">
 
-        <h1>
-            ประวัติส่วนตัว 👤
-        </h1>
+        <div class="card">
 
-
-        <div class="project-card">
+            <h2>👤 ประวัติส่วนตัว</h2>
 
             <p>
                 <strong>ชื่อ :</strong>
@@ -298,6 +364,105 @@ body {
         </div>
 
     </div>
+
+</div>
+
+
+<!-- ================================================== -->
+<!-- ส่วนที่ 2 : จุดเด่นซ้าย 60% + รูปขวา 40% -->
+<!-- ================================================== -->
+
+<div class="section-two">
+
+
+    <!-- กรอบจุดเด่นและทักษะ -->
+
+    <div class="content-left">
+
+        <div class="card">
+
+            <h2>🌟 จุดเด่นและทักษะ</h2>
+
+
+            <h3>🔍 ชอบค้นคว้า</h3>
+
+            <p>
+                สนุกกับการเรียนรู้เรื่องใหม่ ๆ
+                และค้นหาความรู้เพิ่มเติมอยู่เสมอ
+            </p>
+
+
+            <h3>💡 ชอบคิดสร้างสรรค์</h3>
+
+            <p>
+                สนใจการคิดและพัฒนาสิ่งใหม่ ๆ
+                รวมถึงการหาแนวทางในการแก้ไขปัญหา
+            </p>
+
+
+            <h3>🧪 ชอบทดลอง</h3>
+
+            <p>
+                สนใจการทำโครงงาน การทดลอง
+                และการนำความรู้มาประยุกต์ใช้จริง
+            </p>
+
+
+            <h3>💻 สนใจเทคโนโลยี</h3>
+
+            <p>
+                ชอบเรียนรู้และประยุกต์ใช้เทคโนโลยี
+                เพื่อสร้างสรรค์สิ่งใหม่ ๆ
+            </p>
+
+
+            <h3>👑 การเป็นผู้นำ</h3>
+
+            <p>
+                สามารถรับผิดชอบงาน
+                และช่วยวางแผนการทำงานร่วมกับผู้อื่น
+            </p>
+
+
+            <h3>🎤 การนำเสนอ</h3>
+
+            <p>
+                สามารถสื่อสารและนำเสนอข้อมูล
+                หรือผลงานให้ผู้อื่นเข้าใจได้
+            </p>
+
+
+            <h3>🤝 การทำงานเป็นทีม</h3>
+
+            <p>
+                สามารถทำงานร่วมกับผู้อื่น
+                แบ่งหน้าที่ และช่วยกันแก้ไขปัญหา
+                เพื่อให้บรรลุเป้าหมาย
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- รูป IMG_2883 -->
+
+    <div class="image-right">
+
+        <img src="IMG_2883.jpeg" alt="รูปกิจกรรม">
+
+    </div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- คติประจำใจ -->
+<!-- ========================= -->
+
+<div class="motto">
+
+    “ทำในสิ่งที่ตัวเองตั้งใจให้ดีที่สุด“
 
 </div>
 
