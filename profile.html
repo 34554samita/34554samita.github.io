@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
 <meta charset="UTF-8">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+
 <title>ประวัติส่วนตัว</title>
+
 <style>
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-y: scroll;
+}
+
 body {
     font-family: "Itim", cursive;
     background-color: #CDE9DC;
     color: #333;
     margin: 0;
-    padding-top: 80px;
+    padding-top: 65px;
 }
+
+
+/* ========================= */
+/* แถบเมนูด้านบน */
+/* ========================= */
+
 .menu {
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
     height: 65px;
+
     background: white;
+
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 
     display: flex;
@@ -28,17 +51,19 @@ body {
     align-items: center;
 
     padding-right: 70px;
-    box-sizing: border-box;
 
     z-index: 1000;
 }
 
 .menu a {
     color: #333;
+
     text-decoration: none;
+
     font-size: 18px;
 
     width: 100px;
+
     text-align: center;
 
     margin-left: 30px;
@@ -47,53 +72,241 @@ body {
 .menu a:hover {
     color: #3498db;
 }
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 30px;
+
+
+/* ========================= */
+/* ส่วนโปรไฟล์ */
+/* ========================= */
+
+.profile-section {
+    min-height: calc(100vh - 65px);
+
+    display: flex;
+
+    background-color: #CDE9DC;
 }
+
+
+/* ========================= */
+/* รูปด้านซ้าย */
+/* ========================= */
+
+.profile-image {
+    width: 50%;
+
+    height: calc(100vh - 65px);
+
+    overflow: hidden;
+}
+
+.profile-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: left center;
+}
+
+
+/* ========================= */
+/* เนื้อหาด้านขวา */
+/* ========================= */
+
+.profile-content {
+    width: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 50px;
+}
+
+
+/* ========================= */
+/* หัวข้อ */
+/* ========================= */
+
+.profile-content h1 {
+    color: #2c3e50;
+
+    font-size: 40px;
+
+    margin-top: 0;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+}
+
+
+/* ========================= */
+/* กรอบข้อมูล */
+/* ========================= */
+
 .project-card {
     background: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
     text-align: left;
 }
+
 .project-card p {
     font-size: 20px;
+
     line-height: 1.6;
+
+    margin: 10px 0;
 }
-h1 {
-    color: #2c3e50;
+
+
+/* ========================= */
+/* หน้าจอขนาดเล็ก */
+/* ========================= */
+
+@media (max-width: 800px) {
+
+    .profile-section {
+        flex-direction: column;
+    }
+
+    .profile-image {
+        width: 100%;
+
+        height: 50vh;
+    }
+
+    .profile-content {
+        width: 100%;
+
+        padding: 30px;
+    }
+
+    .profile-content h1 {
+        font-size: 32px;
+    }
+
+    .menu {
+        padding-right: 20px;
+    }
+
+    .menu a {
+        width: auto;
+
+        margin-left: 15px;
+
+        font-size: 16px;
+    }
+
 }
+
 </style>
+
 </head>
+
+
 <body>
+
+
+<!-- ========================= -->
+<!-- แถบเมนู -->
+<!-- ========================= -->
+
 <div class="menu">
-    <a href="profile.html">ประวัติส่วนตัว</a>
-    <a href="study.html">การศึกษาต่อ</a>
-    <a href="portfolio.html">ผลงาน</a>
-    <a href="contact.html">ติดต่อ</a>
+
+    <a href="profile.html">
+        ประวัติส่วนตัว
+    </a>
+
+    <a href="study.html">
+        การศึกษาต่อ
+    </a>
+
+    <a href="portfolio.html">
+        ผลงาน
+    </a>
+
+    <a href="contact.html">
+        ติดต่อ
+    </a>
+
 </div>
-<div class="container">
-<h1>ประวัติส่วนตัว 👤</h1>
-<div class="project-card">
-<p><strong>ชื่อ :</strong> สมิตา บุญนาค (Samita Boonnark)</p>
-<p><strong>ระดับการศึกษา :</strong> มัธยมศึกษาปีที่ 6</p>
-<p><strong>แผนการเรียน :</strong> เตรียมวิศวกรรมศาสตร์ (Pre-Engineering)⚙️</p>
-<p>
-<strong>ความสนใจ :</strong>
-วิทยาศาสตร์ เทคโนโลยี วิศวกรรมศาสตร์
-และนวัตกรรมทางการแพทย์
-</p>
-<p>
-<strong>งานอดิเรก :</strong>
-เรียนรู้สิ่งใหม่ ๆ ทำโครงงาน
-และศึกษาด้านเทคโนโลยี
-</p>
+
+
+<!-- ========================= -->
+<!-- ส่วนโปรไฟล์ -->
+<!-- ========================= -->
+
+<div class="profile-section">
+
+
+    <!-- ========================= -->
+    <!-- รูปภาพด้านซ้าย -->
+    <!-- ========================= -->
+
+    <div class="profile-image">
+
+        <img src="IMG_2882.jpeg" alt="รูปโปรไฟล์">
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- ข้อมูลด้านขวา -->
+    <!-- ========================= -->
+
+    <div class="profile-content">
+
+        <h1>
+            ประวัติส่วนตัว 👤
+        </h1>
+
+
+        <div class="project-card">
+
+            <p>
+                <strong>ชื่อ :</strong>
+                สมิตา บุญนาค (Samita Boonnark)
+            </p>
+
+            <p>
+                <strong>ระดับการศึกษา :</strong>
+                มัธยมศึกษาปีที่ 6
+            </p>
+
+            <p>
+                <strong>แผนการเรียน :</strong>
+                เตรียมวิศวกรรมศาสตร์ (Pre-Engineering) ⚙️
+            </p>
+
+            <p>
+                <strong>ความสนใจ :</strong>
+                วิทยาศาสตร์ เทคโนโลยี วิศวกรรมศาสตร์
+                และนวัตกรรมทางการแพทย์
+            </p>
+
+            <p>
+                <strong>งานอดิเรก :</strong>
+                เรียนรู้สิ่งใหม่ ๆ ทำโครงงาน
+                และศึกษาด้านเทคโนโลยี
+            </p>
+
+        </div>
+
+    </div>
+
 </div>
-</div>
+
+
 </body>
+
 </html>
