@@ -2,6 +2,7 @@
 <html lang="th">
 
 <head>
+
 <meta charset="UTF-8">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,26 +14,29 @@
 
 <style>
 
+/* =========================
+   พื้นฐาน
+========================= */
+
 * {
     box-sizing: border-box;
 }
 
 html {
-    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: "Itim", cursive;
     margin: 0;
+    font-family: "Itim", cursive;
     background-color: #CDE9DC;
     color: #333;
-    padding-top: 65px;
 }
 
 
-/* ========================= */
-/* แถบเมนู */
-/* ========================= */
+/* =========================
+   แถบเมนู
+========================= */
 
 .menu {
     position: fixed;
@@ -72,15 +76,16 @@ body {
 }
 
 
-/* ========================= */
-/* ส่วนรูป + ข้อความ */
-/* ========================= */
+/* =========================
+   ส่วนที่ 1
+   รูปเต็มพื้นที่ + ข้อความทับรูป
+========================= */
 
-.photo-section {
+.hero {
     position: relative;
 
     width: 100%;
-    height: 650px;
+    min-height: 100vh;
 
     overflow: hidden;
 
@@ -88,121 +93,206 @@ body {
 }
 
 
-/* รูปเต็มพื้นที่ */
+/* รูป */
 
-.photo-section img {
+.hero-image {
     position: absolute;
 
+    top: 65px;
+    left: 0;
+
     width: 100%;
-    height: 100%;
+    height: calc(100vh - 65px);
 
     object-fit: cover;
 
-    object-position: center;
+    /* เลื่อนรูปไปทางซ้าย
+       เพื่อให้เห็นหน้าคนฝั่งซ้าย */
+
+    object-position: left center;
 }
 
 
-/* ========================= */
-/* กล่องข้อความทับบนรูป */
-/* ========================= */
+/* กรอบข้อมูล */
 
-.overlay-card {
+.profile-card {
     position: absolute;
 
     top: 50%;
+    right: 5%;
+
     transform: translateY(-50%);
 
-    width: 52%;
+    width: 55%;
 
-    background: rgba(205, 233, 220, 0.93);
+    background: rgba(255,255,255,0.88);
 
-    padding: 35px 40px;
+    padding: 35px;
 
     border-radius: 25px;
 
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+
+    z-index: 2;
 }
 
 
-/* กล่องฝั่งขวา */
+/* หัวข้อ */
 
-.right-card {
-    right: 5%;
-}
-
-
-/* กล่องฝั่งซ้าย */
-
-.left-card {
-    left: 5%;
-}
-
-
-/* ========================= */
-/* ตัวหนังสือ */
-/* ========================= */
-
-.overlay-card h2 {
+.profile-card h1 {
     color: #2c3e50;
 
-    font-size: 30px;
+    font-size: 34px;
 
     margin-top: 0;
     margin-bottom: 25px;
 }
 
-.overlay-card h3 {
-    color: #2c3e50;
 
-    font-size: 22px;
+/* ข้อมูล */
 
-    margin-top: 20px;
-    margin-bottom: 5px;
-}
+.profile-card p {
+    font-size: 20px;
 
-.overlay-card p {
-    font-size: 18px;
+    line-height: 1.7;
 
-    line-height: 1.6;
-
-    margin: 8px 0;
+    margin: 15px 0;
 }
 
 
-/* ========================= */
-/* คติประจำใจ */
-/* ========================= */
+/* =========================
+   ส่วนที่ 2
+   รูปอีกฝั่ง + จุดเด่นและทักษะ
+========================= */
 
-.motto {
+.skills-section {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    background-color: #CDE9DC;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 80px 5%;
+
+    gap: 5%;
+}
+
+
+/* กรอบข้อความฝั่งซ้าย */
+
+.skills-card {
+
+    width: 55%;
+
     background: white;
 
-    width: 70%;
-    max-width: 700px;
+    padding: 35px;
 
-    margin: 60px auto;
+    border-radius: 25px;
 
-    padding: 28px 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
 
-    border-radius: 20px;
+    order: 1;
+}
 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.skills-card h2 {
+
+    color: #2c3e50;
+
+    font-size: 30px;
+
+    margin-top: 0;
+}
+
+.skills-card p {
+
+    font-size: 20px;
+
+    line-height: 1.7;
+
+    margin: 12px 0;
+}
+
+
+/* รูปฝั่งขวา */
+
+.skills-image {
+
+    width: 40%;
+
+    height: 500px;
+
+    object-fit: cover;
+
+    border-radius: 25px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+
+    order: 2;
+}
+
+
+/* =========================
+   คติประจำใจ
+========================= */
+
+.motto-section {
+
+    min-height: 350px;
+
+    background-color: #CDE9DC;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 60px 20px;
+}
+
+
+.motto-card {
+
+    background: white;
+
+    padding: 35px 70px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
 
     text-align: center;
 
-    font-size: 25px;
-
-    color: #2c3e50;
+    max-width: 800px;
 }
 
 
-/* ========================= */
-/* หน้าจอเล็ก */
-/* ========================= */
+.motto-card p {
+
+    font-size: 26px;
+
+    color: #2c3e50;
+
+    margin: 0;
+}
+
+
+/* =========================
+   ปรับสำหรับหน้าจอเล็ก
+========================= */
 
 @media (max-width: 800px) {
 
     .menu {
-        padding-right: 20px;
+        padding-right: 15px;
     }
 
     .menu a {
@@ -211,29 +301,108 @@ body {
         font-size: 16px;
     }
 
-    .photo-section {
-        height: 700px;
-    }
 
-    .overlay-card {
-        width: 88%;
-
-        left: 6%;
-        right: auto;
-
+    .profile-card {
+        width: 90%;
+        right: 5%;
         padding: 25px;
     }
 
-    .overlay-card h2 {
-        font-size: 26px;
+    .profile-card h1 {
+        font-size: 28px;
     }
 
-    .overlay-card p {
+    .profile-card p {
         font-size: 17px;
     }
 
-    .motto {
+
+    .skills-section {
+        flex-direction: column;
+    }
+
+    .skills-card,
+    .skills-image {
         width: 90%;
+    }
+
+    .skills-image {
+        height: 400px;
+    }
+
+}
+
+
+/* =========================
+   สำหรับมือถือ
+========================= */
+
+@media (max-width: 500px) {
+
+    .menu {
+        height: 60px;
+        padding-right: 5px;
+    }
+
+    .menu a {
+        font-size: 14px;
+        margin-left: 8px;
+    }
+
+
+    .hero-image {
+        top: 60px;
+        height: calc(100vh - 60px);
+
+        /* เน้นให้เห็นตัวเธอฝั่งซ้าย */
+
+        object-position: 18% center;
+    }
+
+
+    .profile-card {
+
+        top: 55%;
+
+        width: 90%;
+
+        padding: 20px;
+
+        background: rgba(255,255,255,0.90);
+    }
+
+
+    .profile-card h1 {
+        font-size: 25px;
+    }
+
+
+    .profile-card p {
+        font-size: 16px;
+    }
+
+
+    .skills-card {
+        padding: 25px;
+    }
+
+
+    .skills-card h2 {
+        font-size: 25px;
+    }
+
+
+    .skills-card p {
+        font-size: 17px;
+    }
+
+
+    .motto-card {
+        padding: 30px 25px;
+    }
+
+
+    .motto-card p {
         font-size: 21px;
     }
 
@@ -247,9 +416,9 @@ body {
 <body>
 
 
-<!-- ========================= -->
-<!-- แถบเมนู -->
-<!-- ========================= -->
+<!-- =========================
+     เมนู
+========================= -->
 
 <div class="menu">
 
@@ -264,20 +433,23 @@ body {
 </div>
 
 
-<!-- ================================================= -->
-<!-- ส่วนที่ 1 : IMG_2882 + ข้อมูลประวัติส่วนตัว -->
-<!-- ================================================= -->
 
-<div class="photo-section">
+<!-- =========================
+     ส่วนที่ 1
+========================= -->
+
+<section class="hero">
 
     <img
         src="IMG_2882.jpeg"
+        class="hero-image"
         alt="รูปประวัติส่วนตัว"
     >
 
-    <div class="overlay-card right-card">
 
-        <h2>👤 ประวัติส่วนตัว</h2>
+    <div class="profile-card">
+
+        <h1>👤 ประวัติส่วนตัว</h1>
 
         <p>
             <strong>ชื่อ :</strong>
@@ -296,107 +468,89 @@ body {
 
         <p>
             <strong>ความสนใจ :</strong>
-            วิทยาศาสตร์ เทคโนโลยี วิศวกรรมศาสตร์
+            วิทยาศาสตร์ เทคโนโลยี
+            วิศวกรรมศาสตร์
             และนวัตกรรมทางการแพทย์
         </p>
 
         <p>
             <strong>งานอดิเรก :</strong>
-            เรียนรู้สิ่งใหม่ ๆ ทำโครงงาน
+            เรียนรู้สิ่งใหม่ ๆ
+            ทำโครงงาน
             และศึกษาด้านเทคโนโลยี
         </p>
 
     </div>
 
-</div>
+</section>
 
 
-<!-- ================================================= -->
-<!-- ส่วนที่ 2 : IMG_2883 + จุดเด่นและทักษะ -->
-<!-- ================================================= -->
 
-<div class="photo-section">
+<!-- =========================
+     ส่วนที่ 2
+     จุดเด่นและทักษะ
+========================= -->
 
-    <img
-        src="IMG_2883.jpeg"
-        alt="รูปกิจกรรม"
-    >
-
-    <div class="overlay-card left-card">
-
-        <h2>🌟 จุดเด่นและทักษะ</h2>
+<section class="skills-section">
 
 
-        <h3>🔍 ชอบค้นคว้า</h3>
+    <div class="skills-card">
+
+        <h2>⭐ จุดเด่นและทักษะ</h2>
 
         <p>
-            สนุกกับการเรียนรู้เรื่องใหม่ ๆ
-            และค้นหาความรู้เพิ่มเติมอยู่เสมอ
-        </p>
-
-
-        <h3>💡 ชอบคิดสร้างสรรค์</h3>
-
-        <p>
-            สนใจการคิดและพัฒนาสิ่งใหม่ ๆ
-            รวมถึงการหาแนวทางในการแก้ไขปัญหา
-        </p>
-
-
-        <h3>🧪 ชอบทดลอง</h3>
-
-        <p>
-            สนใจการทำโครงงาน การทดลอง
-            และการนำความรู้มาประยุกต์ใช้จริง
-        </p>
-
-
-        <h3>💻 สนใจเทคโนโลยี</h3>
-
-        <p>
-            ชอบเรียนรู้และประยุกต์ใช้เทคโนโลยี
-            เพื่อสร้างสรรค์สิ่งใหม่ ๆ
-        </p>
-
-
-        <h3>👑 การเป็นผู้นำ</h3>
-
-        <p>
+            <strong>• การเป็นผู้นำ</strong><br>
             สามารถรับผิดชอบงาน
             และช่วยวางแผนการทำงานร่วมกับผู้อื่น
         </p>
 
-
-        <h3>🎤 การนำเสนอ</h3>
-
         <p>
+            <strong>• การนำเสนอ</strong><br>
             สามารถสื่อสารและนำเสนอข้อมูล
-            หรือผลงานให้ผู้อื่นเข้าใจได้
+            ให้ผู้อื่นเข้าใจได้อย่างชัดเจน
         </p>
 
-
-        <h3>🤝 การทำงานเป็นทีม</h3>
+        <p>
+            <strong>• การทำงานเป็นทีม</strong><br>
+            สามารถทำงานร่วมกับผู้อื่น
+            รับฟังความคิดเห็น
+            และช่วยกันแก้ไขปัญหา
+        </p>
 
         <p>
-            สามารถทำงานร่วมกับผู้อื่น
-            แบ่งหน้าที่ และช่วยกันแก้ไขปัญหา
-            เพื่อให้บรรลุเป้าหมาย
+            <strong>• การเรียนรู้สิ่งใหม่</strong><br>
+            มีความสนใจในการเรียนรู้
+            และพัฒนาความสามารถของตนเองอยู่เสมอ
         </p>
 
     </div>
 
-</div>
+
+    <img
+        src="IMG_2883.jpeg"
+        class="skills-image"
+        alt="รูปกิจกรรม"
+    >
+
+</section>
 
 
-<!-- ========================= -->
-<!-- คติประจำใจ -->
-<!-- ========================= -->
 
-<div class="motto">
+<!-- =========================
+     คติประจำใจ
+========================= -->
 
-    “ทำในสิ่งที่ตัวเองตั้งใจให้ดีที่สุด“
+<section class="motto-section">
 
-</div>
+    <div class="motto-card">
+
+        <p>
+            “ทำในสิ่งที่ตัวเองตั้งใจให้ดีที่สุด“
+        </p>
+
+    </div>
+
+</section>
 
 
 </body>
