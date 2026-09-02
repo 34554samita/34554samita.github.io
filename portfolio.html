@@ -22,6 +22,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Itim", cursive;
     background-color: #CDE9DC;
@@ -49,6 +53,7 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 
     display: flex;
+
     justify-content: flex-end;
     align-items: center;
 
@@ -77,11 +82,12 @@ body {
 
 
 /* =========================
-   ส่วนเนื้อหา
+   พื้นที่หลัก
 ========================= */
 
 .container {
-    max-width: 800px;
+
+    max-width: 900px;
 
     margin: 0 auto;
 
@@ -92,19 +98,41 @@ body {
 
 
 /* =========================
+   หัวข้อหน้า
+========================= */
+
+h1 {
+
+    color: #2c3e50;
+
+    font-size: 38px;
+
+    margin-bottom: 10px;
+}
+
+.container > p {
+
+    font-size: 20px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
    กรอบผลงาน
 ========================= */
 
 .project-card {
+
     background: white;
 
-    padding: 20px;
+    padding: 25px;
 
-    margin: 20px 0;
+    margin: 25px 0;
 
-    border-radius: 8px;
+    border-radius: 15px;
 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
 
     text-align: left;
 }
@@ -113,36 +141,60 @@ body {
 /* หัวข้อผลงาน */
 
 .project-card h3 {
+
     color: #2c3e50;
 
-    font-size: 24px;
+    font-size: 28px;
 
     margin-top: 0;
+
+    margin-bottom: 20px;
 }
 
 
 /* ข้อความ */
 
 .project-card p {
+
     font-size: 20px;
 
-    line-height: 1.6;
+    line-height: 1.7;
+
+    margin: 15px 0;
 }
 
 
 /* =========================
-   รูปโครงงาน
+   ชื่อโครงงานด้านใน
+========================= */
+
+.project-name {
+
+    font-size: 23px !important;
+
+    color: #2c3e50;
+
+    margin-top: 5px !important;
+
+    margin-bottom: 15px !important;
+}
+
+
+/* =========================
+   รูปผลงาน 2 รูป
 ========================= */
 
 .project-images {
 
-    display: flex;
-
     width: 100%;
+
+    display: flex;
 
     gap: 12px;
 
-    margin-top: 25px;
+    margin-top: 20px;
+
+    overflow: hidden;
 }
 
 .project-images img {
@@ -151,22 +203,42 @@ body {
 
     height: 300px;
 
-    object-fit: contain;
+    object-fit: cover;
 
-    border-radius: 10px;
+    border-radius: 12px;
 
     display: block;
 }
 
 
 /* =========================
-   หัวข้อหลัก
+   รูปของโครงงานเทคโนโลยี
 ========================= */
 
-h1 {
-    color: #2c3e50;
+.tech-images {
 
-    font-size: 36px;
+    width: 100%;
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+    overflow: hidden;
+}
+
+.tech-images img {
+
+    width: calc(50% - 6px);
+
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    display: block;
 }
 
 
@@ -174,48 +246,140 @@ h1 {
    หน้าจอขนาดกลาง
 ========================= */
 
+@media (max-width: 900px) {
+
+    .container {
+
+        max-width: 95%;
+
+        padding: 25px;
+    }
+
+    .menu {
+
+        padding-right: 30px;
+    }
+
+    .menu a {
+
+        margin-left: 15px;
+
+        font-size: 17px;
+    }
+
+    .project-card {
+
+        padding: 22px;
+    }
+
+    .project-images img,
+    .tech-images img {
+
+        height: 260px;
+    }
+
+}
+
+
+/* =========================
+   มือถือ
+========================= */
+
 @media (max-width: 700px) {
+
+    body {
+
+        padding-top: 70px;
+    }
+
+
+    /* เมนู */
 
     .menu {
 
         height: 60px;
 
-        padding-right: 10px;
+        padding-right: 8px;
     }
 
     .menu a {
 
         width: auto;
 
-        font-size: 15px;
+        font-size: 14px;
 
-        margin-left: 12px;
+        margin-left: 10px;
     }
 
+
+    /* พื้นที่หลัก */
 
     .container {
 
-        padding: 20px;
+        width: 100%;
+
+        padding: 20px 15px;
     }
 
+
+    h1 {
+
+        font-size: 30px;
+    }
+
+    .container > p {
+
+        font-size: 17px;
+    }
+
+
+    /* กรอบผลงาน */
+
+    .project-card {
+
+        padding: 20px;
+
+        margin: 20px 0;
+
+        border-radius: 15px;
+    }
+
+    .project-card h3 {
+
+        font-size: 24px;
+    }
 
     .project-card p {
 
-        font-size: 18px;
+        font-size: 17px;
+
+        line-height: 1.6;
+    }
+
+    .project-name {
+
+        font-size: 20px !important;
     }
 
 
-    .project-images {
+    /* รูป 2 รูปยังอยู่ข้างกัน */
+
+    .project-images,
+    .tech-images {
 
         gap: 8px;
+
+        width: 100%;
     }
 
-
-    .project-images img {
+    .project-images img,
+    .tech-images img {
 
         width: calc(50% - 4px);
 
-        height: 220px;
+        height: 180px;
+
+        border-radius: 10px;
     }
 
 }
@@ -229,7 +393,7 @@ h1 {
 
 
 <!-- =========================
-     แถบเมนู
+     เมนู
 ========================= -->
 
 <div class="menu">
@@ -255,7 +419,7 @@ h1 {
 
 
 <!-- =========================
-     เนื้อหาหลัก
+     เนื้อหา
 ========================= -->
 
 <div class="container">
@@ -273,7 +437,7 @@ h1 {
 
     <!-- =========================
          ผลงานที่ 1
-    ========================= -->
+========================= -->
 
     <div class="project-card">
 
@@ -281,18 +445,47 @@ h1 {
             1. โครงงาน/ชิ้นงานวิทยาศาสตร์ 🧪
         </h3>
 
+
+        <p class="project-name">
+            <strong>
+                โครงงาน “Jel-Pop สบู่เด้งดึ๋งพกพา”
+            </strong>
+        </p>
+
+
         <p>
             <strong>รายละเอียดชิ้นงาน :</strong>
-            เป็นโครงงานที่เกี่ยวข้องกับวิทยาศาสตร์
-            โดยนำความรู้ที่ได้จากการเรียนมาประยุกต์ใช้
-            ในการสร้างและพัฒนาชิ้นงาน
+            เป็นโครงงานที่พัฒนาสบู่ในรูปแบบเจลลี่
+            มีลักษณะเด้งดึ๋ง พกพาสะดวก และสามารถนำมาใช้ได้ง่าย
+            โดยนำความรู้ทางวิทยาศาสตร์มาประยุกต์ใช้
+            ในการออกแบบและพัฒนาผลิตภัณฑ์
         </p>
+
 
         <p>
             <strong>สิ่งที่ได้เรียนรู้ :</strong>
             ได้ฝึกกระบวนการคิด การทดลอง
             การแก้ไขปัญหา และการทำงานอย่างเป็นขั้นตอน
+            รวมถึงการนำความรู้ทางวิทยาศาสตร์มาประยุกต์ใช้
+            ในการสร้างชิ้นงาน
         </p>
+
+
+        <!-- รูป Jel-Pop -->
+
+        <div class="project-images">
+
+            <img
+                src="สำเนาของ สำเนาของ โปสเตอร์นำเสนอ - 1.png"
+                alt="โปสเตอร์นำเสนอ Jel-Pop"
+            >
+
+            <img
+                src="โครงงานเรื่อง “Jel-Pop สบู่เด้งดึ๋งพกพา”.png"
+                alt="โครงงาน Jel-Pop สบู่เด้งดึ๋งพกพา"
+            >
+
+        </div>
 
     </div>
 
@@ -300,7 +493,7 @@ h1 {
 
     <!-- =========================
          ผลงานที่ 2
-    ========================= -->
+========================= -->
 
     <div class="project-card">
 
@@ -308,44 +501,59 @@ h1 {
             2. โครงงานด้านเทคโนโลยี 💻
         </h3>
 
-        <p>
-            <strong>โครงงาน “โรงเรือนเลี้ยงไก่อัจฉริยะ”</strong>
+
+        <p class="project-name">
+            <strong>
+                โครงงาน “โรงเรือนเลี้ยงไก่อัจฉริยะ”
+            </strong>
         </p>
+
 
         <p>
             <strong>รายละเอียดชิ้นงาน :</strong>
-            เป็นการนำเทคโนโลยี IoT มาประยุกต์ใช้
-            ในการดูแลโรงเรือนเลี้ยงไก่
-            โดยระบบสามารถควบคุมและปรับอุณหภูมิ
-            ภายในโรงเรือน มีระบบให้น้ำอัตโนมัติ
-            และระบบสั่งการให้อาหารผ่านโทรศัพท์มือถือ
-            โดยระบบต่าง ๆ สามารถทำงานแบบอัตโนมัติ
-            เพื่อช่วยเพิ่มความสะดวกและประสิทธิภาพ
-            ในการเลี้ยงไก่
+            เป็นโครงงานที่นำเทคโนโลยี IoT
+            มาประยุกต์ใช้ในการดูแลโรงเรือนเลี้ยงไก่
+            โดยระบบสามารถทำงานแบบอัตโนมัติ
+            เพื่อลดภาระในการดูแลและเพิ่มความสะดวกในการเลี้ยงไก่
         </p>
+
+
+        <p>
+            ภายในโรงเรือนมีระบบปรับอุณหภูมิอัตโนมัติ
+            ระบบให้น้ำอัตโนมัติ
+            และระบบสั่งการให้อาหารผ่านโทรศัพท์มือถือ
+            โดยสามารถควบคุมและสั่งงานผ่านระบบ IoT
+            ทำให้การดูแลโรงเรือนมีความสะดวก
+            และสามารถทำงานได้อย่างอัตโนมัติ
+        </p>
+
 
         <p>
             <strong>สิ่งที่ได้เรียนรู้ :</strong>
-            ได้เรียนรู้การทำงานของระบบ IoT
-            การควบคุมอุปกรณ์แบบอัตโนมัติ
-            การเชื่อมต่อและสั่งการผ่านโทรศัพท์มือถือ
-            รวมถึงการออกแบบระบบ
-            และการทำงานร่วมกับผู้อื่น
+            ได้เรียนรู้การประยุกต์ใช้เทคโนโลยี IoT
+            การควบคุมระบบผ่านโทรศัพท์มือถือ
+            รวมถึงการออกแบบระบบอัตโนมัติ
+            และการทำงานร่วมกันเป็นทีม
         </p>
 
 
-        <!-- รูปโครงงาน -->
+        <!-- รูปโรงเรือนเลี้ยงไก่อัจฉริยะ -->
 
-        <div class="project-images">
+        <div class="tech-images">
+
+            <!-- รูปซ้าย -->
 
             <img
                 src="IMG_2901.jpeg"
-                alt="โรงเรือนเลี้ยงไก่อัจฉริยะ รูปที่ 1"
+                alt="โรงเรือนเลี้ยงไก่อัจฉริยะ"
             >
+
+
+            <!-- รูปขวา -->
 
             <img
                 src="IMG_2900.jpeg"
-                alt="โรงเรือนเลี้ยงไก่อัจฉริยะ รูปที่ 2"
+                alt="โรงเรือนเลี้ยงไก่อัจฉริยะ"
             >
 
         </div>
@@ -356,7 +564,7 @@ h1 {
 
     <!-- =========================
          ผลงานที่ 3
-    ========================= -->
+========================= -->
 
     <div class="project-card">
 
@@ -364,11 +572,21 @@ h1 {
             3. กิจกรรม/เกียรติบัตรที่ได้รับ 🏆
         </h3>
 
+
         <p>
             <strong>รายละเอียด :</strong>
             รวบรวมกิจกรรม การแข่งขัน
             ผลงาน และเกียรติบัตรที่ได้รับ
             จากการเข้าร่วมกิจกรรมต่าง ๆ
+            ทั้งด้านวิชาการ เทคโนโลยี
+            และกิจกรรมภายในโรงเรียน
+        </p>
+
+
+        <p>
+            <strong>สิ่งที่ได้เรียนรู้ :</strong>
+            ได้ฝึกความรับผิดชอบ การทำงานร่วมกับผู้อื่น
+            การนำเสนอผลงาน และการพัฒนาความสามารถของตนเอง
         </p>
 
     </div>
