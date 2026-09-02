@@ -40,6 +40,7 @@ body {
 
 .menu {
     position: fixed;
+
     top: 0;
     left: 0;
 
@@ -61,11 +62,13 @@ body {
 
 .menu a {
     color: #333;
+
     text-decoration: none;
 
     font-size: 18px;
 
     width: 100px;
+
     text-align: center;
 
     margin-left: 30px;
@@ -77,97 +80,12 @@ body {
 
 
 /* =========================
-   ส่วนที่ 1
-   รูปเต็มพื้นที่ + ข้อความทับรูป
+   ส่วนประวัติส่วนตัว
+   รูปซ้าย 40%
+   ข้อมูลขวา 60%
 ========================= */
 
-.hero {
-    position: relative;
-
-    width: 100%;
-    min-height: 100vh;
-
-    overflow: hidden;
-
-    background-color: #CDE9DC;
-}
-
-
-/* รูป */
-
-.hero-image {
-    position: absolute;
-
-    top: 65px;
-    left: 0;
-
-    width: 100%;
-    height: calc(100vh - 65px);
-
-    object-fit: cover;
-
-    /* เลื่อนรูปไปทางซ้าย
-       เพื่อให้เห็นหน้าคนฝั่งซ้าย */
-
-    object-position: left center;
-}
-
-
-/* กรอบข้อมูล */
-
-.profile-card {
-    position: absolute;
-
-    top: 50%;
-    right: 5%;
-
-    transform: translateY(-50%);
-
-    width: 55%;
-
-    background: rgba(255,255,255,0.88);
-
-    padding: 35px;
-
-    border-radius: 25px;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-
-    z-index: 2;
-}
-
-
-/* หัวข้อ */
-
-.profile-card h1 {
-    color: #2c3e50;
-
-    font-size: 34px;
-
-    margin-top: 0;
-    margin-bottom: 25px;
-}
-
-
-/* ข้อมูล */
-
-.profile-card p {
-    font-size: 20px;
-
-    line-height: 1.7;
-
-    margin: 15px 0;
-}
-
-
-/* =========================
-   ส่วนที่ 2
-   รูปอีกฝั่ง + จุดเด่นและทักษะ
-========================= */
-
-.skills-section {
-
-    position: relative;
+.profile-section {
 
     min-height: 100vh;
 
@@ -179,13 +97,99 @@ body {
 
     justify-content: space-between;
 
-    padding: 80px 5%;
-
     gap: 5%;
+
+    padding: 110px 5% 60px 5%;
 }
 
 
-/* กรอบข้อความฝั่งซ้าย */
+/* รูปด้านซ้าย */
+
+.profile-image {
+
+    width: 40%;
+
+    height: 600px;
+
+    object-fit: cover;
+
+    object-position: center center;
+
+    border-radius: 25px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+
+/* กรอบข้อมูลด้านขวา */
+
+.profile-card {
+
+    width: 55%;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+
+    text-align: left;
+}
+
+
+/* หัวข้อ */
+
+.profile-card h1 {
+
+    color: #2c3e50;
+
+    font-size: 34px;
+
+    margin-top: 0;
+
+    margin-bottom: 25px;
+}
+
+
+/* ข้อมูล */
+
+.profile-card p {
+
+    font-size: 20px;
+
+    line-height: 1.7;
+
+    margin: 15px 0;
+}
+
+
+/* =========================
+   จุดเด่นและทักษะ
+   ข้อความซ้าย 60%
+   รูปขวา 40%
+========================= */
+
+.skills-section {
+
+    min-height: 100vh;
+
+    background-color: #CDE9DC;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 5%;
+
+    padding: 80px 5%;
+}
+
+
+/* กรอบข้อความ */
 
 .skills-card {
 
@@ -199,8 +203,11 @@ body {
 
     box-shadow: 0 5px 15px rgba(0,0,0,0.12);
 
-    order: 1;
+    text-align: left;
 }
+
+
+/* หัวข้อ */
 
 .skills-card h2 {
 
@@ -209,7 +216,12 @@ body {
     font-size: 30px;
 
     margin-top: 0;
+
+    margin-bottom: 25px;
 }
+
+
+/* ข้อความ */
 
 .skills-card p {
 
@@ -221,21 +233,21 @@ body {
 }
 
 
-/* รูปฝั่งขวา */
+/* รูปด้านขวา */
 
 .skills-image {
 
     width: 40%;
 
-    height: 500px;
+    height: 600px;
 
     object-fit: cover;
+
+    object-position: center center;
 
     border-radius: 25px;
 
     box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-
-    order: 2;
 }
 
 
@@ -286,124 +298,165 @@ body {
 
 
 /* =========================
-   ปรับสำหรับหน้าจอเล็ก
+   หน้าจอขนาดกลาง
 ========================= */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
-    .menu {
-        padding-right: 15px;
-    }
-
-    .menu a {
-        width: auto;
-        margin-left: 15px;
-        font-size: 16px;
-    }
-
-
-    .profile-card {
-        width: 90%;
-        right: 5%;
-        padding: 25px;
-    }
-
-    .profile-card h1 {
-        font-size: 28px;
-    }
-
-    .profile-card p {
-        font-size: 17px;
-    }
-
-
+    .profile-section,
     .skills-section {
-        flex-direction: column;
+
+        gap: 4%;
+
+        padding-left: 4%;
+        padding-right: 4%;
     }
 
-    .skills-card,
-    .skills-image {
-        width: 90%;
+    .profile-card,
+    .skills-card {
+
+        width: 56%;
+
+        padding: 28px;
     }
 
+    .profile-image,
     .skills-image {
-        height: 400px;
+
+        width: 40%;
+
+        height: 550px;
+    }
+
+    .profile-card p,
+    .skills-card p {
+
+        font-size: 18px;
     }
 
 }
 
 
 /* =========================
-   สำหรับมือถือ
+   มือถือ
 ========================= */
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
 
     .menu {
+
         height: 60px;
-        padding-right: 5px;
+
+        padding-right: 10px;
     }
 
     .menu a {
-        font-size: 14px;
-        margin-left: 8px;
+
+        width: auto;
+
+        font-size: 15px;
+
+        margin-left: 12px;
     }
 
 
-    .hero-image {
-        top: 60px;
-        height: calc(100vh - 60px);
+    .profile-section,
+    .skills-section {
 
-        /* เน้นให้เห็นตัวเธอฝั่งซ้าย */
+        min-height: auto;
 
-        object-position: 18% center;
+        flex-direction: column;
+
+        padding: 90px 5% 50px 5%;
+
+        gap: 30px;
     }
 
 
-    .profile-card {
+    /* รูปบน */
 
-        top: 55%;
+    .profile-image {
 
         width: 90%;
 
-        padding: 20px;
+        height: 500px;
 
-        background: rgba(255,255,255,0.90);
+        object-fit: cover;
+
+        object-position: center center;
+
+        order: 1;
     }
 
 
-    .profile-card h1 {
-        font-size: 25px;
-    }
+    /* ข้อมูลบน */
 
+    .profile-card {
 
-    .profile-card p {
-        font-size: 16px;
-    }
+        width: 90%;
 
+        order: 2;
 
-    .skills-card {
         padding: 25px;
     }
 
 
-    .skills-card h2 {
-        font-size: 25px;
+    /* ข้อมูลล่าง */
+
+    .skills-card {
+
+        width: 90%;
+
+        order: 1;
+
+        padding: 25px;
     }
 
 
+    /* รูปล่าง */
+
+    .skills-image {
+
+        width: 90%;
+
+        height: 500px;
+
+        order: 2;
+    }
+
+
+    .profile-card h1 {
+
+        font-size: 28px;
+    }
+
+
+    .skills-card h2 {
+
+        font-size: 27px;
+    }
+
+
+    .profile-card p,
     .skills-card p {
+
         font-size: 17px;
+
+        line-height: 1.6;
     }
 
 
     .motto-card {
-        padding: 30px 25px;
+
+        width: 90%;
+
+        padding: 30px 20px;
     }
 
 
     .motto-card p {
-        font-size: 21px;
+
+        font-size: 22px;
     }
 
 }
@@ -422,13 +475,21 @@ body {
 
 <div class="menu">
 
-    <a href="profile.html">ประวัติส่วนตัว</a>
+    <a href="profile.html">
+        ประวัติส่วนตัว
+    </a>
 
-    <a href="study.html">การศึกษาต่อ</a>
+    <a href="study.html">
+        การศึกษาต่อ
+    </a>
 
-    <a href="portfolio.html">ผลงาน</a>
+    <a href="portfolio.html">
+        ผลงาน
+    </a>
 
-    <a href="contact.html">ติดต่อ</a>
+    <a href="contact.html">
+        ติดต่อ
+    </a>
 
 </div>
 
@@ -436,20 +497,28 @@ body {
 
 <!-- =========================
      ส่วนที่ 1
+     รูปซ้าย / ข้อมูลขวา
 ========================= -->
 
-<section class="hero">
+<section class="profile-section">
+
+
+    <!-- รูป IMG_2882 -->
 
     <img
         src="IMG_2882.jpeg"
-        class="hero-image"
+        class="profile-image"
         alt="รูปประวัติส่วนตัว"
     >
 
 
+    <!-- กรอบข้อมูล -->
+
     <div class="profile-card">
 
-        <h1>👤 ประวัติส่วนตัว</h1>
+        <h1>
+            👤 ประวัติส่วนตัว
+        </h1>
 
         <p>
             <strong>ชื่อ :</strong>
@@ -488,15 +557,19 @@ body {
 
 <!-- =========================
      ส่วนที่ 2
-     จุดเด่นและทักษะ
+     ข้อมูลซ้าย / รูปขวา
 ========================= -->
 
 <section class="skills-section">
 
 
+    <!-- กรอบจุดเด่นและทักษะ -->
+
     <div class="skills-card">
 
-        <h2>⭐ จุดเด่นและทักษะ</h2>
+        <h2>
+            ⭐ จุดเด่นและทักษะ
+        </h2>
 
         <p>
             <strong>• การเป็นผู้นำ</strong><br>
@@ -525,6 +598,8 @@ body {
 
     </div>
 
+
+    <!-- รูป IMG_2883 -->
 
     <img
         src="IMG_2883.jpeg"
