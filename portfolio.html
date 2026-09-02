@@ -2,11 +2,16 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+
 <title>แฟ้มสะสมงานของฉัน</title>
+
 <style>
+
 body {
     font-family: "Itim", cursive;
     background-color: #CDE9DC;
@@ -14,13 +19,22 @@ body {
     margin: 0;
     padding-top: 80px;
 }
+
+
+/* =========================
+   แถบเมนู
+========================= */
+
 .menu {
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
     height: 65px;
+
     background: white;
+
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 
     display: flex;
@@ -28,6 +42,7 @@ body {
     align-items: center;
 
     padding-right: 70px;
+
     box-sizing: border-box;
 
     z-index: 1000;
@@ -35,10 +50,13 @@ body {
 
 .menu a {
     color: #333;
+
     text-decoration: none;
+
     font-size: 18px;
 
     width: 100px;
+
     text-align: center;
 
     margin-left: 30px;
@@ -47,63 +65,242 @@ body {
 .menu a:hover {
     color: #3498db;
 }
+
+
+/* =========================
+   ส่วนเนื้อหา
+========================= */
+
 .container {
     max-width: 800px;
+
     margin: 0 auto;
+
     text-align: center;
+
     padding: 30px;
 }
+
+
+/* =========================
+   กรอบผลงาน
+========================= */
+
 .project-card {
     background: white;
+
     padding: 20px;
+
     margin: 20px 0;
+
     border-radius: 8px;
+
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
     text-align: left;
 }
+
 .project-card p {
     font-size: 20px;
+
     line-height: 1.6;
 }
+
 h1 {
     color: #2c3e50;
 }
+
+
+/* =========================
+   รูปผลงานกรอบแรก
+========================= */
+
+.project-images {
+    display: flex;
+
+    gap: 10px;
+
+    width: 100%;
+
+    margin-top: 20px;
+}
+
+.project-images img {
+    width: calc(50% - 5px);
+
+    height: 250px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    display: block;
+}
+
+
+/* =========================
+   มือถือ
+========================= */
+
+@media (max-width: 700px) {
+
+    .menu {
+        height: 60px;
+
+        padding-right: 10px;
+    }
+
+    .menu a {
+        width: auto;
+
+        font-size: 15px;
+
+        margin-left: 12px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .project-images {
+        gap: 8px;
+    }
+
+    .project-images img {
+        height: 180px;
+    }
+
+}
+
 </style>
 </head>
+
+
 <body>
+
+
+<!-- =========================
+     แถบเมนู
+========================= -->
+
 <div class="menu">
-    <a href="profile.html">ประวัติส่วนตัว</a>
-    <a href="study.html">การศึกษาต่อ</a>
-    <a href="portfolio.html">ผลงาน</a>
-    <a href="contact.html">ติดต่อ</a>
+
+    <a href="profile.html">
+        ประวัติส่วนตัว
+    </a>
+
+    <a href="study.html">
+        การศึกษาต่อ
+    </a>
+
+    <a href="portfolio.html">
+        ผลงาน
+    </a>
+
+    <a href="contact.html">
+        ติดต่อ
+    </a>
+
 </div>
+
+
+
+<!-- =========================
+     เนื้อหา
+========================= -->
+
 <div class="container">
-<h1>แฟ้มสะสมงาน 📂</h1>
-<p>นี่คือพื้นที่รวบรวมผลงานและกิจกรรมที่ภูมิใจค่ะ 💌</p>
-<div class="project-card">
-<h3>1. โครงงาน/ชิ้นงานวิทยาศาสตร์ 🧪</h3>
-<p>
-รายละเอียดชิ้นงาน :
-ใส่รายละเอียดเกี่ยวกับโครงงาน
-และสิ่งที่ได้เรียนรู้จากการทำงาน
-</p>
+
+    <h1>แฟ้มสะสมงาน 📂</h1>
+
+    <p>
+        นี่คือพื้นที่รวบรวมผลงานและกิจกรรมที่ภูมิใจค่ะ 💌
+    </p>
+
+
+
+    <!-- =========================
+         ผลงานที่ 1
+    ========================= -->
+
+    <div class="project-card">
+
+        <h3>
+            1. โครงงาน/ชิ้นงานวิทยาศาสตร์ 🧪
+        </h3>
+
+        <p>
+            รายละเอียดชิ้นงาน :
+            ใส่รายละเอียดเกี่ยวกับโครงงาน
+            และสิ่งที่ได้เรียนรู้จากการทำงาน
+        </p>
+
+
+        <!-- รูปผลงาน 2 รูป -->
+
+        <div class="project-images">
+
+            <!-- รูปซ้าย -->
+
+            <img
+                src="สำเนาของ สำเนาของ โปสเตอร์นำเสนอ - 1.png"
+                alt="โปสเตอร์นำเสนอ"
+            >
+
+
+            <!-- รูปขวา -->
+
+            <img
+                src="โครงงานเรื่อง “Jel-Pop สบู่เด้งดึ๋งพกพา”.png"
+                alt="โครงงาน Jel-Pop"
+            >
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         ผลงานที่ 2
+    ========================= -->
+
+    <div class="project-card">
+
+        <h3>
+            2. โครงงานด้านเทคโนโลยี 💻
+        </h3>
+
+        <p>
+            รายละเอียดชิ้นงาน :
+            ใส่รายละเอียดเกี่ยวกับโครงงาน
+            หรือโปรแกรมที่เคยพัฒนา
+        </p>
+
+    </div>
+
+
+
+    <!-- =========================
+         ผลงานที่ 3
+    ========================= -->
+
+    <div class="project-card">
+
+        <h3>
+            3. กิจกรรม/เกียรติบัตรที่ได้รับ 🏆
+        </h3>
+
+        <p>
+            รายละเอียด :
+            รวบรวมกิจกรรม การแข่งขัน
+            และเกียรติบัตรที่ได้รับ
+        </p>
+
+    </div>
+
 </div>
-<div class="project-card">
-<h3>2. โครงงานด้านเทคโนโลยี 💻</h3>
-<p>
-รายละเอียดชิ้นงาน :
-ใส่รายละเอียดเกี่ยวกับโครงงาน
-หรือโปรแกรมที่เคยพัฒนา
-</p>
-</div>
-<div class="project-card">
-<h3>3. กิจกรรม/เกียรติบัตรที่ได้รับ 🏆</h3>
-<p>
-รายละเอียด :
-รวบรวมกิจกรรม การแข่งขัน
-และเกียรติบัตรที่ได้รับ
-</p>
-</div>
-</div>
+
+
 </body>
 </html>
