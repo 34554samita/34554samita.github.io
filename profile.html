@@ -2,7 +2,6 @@
 <html lang="th">
 
 <head>
-
 <meta charset="UTF-8">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,10 +13,6 @@
 
 <style>
 
-/* ========================= */
-/* ตั้งค่าพื้นฐาน */
-/* ========================= */
-
 * {
     box-sizing: border-box;
 }
@@ -28,15 +23,15 @@ html {
 
 body {
     font-family: "Itim", cursive;
+    margin: 0;
     background-color: #CDE9DC;
     color: #333;
-    margin: 0;
     padding-top: 65px;
 }
 
 
 /* ========================= */
-/* แถบเมนูด้านบน */
+/* แถบเมนู */
 /* ========================= */
 
 .menu {
@@ -78,66 +73,76 @@ body {
 
 
 /* ========================= */
-/* แถวที่ 1 */
-/* รูป 40% + ข้อมูล 60% */
+/* ส่วนรูป + ข้อความ */
 /* ========================= */
 
-.section-one {
+.photo-section {
+    position: relative;
+
     width: 100%;
-    min-height: 600px;
+    height: 650px;
 
-    display: flex;
-    align-items: stretch;
-}
-
-
-/* รูป IMG_2882 ฝั่งซ้าย 40% */
-
-.image-left {
-    width: 40%;
     overflow: hidden;
+
+    background-color: #CDE9DC;
 }
 
-.image-left img {
+
+/* รูปเต็มพื้นที่ */
+
+.photo-section img {
+    position: absolute;
+
     width: 100%;
     height: 100%;
 
     object-fit: cover;
+
     object-position: center;
 }
 
 
-/* กรอบข้อมูลฝั่งขวา 60% */
+/* ========================= */
+/* กล่องข้อความทับบนรูป */
+/* ========================= */
 
-.content-right {
-    width: 60%;
+.overlay-card {
+    position: absolute;
 
-    padding: 50px;
+    top: 50%;
+    transform: translateY(-50%);
 
-    display: flex;
-    align-items: center;
-}
+    width: 52%;
 
-.card {
-    background: white;
+    background: rgba(205, 233, 220, 0.93);
 
-    width: 100%;
-
-    padding: 35px;
+    padding: 35px 40px;
 
     border-radius: 25px;
 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
 
-    text-align: left;
+
+/* กล่องฝั่งขวา */
+
+.right-card {
+    right: 5%;
+}
+
+
+/* กล่องฝั่งซ้าย */
+
+.left-card {
+    left: 5%;
 }
 
 
 /* ========================= */
-/* ข้อความในกรอบแรก */
+/* ตัวหนังสือ */
 /* ========================= */
 
-.card h2 {
+.overlay-card h2 {
     color: #2c3e50;
 
     font-size: 30px;
@@ -146,63 +151,21 @@ body {
     margin-bottom: 25px;
 }
 
-.card h3 {
+.overlay-card h3 {
     color: #2c3e50;
 
-    font-size: 23px;
+    font-size: 22px;
 
-    margin-top: 25px;
-    margin-bottom: 8px;
+    margin-top: 20px;
+    margin-bottom: 5px;
 }
 
-.card p {
-    font-size: 19px;
+.overlay-card p {
+    font-size: 18px;
 
-    line-height: 1.7;
+    line-height: 1.6;
 
     margin: 8px 0;
-}
-
-
-/* ========================= */
-/* แถวที่ 2 */
-/* ข้อมูล 60% + รูป 40% */
-/* ========================= */
-
-.section-two {
-    width: 100%;
-    min-height: 600px;
-
-    display: flex;
-    align-items: stretch;
-}
-
-
-/* กรอบข้อมูลฝั่งซ้าย 60% */
-
-.content-left {
-    width: 60%;
-
-    padding: 50px;
-
-    display: flex;
-    align-items: center;
-}
-
-
-/* รูป IMG_2883 ฝั่งขวา 40% */
-
-.image-right {
-    width: 40%;
-    overflow: hidden;
-}
-
-.image-right img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center;
 }
 
 
@@ -233,7 +196,7 @@ body {
 
 
 /* ========================= */
-/* หน้าจอขนาดเล็ก */
+/* หน้าจอเล็ก */
 /* ========================= */
 
 @media (max-width: 800px) {
@@ -248,26 +211,25 @@ body {
         font-size: 16px;
     }
 
-    .section-one,
-    .section-two {
-        flex-direction: column;
+    .photo-section {
+        height: 700px;
     }
 
-    .image-left,
-    .image-right,
-    .content-left,
-    .content-right {
-        width: 100%;
+    .overlay-card {
+        width: 88%;
+
+        left: 6%;
+        right: auto;
+
+        padding: 25px;
     }
 
-    .image-left,
-    .image-right {
-        height: 450px;
+    .overlay-card h2 {
+        font-size: 26px;
     }
 
-    .content-left,
-    .content-right {
-        padding: 30px;
+    .overlay-card p {
+        font-size: 17px;
     }
 
     .motto {
@@ -291,165 +253,135 @@ body {
 
 <div class="menu">
 
-    <a href="profile.html">
-        ประวัติส่วนตัว
-    </a>
+    <a href="profile.html">ประวัติส่วนตัว</a>
 
-    <a href="study.html">
-        การศึกษาต่อ
-    </a>
+    <a href="study.html">การศึกษาต่อ</a>
 
-    <a href="portfolio.html">
-        ผลงาน
-    </a>
+    <a href="portfolio.html">ผลงาน</a>
 
-    <a href="contact.html">
-        ติดต่อ
-    </a>
+    <a href="contact.html">ติดต่อ</a>
 
 </div>
 
 
-<!-- ================================================== -->
-<!-- ส่วนที่ 1 : รูปซ้าย 40% + ประวัติส่วนตัวขวา 60% -->
-<!-- ================================================== -->
+<!-- ================================================= -->
+<!-- ส่วนที่ 1 : IMG_2882 + ข้อมูลประวัติส่วนตัว -->
+<!-- ================================================= -->
 
-<div class="section-one">
+<div class="photo-section">
 
+    <img
+        src="IMG_2882.jpeg"
+        alt="รูปประวัติส่วนตัว"
+    >
 
-    <!-- รูป IMG_2882 -->
+    <div class="overlay-card right-card">
 
-    <div class="image-left">
+        <h2>👤 ประวัติส่วนตัว</h2>
 
-        <img src="IMG_2882.jpeg" alt="รูปโปรไฟล์">
+        <p>
+            <strong>ชื่อ :</strong>
+            สมิตา บุญนาค (Samita Boonnark)
+        </p>
 
-    </div>
+        <p>
+            <strong>ระดับการศึกษา :</strong>
+            มัธยมศึกษาปีที่ 6
+        </p>
 
+        <p>
+            <strong>แผนการเรียน :</strong>
+            เตรียมวิศวกรรมศาสตร์ (Pre-Engineering) ⚙️
+        </p>
 
-    <!-- กรอบประวัติส่วนตัว -->
+        <p>
+            <strong>ความสนใจ :</strong>
+            วิทยาศาสตร์ เทคโนโลยี วิศวกรรมศาสตร์
+            และนวัตกรรมทางการแพทย์
+        </p>
 
-    <div class="content-right">
-
-        <div class="card">
-
-            <h2>👤 ประวัติส่วนตัว</h2>
-
-            <p>
-                <strong>ชื่อ :</strong>
-                สมิตา บุญนาค (Samita Boonnark)
-            </p>
-
-            <p>
-                <strong>ระดับการศึกษา :</strong>
-                มัธยมศึกษาปีที่ 6
-            </p>
-
-            <p>
-                <strong>แผนการเรียน :</strong>
-                เตรียมวิศวกรรมศาสตร์ (Pre-Engineering) ⚙️
-            </p>
-
-            <p>
-                <strong>ความสนใจ :</strong>
-                วิทยาศาสตร์ เทคโนโลยี วิศวกรรมศาสตร์
-                และนวัตกรรมทางการแพทย์
-            </p>
-
-            <p>
-                <strong>งานอดิเรก :</strong>
-                เรียนรู้สิ่งใหม่ ๆ ทำโครงงาน
-                และศึกษาด้านเทคโนโลยี
-            </p>
-
-        </div>
+        <p>
+            <strong>งานอดิเรก :</strong>
+            เรียนรู้สิ่งใหม่ ๆ ทำโครงงาน
+            และศึกษาด้านเทคโนโลยี
+        </p>
 
     </div>
 
 </div>
 
 
-<!-- ================================================== -->
-<!-- ส่วนที่ 2 : จุดเด่นซ้าย 60% + รูปขวา 40% -->
-<!-- ================================================== -->
+<!-- ================================================= -->
+<!-- ส่วนที่ 2 : IMG_2883 + จุดเด่นและทักษะ -->
+<!-- ================================================= -->
 
-<div class="section-two">
+<div class="photo-section">
 
+    <img
+        src="IMG_2883.jpeg"
+        alt="รูปกิจกรรม"
+    >
 
-    <!-- กรอบจุดเด่นและทักษะ -->
+    <div class="overlay-card left-card">
 
-    <div class="content-left">
-
-        <div class="card">
-
-            <h2>🌟 จุดเด่นและทักษะ</h2>
-
-
-            <h3>🔍 ชอบค้นคว้า</h3>
-
-            <p>
-                สนุกกับการเรียนรู้เรื่องใหม่ ๆ
-                และค้นหาความรู้เพิ่มเติมอยู่เสมอ
-            </p>
+        <h2>🌟 จุดเด่นและทักษะ</h2>
 
 
-            <h3>💡 ชอบคิดสร้างสรรค์</h3>
+        <h3>🔍 ชอบค้นคว้า</h3>
 
-            <p>
-                สนใจการคิดและพัฒนาสิ่งใหม่ ๆ
-                รวมถึงการหาแนวทางในการแก้ไขปัญหา
-            </p>
-
-
-            <h3>🧪 ชอบทดลอง</h3>
-
-            <p>
-                สนใจการทำโครงงาน การทดลอง
-                และการนำความรู้มาประยุกต์ใช้จริง
-            </p>
+        <p>
+            สนุกกับการเรียนรู้เรื่องใหม่ ๆ
+            และค้นหาความรู้เพิ่มเติมอยู่เสมอ
+        </p>
 
 
-            <h3>💻 สนใจเทคโนโลยี</h3>
+        <h3>💡 ชอบคิดสร้างสรรค์</h3>
 
-            <p>
-                ชอบเรียนรู้และประยุกต์ใช้เทคโนโลยี
-                เพื่อสร้างสรรค์สิ่งใหม่ ๆ
-            </p>
-
-
-            <h3>👑 การเป็นผู้นำ</h3>
-
-            <p>
-                สามารถรับผิดชอบงาน
-                และช่วยวางแผนการทำงานร่วมกับผู้อื่น
-            </p>
+        <p>
+            สนใจการคิดและพัฒนาสิ่งใหม่ ๆ
+            รวมถึงการหาแนวทางในการแก้ไขปัญหา
+        </p>
 
 
-            <h3>🎤 การนำเสนอ</h3>
+        <h3>🧪 ชอบทดลอง</h3>
 
-            <p>
-                สามารถสื่อสารและนำเสนอข้อมูล
-                หรือผลงานให้ผู้อื่นเข้าใจได้
-            </p>
-
-
-            <h3>🤝 การทำงานเป็นทีม</h3>
-
-            <p>
-                สามารถทำงานร่วมกับผู้อื่น
-                แบ่งหน้าที่ และช่วยกันแก้ไขปัญหา
-                เพื่อให้บรรลุเป้าหมาย
-            </p>
-
-        </div>
-
-    </div>
+        <p>
+            สนใจการทำโครงงาน การทดลอง
+            และการนำความรู้มาประยุกต์ใช้จริง
+        </p>
 
 
-    <!-- รูป IMG_2883 -->
+        <h3>💻 สนใจเทคโนโลยี</h3>
 
-    <div class="image-right">
+        <p>
+            ชอบเรียนรู้และประยุกต์ใช้เทคโนโลยี
+            เพื่อสร้างสรรค์สิ่งใหม่ ๆ
+        </p>
 
-        <img src="IMG_2883.jpeg" alt="รูปกิจกรรม">
+
+        <h3>👑 การเป็นผู้นำ</h3>
+
+        <p>
+            สามารถรับผิดชอบงาน
+            และช่วยวางแผนการทำงานร่วมกับผู้อื่น
+        </p>
+
+
+        <h3>🎤 การนำเสนอ</h3>
+
+        <p>
+            สามารถสื่อสารและนำเสนอข้อมูล
+            หรือผลงานให้ผู้อื่นเข้าใจได้
+        </p>
+
+
+        <h3>🤝 การทำงานเป็นทีม</h3>
+
+        <p>
+            สามารถทำงานร่วมกับผู้อื่น
+            แบ่งหน้าที่ และช่วยกันแก้ไขปัญหา
+            เพื่อให้บรรลุเป้าหมาย
+        </p>
 
     </div>
 
