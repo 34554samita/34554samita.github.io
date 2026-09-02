@@ -40,7 +40,6 @@ body {
 
 .menu {
     position: fixed;
-
     top: 0;
     left: 0;
 
@@ -62,13 +61,11 @@ body {
 
 .menu a {
     color: #333;
-
     text-decoration: none;
 
     font-size: 18px;
 
     width: 100px;
-
     text-align: center;
 
     margin-left: 30px;
@@ -80,7 +77,7 @@ body {
 
 
 /* =========================
-   ส่วนประวัติส่วนตัว
+   ประวัติส่วนตัว
    รูปซ้าย 40%
    ข้อมูลขวา 60%
 ========================= */
@@ -92,14 +89,12 @@ body {
     background-color: #CDE9DC;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     gap: 5%;
 
-    padding: 110px 5% 60px 5%;
+    padding: 100px 5% 60px 5%;
 }
 
 
@@ -108,12 +103,15 @@ body {
 .profile-image {
 
     width: 40%;
-
     height: 600px;
 
-    object-fit: cover;
+    /*
+       ใช้ contain เพื่อไม่ให้รูปถูกซูมและตัด
+       ทำให้เห็นภาพมากขึ้น
+    */
+    object-fit: contain;
 
-    object-position: center center;
+    object-position: left center;
 
     border-radius: 25px;
 
@@ -139,8 +137,6 @@ body {
 }
 
 
-/* หัวข้อ */
-
 .profile-card h1 {
 
     color: #2c3e50;
@@ -148,12 +144,9 @@ body {
     font-size: 34px;
 
     margin-top: 0;
-
     margin-bottom: 25px;
 }
 
-
-/* ข้อมูล */
 
 .profile-card p {
 
@@ -207,8 +200,6 @@ body {
 }
 
 
-/* หัวข้อ */
-
 .skills-card h2 {
 
     color: #2c3e50;
@@ -216,12 +207,9 @@ body {
     font-size: 30px;
 
     margin-top: 0;
-
     margin-bottom: 25px;
 }
 
-
-/* ข้อความ */
 
 .skills-card p {
 
@@ -379,11 +367,15 @@ body {
 
         width: 90%;
 
-        height: 500px;
+        height: auto;
 
-        object-fit: cover;
+        /*
+           สำคัญ:
+           ไม่ซูมรูปบนแล้ว
+        */
+        object-fit: contain;
 
-        object-position: center center;
+        object-position: center;
 
         order: 1;
     }
@@ -420,6 +412,10 @@ body {
         width: 90%;
 
         height: 500px;
+
+        object-fit: cover;
+
+        object-position: center;
 
         order: 2;
     }
@@ -475,21 +471,13 @@ body {
 
 <div class="menu">
 
-    <a href="profile.html">
-        ประวัติส่วนตัว
-    </a>
+    <a href="profile.html">ประวัติส่วนตัว</a>
 
-    <a href="study.html">
-        การศึกษาต่อ
-    </a>
+    <a href="study.html">การศึกษาต่อ</a>
 
-    <a href="portfolio.html">
-        ผลงาน
-    </a>
+    <a href="portfolio.html">ผลงาน</a>
 
-    <a href="contact.html">
-        ติดต่อ
-    </a>
+    <a href="contact.html">ติดต่อ</a>
 
 </div>
 
@@ -562,8 +550,6 @@ body {
 
 <section class="skills-section">
 
-
-    <!-- กรอบจุดเด่นและทักษะ -->
 
     <div class="skills-card">
 
