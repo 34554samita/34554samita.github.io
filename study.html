@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>การศึกษาต่อ | สมิตา บุญนาค</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -15,184 +19,627 @@
         body {
             margin: 0;
             padding-top: 70px;
-            font-family: 'Itim', cursive;
+
+            font-family: "Itim", cursive;
+
             background-color: #CDE9DC;
             color: #40534A;
+
+            overflow-x: hidden;
         }
 
-        /* เมนูด้านบน */
+
+        /* =========================
+           เมนูด้านบน
+        ========================= */
+
         .menu {
             position: fixed;
             top: 0;
             left: 0;
+
             width: 100%;
             height: 70px;
-            background: rgba(255,255,255,0.96);
-            box-shadow: 0 4px 15px rgba(64,83,74,0.10);
+
+            background: rgba(255, 255, 255, 0.97);
+
+            box-shadow:
+                0 4px 15px rgba(64, 83, 74, 0.10);
+
             display: flex;
             justify-content: center;
             align-items: center;
+
             padding: 0 20px;
             gap: 8px;
+
             z-index: 1000;
+
             overflow-x: auto;
             overflow-y: hidden;
         }
 
         .menu a {
             flex-shrink: 0;
+
             color: #40534A;
+
             text-decoration: none;
+
             font-size: 18px;
+
             padding: 10px 16px;
+
             border-radius: 20px;
+
             white-space: nowrap;
-            transition: color 0.25s ease,
-                        background-color 0.25s ease,
-                        transform 0.25s ease;
+
+            transition:
+                color 0.25s ease,
+                background-color 0.25s ease,
+                transform 0.25s ease;
         }
 
         .menu a:hover {
             color: #527A66;
+
             background-color: #E4F4EC;
+
             transform: translateY(-2px);
         }
 
         .menu a.active {
             color: #527A66;
+
             background-color: #DCEFE5;
-            box-shadow: inset 0 0 0 1px #C5E3D3;
+
+            box-shadow:
+                inset 0 0 0 1px #C5E3D3;
         }
 
-        /* ส่วนหัว */
+
+        /* =========================
+           ตกแต่งพื้นหลัง
+        ========================= */
+
+        .background-decoration {
+            position: fixed;
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            opacity: 0.55;
+        }
+
+        .circle-one {
+            width: 280px;
+            height: 280px;
+
+            background-color: #B8DEC9;
+
+            top: 105px;
+            left: -100px;
+        }
+
+        .circle-two {
+            width: 230px;
+            height: 230px;
+
+            background-color: #E5F3E9;
+
+            right: -75px;
+            bottom: 80px;
+        }
+
+        .circle-three {
+            width: 135px;
+            height: 135px;
+
+            background-color: #A8D2BB;
+
+            right: 12%;
+            top: 120px;
+
+            opacity: 0.22;
+        }
+
+
+        /* =========================
+           เมฆ
+        ========================= */
+
+        .cloud {
+            position: fixed;
+
+            color: #FFFFFF;
+
+            font-size: 82px;
+
+            opacity: 0.42;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            filter: blur(0.3px);
+        }
+
+        .cloud-one {
+            top: 105px;
+            left: 4%;
+        }
+
+        .cloud-two {
+            right: 5%;
+            bottom: 110px;
+
+            font-size: 68px;
+        }
+
+
+        /* =========================
+           ดอกไม้
+        ========================= */
+
+        .bg-flower {
+            position: fixed;
+
+            color: #7FA992;
+
+            opacity: 0.42;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            animation: flowerFloat 4s ease-in-out infinite;
+        }
+
+        .flower-one {
+            top: 22%;
+            left: 8%;
+
+            font-size: 34px;
+
+            transform: rotate(-15deg);
+        }
+
+        .flower-two {
+            top: 47%;
+            right: 7%;
+
+            font-size: 29px;
+
+            transform: rotate(15deg);
+
+            animation-delay: 1s;
+        }
+
+        .flower-three {
+            bottom: 12%;
+            left: 8%;
+
+            font-size: 32px;
+
+            animation-delay: 1.8s;
+        }
+
+
+        /* =========================
+           ใบไม้
+        ========================= */
+
+        .bg-leaf {
+            position: fixed;
+
+            opacity: 0.38;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            font-size: 37px;
+        }
+
+        .leaf-one {
+            top: 32%;
+            left: 3%;
+
+            transform: rotate(-25deg);
+        }
+
+        .leaf-two {
+            top: 68%;
+            right: 4%;
+
+            transform: rotate(20deg);
+        }
+
+        .leaf-three {
+            bottom: 8%;
+            right: 14%;
+
+            transform: rotate(-15deg);
+        }
+
+
+        /* =========================
+           ประกาย
+        ========================= */
+
+        .bg-sparkle {
+            position: fixed;
+
+            color: #527A66;
+
+            opacity: 0.32;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            animation: sparkleFloat 4s ease-in-out infinite;
+        }
+
+        .sparkle-one {
+            top: 21%;
+            right: 20%;
+
+            font-size: 25px;
+        }
+
+        .sparkle-two {
+            top: 43%;
+            left: 17%;
+
+            font-size: 20px;
+
+            animation-delay: 1s;
+        }
+
+        .sparkle-three {
+            bottom: 25%;
+            right: 21%;
+
+            font-size: 28px;
+
+            animation-delay: 2s;
+        }
+
+        .sparkle-four {
+            bottom: 18%;
+            left: 25%;
+
+            font-size: 22px;
+
+            animation-delay: 1.5s;
+        }
+
+
+        /* =========================
+           จุดเล็ก ๆ
+        ========================= */
+
+        .dots {
+            position: fixed;
+
+            color: #7FA992;
+
+            font-size: 16px;
+
+            opacity: 0.42;
+
+            pointer-events: none;
+
+            z-index: -1;
+        }
+
+        .dots.one {
+            top: 25%;
+            left: 11%;
+        }
+
+        .dots.two {
+            top: 36%;
+            right: 12%;
+        }
+
+        .dots.three {
+            bottom: 20%;
+            left: 14%;
+        }
+
+        .dots.four {
+            bottom: 31%;
+            right: 8%;
+        }
+
+
+        /* =========================
+           ส่วนหัว
+        ========================= */
+
         .header {
+            position: relative;
+
             text-align: center;
+
             padding: 50px 20px 30px;
         }
 
         .header h1 {
             margin: 0;
-            font-size: 42px;
+
+            font-size: 46px;
+
             color: #527A66;
         }
 
         .header p {
             font-size: 21px;
+
             margin-top: 10px;
+
+            color: #687C72;
         }
 
-        /* กล่องเนื้อหา */
+        .decoration {
+            color: #7FA992;
+
+            font-size: 22px;
+
+            margin-bottom: 12px;
+
+            letter-spacing: 5px;
+        }
+
+        .header-line {
+            width: 80px;
+            height: 3px;
+
+            background-color: #A8D2BB;
+
+            border-radius: 10px;
+
+            margin: 20px auto 0;
+        }
+
+
+        /* =========================
+           กล่องเนื้อหา
+        ========================= */
+
         .container {
             width: 90%;
             max-width: 1000px;
+
             margin: auto;
+
+            padding-bottom: 30px;
         }
 
+
+        /* =========================
+           กล่องสาขา
+        ========================= */
+
         .study-card {
-            background-color: white;
-            border-radius: 25px;
-            padding: 30px;
+            position: relative;
+
+            background-color: rgba(255, 255, 255, 0.96);
+
+            border-radius: 28px;
+
+            padding: 32px 35px;
+
             margin-bottom: 25px;
-            box-shadow: 0 8px 25px rgba(64,83,74,0.10);
-            border: 2px solid #E4F4EC;
-            transition: transform 0.25s ease,
-                        box-shadow 0.25s ease;
+
+            box-shadow:
+                0 10px 28px rgba(64, 83, 74, 0.10);
+
+            border: 2px solid #D8EEE2;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+
+            overflow: hidden;
         }
 
         .study-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(64,83,74,0.14);
+
+            box-shadow:
+                0 15px 32px rgba(64, 83, 74, 0.14);
+        }
+
+        /* ของตกแต่งในแต่ละกล่อง */
+
+        .study-card::after {
+            content: "✿";
+
+            position: absolute;
+
+            right: 18px;
+            bottom: -15px;
+
+            font-size: 65px;
+
+            color: #E4F4EC;
+
+            transform: rotate(-15deg);
+
+            pointer-events: none;
+        }
+
+        .study-card:nth-child(1)::before {
+            content: "✦";
+
+            position: absolute;
+
+            right: 25px;
+            top: 18px;
+
+            color: #C5E3D3;
+
+            font-size: 23px;
+        }
+
+        .study-card:nth-child(2)::before {
+            content: "♡";
+
+            position: absolute;
+
+            right: 25px;
+            top: 18px;
+
+            color: #C5E3D3;
+
+            font-size: 25px;
+        }
+
+        .study-card:nth-child(3)::before {
+            content: "✧";
+
+            position: absolute;
+
+            right: 25px;
+            top: 18px;
+
+            color: #C5E3D3;
+
+            font-size: 25px;
         }
 
         .study-card h2 {
+            position: relative;
+            z-index: 1;
+
             margin-top: 0;
             margin-bottom: 12px;
+
             color: #527A66;
-            font-size: 28px;
-        }
 
-        .study-card p {
-            font-size: 19px;
-            line-height: 1.8;
-            margin: 0;
-        }
-
-        /* กล่องเป้าหมาย */
-        .goal-box {
-            background-color: #E4F4EC;
-            border: 2px solid #C5E3D3;
-            border-radius: 25px;
-            padding: 30px;
-            margin-top: 35px;
-            text-align: center;
-        }
-
-        .goal-box h2 {
-            margin-top: 0;
-            color: #527A66;
             font-size: 29px;
         }
 
-        .goal-box p {
-            font-size: 20px;
+        .study-card p {
+            position: relative;
+            z-index: 1;
+
+            font-size: 19px;
+
             line-height: 1.8;
-            margin-bottom: 0;
+
+            margin: 0;
+
+            color: #53665D;
         }
 
-        /* ปุ่มไปหน้าถัดไป */
+
+        /* =========================
+           ปุ่มไปหน้าถัดไป
+        ========================= */
+
         .page-navigation {
             display: flex;
+
             justify-content: center;
+
             align-items: center;
+
             margin: 45px auto 20px;
         }
 
         .next-button {
             display: inline-block;
+
             padding: 12px 25px;
+
             background-color: #DCEFE5;
+
             color: #527A66;
+
             text-decoration: none;
+
             font-size: 19px;
+
             border: 2px solid #C5E3D3;
+
             border-radius: 25px;
-            box-shadow: 0 5px 15px rgba(64,83,74,0.08);
-            transition: transform 0.25s ease,
-                        background-color 0.25s ease,
-                        box-shadow 0.25s ease;
+
+            box-shadow:
+                0 5px 15px rgba(64, 83, 74, 0.08);
+
+            transition:
+                transform 0.25s ease,
+                background-color 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
         .next-button:hover {
             transform: translateY(-3px);
+
             background-color: #E4F4EC;
-            box-shadow: 0 8px 20px rgba(64,83,74,0.12);
+
+            box-shadow:
+                0 8px 20px rgba(64, 83, 74, 0.12);
         }
 
-        /* ตกแต่งเล็กน้อย */
-        .decoration {
-            text-align: center;
-            color: #7FA992;
-            font-size: 20px;
-            margin: 20px 0;
+
+        /* =========================
+           Animation
+        ========================= */
+
+        @keyframes flowerFloat {
+
+            0%, 100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+
+            50% {
+                transform: translateY(-6px) rotate(5deg);
+            }
+
         }
 
-        footer {
-            text-align: center;
-            padding: 25px 15px 35px;
-            font-size: 17px;
-            color: #527A66;
+        @keyframes sparkleFloat {
+
+            0%, 100% {
+                transform: translateY(0) scale(1);
+
+                opacity: 0.25;
+            }
+
+            50% {
+                transform: translateY(-8px) scale(1.1);
+
+                opacity: 0.5;
+            }
+
         }
+
+
+        /* =========================
+           มือถือ
+        ========================= */
 
         @media (max-width: 800px) {
 
             .menu {
                 justify-content: flex-start;
+
                 padding: 0 12px;
+
                 gap: 2px;
             }
 
             .menu a {
                 font-size: 16px;
+
                 padding: 9px 13px;
             }
 
@@ -201,73 +648,197 @@
             }
 
             .header h1 {
-                font-size: 34px;
+                font-size: 35px;
             }
 
             .header p {
                 font-size: 18px;
+
+                line-height: 1.6;
+            }
+
+            .container {
+                width: 92%;
             }
 
             .study-card {
-                padding: 25px 20px;
+                padding: 27px 22px;
+
+                border-radius: 25px;
             }
 
             .study-card h2 {
                 font-size: 25px;
+
+                padding-right: 25px;
             }
 
             .study-card p {
                 font-size: 18px;
-            }
 
-            .goal-box {
-                padding: 25px 20px;
-            }
-
-            .goal-box h2 {
-                font-size: 26px;
-            }
-
-            .goal-box p {
-                font-size: 18px;
+                line-height: 1.8;
             }
 
             .next-button {
                 font-size: 18px;
+
                 padding: 11px 22px;
             }
+
+
+            /* ลดของตกแต่งบนมือถือ */
+
+            .circle-one {
+                width: 180px;
+                height: 180px;
+            }
+
+            .circle-two {
+                width: 150px;
+                height: 150px;
+            }
+
+            .cloud {
+                font-size: 55px;
+            }
+
+            .cloud-one {
+                left: -8px;
+            }
+
+            .cloud-two {
+                right: -8px;
+                bottom: 80px;
+            }
+
+            .bg-flower {
+                opacity: 0.28;
+            }
+
+            .bg-leaf {
+                font-size: 28px;
+
+                opacity: 0.28;
+            }
+
+            .bg-sparkle {
+                opacity: 0.23;
+            }
+
         }
+
     </style>
 </head>
 
+
 <body>
 
-    <!-- เมนู -->
+
+    <!-- =========================
+         ตกแต่งพื้นหลัง
+    ========================= -->
+
+    <div class="background-decoration circle-one"></div>
+    <div class="background-decoration circle-two"></div>
+    <div class="background-decoration circle-three"></div>
+
+    <!-- เมฆ -->
+    <div class="cloud cloud-one">☁</div>
+    <div class="cloud cloud-two">☁</div>
+
+    <!-- ดอกไม้ -->
+    <div class="bg-flower flower-one">✿</div>
+    <div class="bg-flower flower-two">✿</div>
+    <div class="bg-flower flower-three">❀</div>
+
+    <!-- ใบไม้ -->
+    <div class="bg-leaf leaf-one">🌿</div>
+    <div class="bg-leaf leaf-two">🍃</div>
+    <div class="bg-leaf leaf-three">🌿</div>
+
+    <!-- ประกาย -->
+    <div class="bg-sparkle sparkle-one">✦</div>
+    <div class="bg-sparkle sparkle-two">✧</div>
+    <div class="bg-sparkle sparkle-three">✦</div>
+    <div class="bg-sparkle sparkle-four">♡</div>
+
+    <!-- จุดเล็ก ๆ -->
+    <div class="dots one">• ✦ •</div>
+    <div class="dots two">✦ • ✿</div>
+    <div class="dots three">♡ • ✦</div>
+    <div class="dots four">• ✿ •</div>
+
+
+    <!-- =========================
+         เมนู
+    ========================= -->
+
     <div class="menu">
-        <a href="home.html">🏠 หน้าแรก</a>
-        <a href="index.html">📖 คำนำ</a>
-        <a href="profile.html">👩🏻‍💻 ประวัติส่วนตัว</a>
-        <a href="study.html" class="active">🎓 การศึกษาต่อ</a>
-        <a href="portfolio.html">🏆 ผลงาน</a>
-        <a href="contact.html">📮 ติดต่อ</a>
+
+        <a href="home.html">
+            🏠 หน้าแรก
+        </a>
+
+        <a href="index.html">
+            📖 คำนำ
+        </a>
+
+        <a href="profile.html">
+            👩🏻‍💻 ประวัติส่วนตัว
+        </a>
+
+        <a href="study.html" class="active">
+            🎓 การศึกษาต่อ
+        </a>
+
+        <a href="portfolio.html">
+            🏆 ผลงาน
+        </a>
+
+        <a href="contact.html">
+            📮 ติดต่อ
+        </a>
+
     </div>
 
-    <!-- หัวข้อ -->
-    <div class="header">
-        <div class="decoration">✦ ✿ ✦</div>
 
-        <h1>🎓 ความสนใจในการศึกษาต่อ</h1>
+    <!-- =========================
+         หัวข้อ
+    ========================= -->
+
+    <div class="header">
+
+        <div class="decoration">
+            ✦ ✿ ✦
+        </div>
+
+        <h1>
+            🎓 ความสนใจในการศึกษาต่อ
+        </h1>
 
         <p>
             คณะที่ฉันสนใจและเป้าหมายในการศึกษาต่อในอนาคต
         </p>
+
+        <div class="header-line"></div>
+
     </div>
+
+
+    <!-- =========================
+         เนื้อหา
+    ========================= -->
 
     <div class="container">
 
+
         <!-- วิศวกรรมชีวการแพทย์ -->
+
         <div class="study-card">
-            <h2>🧬 วิศวกรรมชีวการแพทย์</h2>
+
+            <h2>
+                🧬 วิศวกรรมชีวการแพทย์
+            </h2>
 
             <p>
                 เป็นสาขาที่ผสมผสานความรู้ด้านวิศวกรรมศาสตร์
@@ -275,11 +846,17 @@
                 เพื่อพัฒนาอุปกรณ์ เทคโนโลยี และนวัตกรรมทางการแพทย์
                 ที่สามารถนำมาใช้ในการดูแลและช่วยเหลือผู้ป่วย
             </p>
+
         </div>
 
+
         <!-- เภสัชศาสตร์ -->
+
         <div class="study-card">
-            <h2>💊 คณะเภสัชศาสตร์</h2>
+
+            <h2>
+                💊 คณะเภสัชศาสตร์
+            </h2>
 
             <p>
                 เป็นคณะที่ศึกษาเกี่ยวกับยา การใช้ยา
@@ -287,11 +864,17 @@
                 โดยมุ่งเน้นการนำความรู้ทางวิทยาศาสตร์
                 มาใช้ในการดูแลและส่งเสริมสุขภาพของผู้คน
             </p>
+
         </div>
 
+
         <!-- สหเวชศาสตร์ -->
+
         <div class="study-card">
-            <h2>🧪 คณะสหเวชศาสตร์</h2>
+
+            <h2>
+                🧪 คณะสหเวชศาสตร์
+            </h2>
 
             <p>
                 เป็นกลุ่มสาขาที่เกี่ยวข้องกับการดูแลสุขภาพ
@@ -299,14 +882,22 @@
                 รวมถึงการประยุกต์ใช้ความรู้ด้านวิทยาศาสตร์
                 และเทคโนโลยีในการดูแลผู้ป่วย
             </p>
+
         </div>
 
-        <!-- ปุ่มหน้าถัดไป -->
+
+        <!-- =========================
+             ปุ่มหน้าถัดไป
+        ========================= -->
+
         <div class="page-navigation">
+
             <a href="portfolio.html" class="next-button">
                 🏆 ไปผลงาน →
             </a>
+
         </div>
+
 
     </div>
 
