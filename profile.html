@@ -24,6 +24,8 @@
 
             background-color: #CDE9DC;
             color: #40534A;
+
+            overflow-x: hidden;
         }
 
 
@@ -39,7 +41,7 @@
             width: 100%;
             height: 70px;
 
-            background: rgba(255, 255, 255, 0.96);
+            background: rgba(255, 255, 255, 0.97);
 
             box-shadow:
                 0 4px 15px rgba(64, 83, 74, 0.10);
@@ -96,6 +98,266 @@
 
 
         /* =========================
+           ตกแต่งพื้นหลัง
+        ========================= */
+
+        .background-decoration {
+            position: fixed;
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            opacity: 0.55;
+        }
+
+        .circle-one {
+            width: 280px;
+            height: 280px;
+
+            background-color: #B8DEC9;
+
+            top: 110px;
+            left: -100px;
+        }
+
+        .circle-two {
+            width: 230px;
+            height: 230px;
+
+            background-color: #E5F3E9;
+
+            right: -75px;
+            bottom: 80px;
+        }
+
+        .circle-three {
+            width: 140px;
+            height: 140px;
+
+            background-color: #A8D2BB;
+
+            right: 12%;
+            top: 120px;
+
+            opacity: 0.22;
+        }
+
+
+        /* =========================
+           เมฆ
+        ========================= */
+
+        .cloud {
+            position: fixed;
+
+            color: #FFFFFF;
+
+            font-size: 82px;
+
+            opacity: 0.42;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            filter: blur(0.3px);
+        }
+
+        .cloud-one {
+            top: 105px;
+            left: 4%;
+        }
+
+        .cloud-two {
+            right: 5%;
+            bottom: 115px;
+
+            font-size: 68px;
+        }
+
+
+        /* =========================
+           ดอกไม้
+        ========================= */
+
+        .bg-flower {
+            position: fixed;
+
+            color: #7FA992;
+
+            opacity: 0.42;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            animation: flowerFloat 4s ease-in-out infinite;
+        }
+
+        .flower-one {
+            top: 22%;
+            left: 8%;
+
+            font-size: 34px;
+
+            transform: rotate(-15deg);
+        }
+
+        .flower-two {
+            top: 52%;
+            right: 7%;
+
+            font-size: 29px;
+
+            transform: rotate(15deg);
+
+            animation-delay: 1s;
+        }
+
+        .flower-three {
+            bottom: 12%;
+            left: 8%;
+
+            font-size: 32px;
+
+            animation-delay: 1.8s;
+        }
+
+
+        /* =========================
+           ใบไม้
+        ========================= */
+
+        .bg-leaf {
+            position: fixed;
+
+            opacity: 0.38;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            font-size: 37px;
+        }
+
+        .leaf-one {
+            top: 34%;
+            left: 3%;
+
+            transform: rotate(-25deg);
+        }
+
+        .leaf-two {
+            top: 70%;
+            right: 4%;
+
+            transform: rotate(20deg);
+        }
+
+        .leaf-three {
+            bottom: 8%;
+            right: 14%;
+
+            transform: rotate(-15deg);
+        }
+
+
+        /* =========================
+           ประกาย
+        ========================= */
+
+        .bg-sparkle {
+            position: fixed;
+
+            color: #527A66;
+
+            opacity: 0.32;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            animation: sparkleFloat 4s ease-in-out infinite;
+        }
+
+        .sparkle-one {
+            top: 20%;
+            right: 20%;
+
+            font-size: 25px;
+        }
+
+        .sparkle-two {
+            top: 43%;
+            left: 17%;
+
+            font-size: 20px;
+
+            animation-delay: 1s;
+        }
+
+        .sparkle-three {
+            bottom: 25%;
+            right: 21%;
+
+            font-size: 28px;
+
+            animation-delay: 2s;
+        }
+
+        .sparkle-four {
+            bottom: 18%;
+            left: 25%;
+
+            font-size: 22px;
+
+            animation-delay: 1.5s;
+        }
+
+
+        /* =========================
+           จุดเล็ก ๆ
+        ========================= */
+
+        .dots {
+            position: fixed;
+
+            color: #7FA992;
+
+            font-size: 16px;
+
+            opacity: 0.42;
+
+            pointer-events: none;
+
+            z-index: -1;
+        }
+
+        .dots.one {
+            top: 25%;
+            left: 11%;
+        }
+
+        .dots.two {
+            top: 38%;
+            right: 12%;
+        }
+
+        .dots.three {
+            bottom: 20%;
+            left: 14%;
+        }
+
+        .dots.four {
+            bottom: 31%;
+            right: 8%;
+        }
+
+
+        /* =========================
            เนื้อหาหลัก
         ========================= */
 
@@ -116,6 +378,8 @@
             text-align: center;
 
             margin-bottom: 45px;
+
+            position: relative;
         }
 
         .page-title h1 {
@@ -151,6 +415,8 @@
         ========================= */
 
         .profile-card {
+            position: relative;
+
             display: grid;
 
             grid-template-columns: 40% 1fr;
@@ -159,7 +425,7 @@
 
             align-items: center;
 
-            background: rgba(255, 255, 255, 0.94);
+            background: rgba(255, 255, 255, 0.96);
 
             border: 2px solid #D8EEE2;
 
@@ -171,6 +437,40 @@
                 0 12px 35px rgba(64, 83, 74, 0.10);
 
             margin-bottom: 40px;
+
+            overflow: hidden;
+        }
+
+        .profile-card::before {
+            content: "✦";
+
+            position: absolute;
+
+            top: 18px;
+            right: 25px;
+
+            font-size: 24px;
+
+            color: #D1E9DB;
+
+            transform: rotate(15deg);
+        }
+
+        .profile-card::after {
+            content: "✿";
+
+            position: absolute;
+
+            right: -8px;
+            bottom: -18px;
+
+            font-size: 75px;
+
+            color: #E4F4EC;
+
+            transform: rotate(-15deg);
+
+            pointer-events: none;
         }
 
 
@@ -189,10 +489,18 @@
             border: 3px solid #CDE9DC;
 
             background-color: #F7FCF9;
+
+            box-shadow:
+                0 7px 18px rgba(64, 83, 74, 0.08);
         }
 
 
         /* ข้อมูล */
+
+        .profile-info {
+            position: relative;
+            z-index: 1;
+        }
 
         .profile-info h2 {
             margin-top: 0;
@@ -204,6 +512,14 @@
 
         .info-item {
             margin-bottom: 22px;
+
+            padding: 13px 16px;
+
+            border-radius: 18px;
+
+            background-color: #F4FAF7;
+
+            border: 1px solid #E0F0E7;
         }
 
         .info-item h3 {
@@ -230,6 +546,8 @@
         ========================= */
 
         .skills-card {
+            position: relative;
+
             display: grid;
 
             grid-template-columns: 1fr 40%;
@@ -238,7 +556,7 @@
 
             align-items: center;
 
-            background: rgba(255, 255, 255, 0.94);
+            background: rgba(255, 255, 255, 0.96);
 
             border: 2px solid #D8EEE2;
 
@@ -248,6 +566,41 @@
 
             box-shadow:
                 0 12px 35px rgba(64, 83, 74, 0.10);
+
+            overflow: hidden;
+        }
+
+        .skills-card::before {
+            content: "♡";
+
+            position: absolute;
+
+            top: 18px;
+            left: 25px;
+
+            font-size: 27px;
+
+            color: #D1E9DB;
+
+            transform: rotate(-10deg);
+        }
+
+        .skills-card::after {
+            content: "✦";
+
+            position: absolute;
+
+            right: 25px;
+            bottom: 18px;
+
+            font-size: 25px;
+
+            color: #D1E9DB;
+        }
+
+        .skills-info {
+            position: relative;
+            z-index: 1;
         }
 
         .skills-info h2 {
@@ -259,7 +612,15 @@
         }
 
         .skill {
-            margin-bottom: 22px;
+            margin-bottom: 20px;
+
+            padding: 12px 15px;
+
+            border-radius: 18px;
+
+            background-color: #F4FAF7;
+
+            border: 1px solid #E0F0E7;
         }
 
         .skill h3 {
@@ -296,6 +657,9 @@
             border: 3px solid #CDE9DC;
 
             background-color: #F7FCF9;
+
+            box-shadow:
+                0 7px 18px rgba(64, 83, 74, 0.08);
         }
 
 
@@ -304,6 +668,8 @@
         ========================= */
 
         .motto {
+            position: relative;
+
             margin-top: 40px;
 
             padding: 30px;
@@ -315,6 +681,37 @@
             border: 2px solid #C5E3D3;
 
             border-radius: 25px;
+
+            box-shadow:
+                0 8px 25px rgba(64, 83, 74, 0.07);
+
+            overflow: hidden;
+        }
+
+        .motto::before {
+            content: "✿";
+
+            position: absolute;
+
+            left: 20px;
+            bottom: -10px;
+
+            font-size: 55px;
+
+            color: #D1E9DB;
+        }
+
+        .motto::after {
+            content: "✦";
+
+            position: absolute;
+
+            right: 25px;
+            top: 15px;
+
+            font-size: 25px;
+
+            color: #B8D9C5;
         }
 
         .motto-title {
@@ -382,6 +779,37 @@
 
 
         /* =========================
+           Animation
+        ========================= */
+
+        @keyframes flowerFloat {
+
+            0%, 100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+
+            50% {
+                transform: translateY(-6px) rotate(5deg);
+            }
+
+        }
+
+        @keyframes sparkleFloat {
+
+            0%, 100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.25;
+            }
+
+            50% {
+                transform: translateY(-8px) scale(1.1);
+                opacity: 0.5;
+            }
+
+        }
+
+
+        /* =========================
            มือถือ
         ========================= */
 
@@ -424,8 +852,6 @@
                 border-radius: 25px;
             }
 
-            /* รูปทั้งสองขนาดเท่ากัน */
-
             .profile-image,
             .skills-image {
                 height: 500px;
@@ -455,6 +881,46 @@
 
                 padding: 11px 22px;
             }
+
+
+            /* ลดของตกแต่งบนมือถือ */
+
+            .circle-one {
+                width: 180px;
+                height: 180px;
+            }
+
+            .circle-two {
+                width: 150px;
+                height: 150px;
+            }
+
+            .cloud {
+                font-size: 55px;
+            }
+
+            .cloud-one {
+                left: -8px;
+            }
+
+            .cloud-two {
+                right: -8px;
+                bottom: 80px;
+            }
+
+            .bg-flower {
+                opacity: 0.28;
+            }
+
+            .bg-leaf {
+                font-size: 28px;
+                opacity: 0.28;
+            }
+
+            .bg-sparkle {
+                opacity: 0.23;
+            }
+
         }
 
     </style>
@@ -462,6 +928,37 @@
 
 
 <body>
+
+
+    <!-- =========================
+         ตกแต่งพื้นหลัง
+    ========================= -->
+
+    <div class="background-decoration circle-one"></div>
+    <div class="background-decoration circle-two"></div>
+    <div class="background-decoration circle-three"></div>
+
+    <div class="cloud cloud-one">☁</div>
+    <div class="cloud cloud-two">☁</div>
+
+    <div class="bg-flower flower-one">✿</div>
+    <div class="bg-flower flower-two">✿</div>
+    <div class="bg-flower flower-three">❀</div>
+
+    <div class="bg-leaf leaf-one">🌿</div>
+    <div class="bg-leaf leaf-two">🍃</div>
+    <div class="bg-leaf leaf-three">🌿</div>
+
+    <div class="bg-sparkle sparkle-one">✦</div>
+    <div class="bg-sparkle sparkle-two">✧</div>
+    <div class="bg-sparkle sparkle-three">✦</div>
+    <div class="bg-sparkle sparkle-four">♡</div>
+
+    <div class="dots one">• ✦ •</div>
+    <div class="dots two">✦ • ✿</div>
+    <div class="dots three">♡ • ✦</div>
+    <div class="dots four">• ✿ •</div>
+
 
     <!-- =========================
          เมนูด้านบน
