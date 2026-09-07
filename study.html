@@ -25,6 +25,7 @@
 
 html {
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
 }
 
 body {
@@ -34,8 +35,16 @@ body {
     font-family: "Itim", cursive;
 
     background:
-        radial-gradient(circle at 8% 15%, rgba(255,255,255,0.65) 0 45px, transparent 46px),
-        radial-gradient(circle at 92% 25%, rgba(255,255,255,0.45) 0 35px, transparent 36px),
+        radial-gradient(
+            circle at 8% 15%,
+            rgba(255,255,255,0.65) 0 45px,
+            transparent 46px
+        ),
+        radial-gradient(
+            circle at 92% 25%,
+            rgba(255,255,255,0.45) 0 35px,
+            transparent 36px
+        ),
         #CDE9DC;
 
     color: #40534A;
@@ -62,17 +71,22 @@ body {
 
     display: flex;
 
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 
-    padding: 0 55px;
+    padding: 0 20px;
 
     gap: 8px;
 
     z-index: 1000;
+
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .menu a {
+    flex-shrink: 0;
+
     color: #40534A;
 
     text-decoration: none;
@@ -83,7 +97,10 @@ body {
 
     border-radius: 20px;
 
-    transition: all 0.25s ease;
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        transform 0.25s ease;
 
     white-space: nowrap;
 }
@@ -239,7 +256,9 @@ body {
 
     overflow: hidden;
 
-    transition: all 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .project-card:hover {
@@ -269,7 +288,7 @@ body {
 }
 
 
-/* วงกลมตกแต่งมุม */
+/* ดาวตกแต่งมุม */
 
 .project-card::after {
     content: "✦";
@@ -384,8 +403,6 @@ body {
         justify-content: flex-start;
 
         padding: 0 12px;
-
-        overflow-x: auto;
 
         gap: 2px;
     }
