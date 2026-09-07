@@ -27,6 +27,8 @@
             color: #40534A;
 
             min-height: 100vh;
+
+            overflow-x: hidden;
         }
 
 
@@ -43,7 +45,7 @@
             width: 100%;
             height: 70px;
 
-            background: rgba(255, 255, 255, 0.96);
+            background: rgba(255, 255, 255, 0.97);
 
             box-shadow:
                 0 4px 15px rgba(64, 83, 74, 0.10);
@@ -101,6 +103,268 @@
 
 
         /* =========================
+           ตกแต่งพื้นหลัง
+        ========================= */
+
+        .background-decoration {
+            position: fixed;
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            opacity: 0.55;
+        }
+
+        .circle-one {
+            width: 280px;
+            height: 280px;
+
+            background-color: #B8DEC9;
+
+            top: 110px;
+            left: -100px;
+        }
+
+        .circle-two {
+            width: 230px;
+            height: 230px;
+
+            background-color: #E5F3E9;
+
+            right: -75px;
+            bottom: 70px;
+        }
+
+        .circle-three {
+            width: 130px;
+            height: 130px;
+
+            background-color: #A8D2BB;
+
+            right: 13%;
+            top: 120px;
+
+            opacity: 0.22;
+        }
+
+
+        /* =========================
+           เมฆ
+        ========================= */
+
+        .cloud {
+            position: fixed;
+
+            color: #FFFFFF;
+
+            font-size: 80px;
+
+            opacity: 0.42;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            filter: blur(0.3px);
+        }
+
+        .cloud-one {
+            top: 110px;
+            left: 4%;
+        }
+
+        .cloud-two {
+            right: 5%;
+            bottom: 120px;
+
+            font-size: 65px;
+        }
+
+
+        /* =========================
+           ดอกไม้
+        ========================= */
+
+        .bg-flower {
+            position: fixed;
+
+            color: #7FA992;
+
+            opacity: 0.42;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            animation:
+                flowerFloat 4s ease-in-out infinite;
+        }
+
+        .flower-one {
+            top: 20%;
+            left: 8%;
+
+            font-size: 34px;
+
+            transform: rotate(-15deg);
+        }
+
+        .flower-two {
+            top: 45%;
+            right: 7%;
+
+            font-size: 28px;
+
+            transform: rotate(15deg);
+
+            animation-delay: 1s;
+        }
+
+        .flower-three {
+            bottom: 13%;
+            left: 8%;
+
+            font-size: 31px;
+
+            animation-delay: 1.8s;
+        }
+
+
+        /* =========================
+           ใบไม้
+        ========================= */
+
+        .bg-leaf {
+            position: fixed;
+
+            opacity: 0.38;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            font-size: 36px;
+        }
+
+        .leaf-one {
+            top: 32%;
+            left: 3%;
+
+            transform: rotate(-25deg);
+        }
+
+        .leaf-two {
+            top: 68%;
+            right: 4%;
+
+            transform: rotate(20deg);
+        }
+
+        .leaf-three {
+            bottom: 8%;
+            right: 14%;
+
+            transform: rotate(-15deg);
+        }
+
+
+        /* =========================
+           ประกาย
+        ========================= */
+
+        .bg-sparkle {
+            position: fixed;
+
+            color: #527A66;
+
+            opacity: 0.32;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            animation:
+                sparkleFloat 4s ease-in-out infinite;
+        }
+
+        .sparkle-one {
+            top: 22%;
+            right: 20%;
+
+            font-size: 25px;
+        }
+
+        .sparkle-two {
+            top: 43%;
+            left: 17%;
+
+            font-size: 20px;
+
+            animation-delay: 1s;
+        }
+
+        .sparkle-three {
+            bottom: 24%;
+            right: 21%;
+
+            font-size: 27px;
+
+            animation-delay: 2s;
+        }
+
+        .sparkle-four {
+            bottom: 17%;
+            left: 25%;
+
+            font-size: 22px;
+
+            animation-delay: 1.5s;
+        }
+
+
+        /* =========================
+           จุดเล็ก ๆ
+        ========================= */
+
+        .dots {
+            position: fixed;
+
+            color: #7FA992;
+
+            font-size: 16px;
+
+            opacity: 0.4;
+
+            pointer-events: none;
+
+            z-index: -1;
+        }
+
+        .dots.one {
+            top: 25%;
+            left: 12%;
+        }
+
+        .dots.two {
+            top: 36%;
+            right: 12%;
+        }
+
+        .dots.three {
+            bottom: 20%;
+            left: 14%;
+        }
+
+        .dots.four {
+            bottom: 31%;
+            right: 8%;
+        }
+
+
+        /* =========================
            พื้นที่เนื้อหา
         ========================= */
 
@@ -126,7 +390,7 @@
             width: 82%;
             max-width: 920px;
 
-            background: rgba(255, 255, 255, 0.94);
+            background: rgba(255, 255, 255, 0.96);
 
             border-radius: 32px;
 
@@ -136,6 +400,8 @@
 
             box-shadow:
                 0 15px 40px rgba(64, 83, 74, 0.12);
+
+            overflow: hidden;
         }
 
 
@@ -151,17 +417,37 @@
 
             transform: translateX(-50%);
 
-            width: 100px;
-            height: 6px;
+            width: 105px;
+            height: 7px;
 
             background-color: #A8D2BB;
 
-            border-radius: 0 0 10px 10px;
+            border-radius: 0 0 12px 12px;
+        }
+
+
+        /* ดอกไม้จาง ๆ มุมล่าง */
+
+        .intro-card::after {
+            content: "✿";
+
+            position: absolute;
+
+            right: 25px;
+            bottom: 8px;
+
+            font-size: 80px;
+
+            color: #E4F4EC;
+
+            transform: rotate(-15deg);
+
+            pointer-events: none;
         }
 
 
         /* =========================
-           ตกแต่ง
+           ตกแต่งบนการ์ด
         ========================= */
 
         .decoration {
@@ -172,6 +458,9 @@
             opacity: 0.7;
 
             font-size: 25px;
+
+            animation:
+                float 3.5s ease-in-out infinite;
         }
 
         .decoration.one {
@@ -182,16 +471,22 @@
         .decoration.two {
             top: 30px;
             right: 40px;
+
+            animation-delay: 0.7s;
         }
 
         .decoration.three {
             bottom: 30px;
             left: 40px;
+
+            animation-delay: 1.2s;
         }
 
         .decoration.four {
             bottom: 30px;
             right: 40px;
+
+            animation-delay: 1.8s;
         }
 
 
@@ -216,7 +511,22 @@
 
             color: #6B7F75;
 
-            margin-bottom: 35px;
+            margin-bottom: 25px;
+        }
+
+
+        /* ดอกไม้เล็กใต้หัวข้อ */
+
+        .mini-flower {
+            text-align: center;
+
+            font-size: 22px;
+
+            color: #7FA992;
+
+            letter-spacing: 7px;
+
+            margin-bottom: 20px;
         }
 
 
@@ -329,6 +639,51 @@
 
 
         /* =========================
+           Animation
+        ========================= */
+
+        @keyframes float {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-7px);
+            }
+
+        }
+
+        @keyframes flowerFloat {
+
+            0%, 100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+
+            50% {
+                transform: translateY(-6px) rotate(5deg);
+            }
+
+        }
+
+        @keyframes sparkleFloat {
+
+            0%, 100% {
+                transform: translateY(0) scale(1);
+
+                opacity: 0.25;
+            }
+
+            50% {
+                transform: translateY(-8px) scale(1.1);
+
+                opacity: 0.5;
+            }
+
+        }
+
+
+        /* =========================
            มือถือ
         ========================= */
 
@@ -348,6 +703,7 @@
                 padding: 9px 13px;
             }
 
+
             .container {
                 padding: 35px 15px;
             }
@@ -366,6 +722,12 @@
 
             .subtitle {
                 font-size: 19px;
+            }
+
+            .mini-flower {
+                font-size: 19px;
+
+                letter-spacing: 4px;
             }
 
             .intro-card p {
@@ -394,6 +756,50 @@
                 font-size: 20px;
             }
 
+
+            /* พื้นหลังมือถือ */
+
+            .circle-one {
+                width: 180px;
+                height: 180px;
+            }
+
+            .circle-two {
+                width: 150px;
+                height: 150px;
+            }
+
+            .cloud {
+                font-size: 55px;
+            }
+
+            .cloud-one {
+                left: -5px;
+            }
+
+            .cloud-two {
+                right: -5px;
+                bottom: 90px;
+            }
+
+            .bg-flower {
+                opacity: 0.28;
+            }
+
+            .bg-leaf {
+                font-size: 28px;
+
+                opacity: 0.28;
+            }
+
+            .bg-sparkle {
+                opacity: 0.23;
+            }
+
+            .intro-card::after {
+                font-size: 55px;
+            }
+
         }
 
     </style>
@@ -401,6 +807,41 @@
 
 
 <body>
+
+
+    <!-- =========================
+         ตกแต่งพื้นหลัง
+    ========================= -->
+
+    <div class="background-decoration circle-one"></div>
+    <div class="background-decoration circle-two"></div>
+    <div class="background-decoration circle-three"></div>
+
+    <!-- เมฆ -->
+    <div class="cloud cloud-one">☁</div>
+    <div class="cloud cloud-two">☁</div>
+
+    <!-- ดอกไม้ -->
+    <div class="bg-flower flower-one">✿</div>
+    <div class="bg-flower flower-two">✿</div>
+    <div class="bg-flower flower-three">❀</div>
+
+    <!-- ใบไม้ -->
+    <div class="bg-leaf leaf-one">🌿</div>
+    <div class="bg-leaf leaf-two">🍃</div>
+    <div class="bg-leaf leaf-three">🌿</div>
+
+    <!-- ประกาย -->
+    <div class="bg-sparkle sparkle-one">✦</div>
+    <div class="bg-sparkle sparkle-two">✧</div>
+    <div class="bg-sparkle sparkle-three">✦</div>
+    <div class="bg-sparkle sparkle-four">♡</div>
+
+    <!-- จุดตกแต่ง -->
+    <div class="dots one">• ✦ •</div>
+    <div class="dots two">✦ • ✿</div>
+    <div class="dots three">♡ • ✦</div>
+    <div class="dots four">• ✿ •</div>
 
 
     <!-- =========================
@@ -444,12 +885,18 @@
 
         <section class="intro-card">
 
-            <!-- ตกแต่ง -->
+
+            <!-- ตกแต่งบนการ์ด -->
 
             <div class="decoration one">✦</div>
             <div class="decoration two">✿</div>
             <div class="decoration three">♡</div>
             <div class="decoration four">✦</div>
+
+
+            <div class="mini-flower">
+                ✿ ✦ ✿
+            </div>
 
 
             <h1>
