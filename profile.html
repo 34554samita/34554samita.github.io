@@ -79,7 +79,7 @@ body {
 /* =========================
    ประวัติส่วนตัว
    รูปซ้าย 40%
-   ข้อมูลขวา 60%
+   ข้อมูลขวา 55%
 ========================= */
 
 .profile-section {
@@ -98,28 +98,30 @@ body {
 }
 
 
-/* รูปด้านซ้าย */
+/* =========================
+   รูปด้านซ้าย
+   ไม่ซูม ไม่ตัด ไม่เกิดพื้นที่ว่าง
+========================= */
 
 .profile-image {
 
     width: 40%;
-    height: 600px;
 
-    /*
-       ใช้ contain เพื่อไม่ให้รูปถูกซูมและตัด
-       ทำให้เห็นภาพมากขึ้น
-    */
-    object-fit: contain;
+    height: auto;
 
-    object-position: left center;
+    object-fit: initial;
 
     border-radius: 25px;
 
     box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+
+    display: block;
 }
 
 
-/* กรอบข้อมูลด้านขวา */
+/* =========================
+   กรอบข้อมูลด้านขวา
+========================= */
 
 .profile-card {
 
@@ -160,8 +162,8 @@ body {
 
 /* =========================
    จุดเด่นและทักษะ
-   ข้อความซ้าย 60%
-   รูปขวา 40%
+   ข้อความซ้าย
+   รูปขวา
 ========================= */
 
 .skills-section {
@@ -308,12 +310,24 @@ body {
         padding: 28px;
     }
 
-    .profile-image,
+    /* รูปประวัติส่วนตัว */
+    .profile-image {
+
+        width: 40%;
+
+        height: auto;
+
+        object-fit: initial;
+    }
+
+    /* รูปจุดเด่น */
     .skills-image {
 
         width: 40%;
 
         height: 550px;
+
+        object-fit: cover;
     }
 
     .profile-card p,
@@ -369,11 +383,7 @@ body {
 
         height: auto;
 
-        /*
-           สำคัญ:
-           ไม่ซูมรูปบนแล้ว
-        */
-        object-fit: contain;
+        object-fit: initial;
 
         object-position: center;
 
@@ -491,7 +501,7 @@ body {
 <section class="profile-section">
 
 
-    <!-- รูป IMG_2882 -->
+    <!-- รูปประวัติส่วนตัว -->
 
     <img
         src="IMG_2890.jpeg"
@@ -585,7 +595,7 @@ body {
     </div>
 
 
-    <!-- รูป IMG_2883 -->
+    <!-- รูปกิจกรรม -->
 
     <img
         src="IMG_2883.jpeg"
