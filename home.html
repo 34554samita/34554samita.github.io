@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>หน้าแรก | สมิตา บุญนาค</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding-top: 70px;
+
+            font-family: "Itim", cursive;
+
+            background-color: #CDE9DC;
+            color: #40534A;
+
+            min-height: 100vh;
+        }
+
+
+        /* =========================
+           เมนูด้านบน
+        ========================= */
+
+        .menu {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 70px;
+
+            background: rgba(255, 255, 255, 0.96);
+
+            box-shadow:
+                0 4px 15px rgba(64, 83, 74, 0.10);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 0 20px;
+            gap: 8px;
+
+            z-index: 1000;
+
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+
+        .menu a {
+            flex-shrink: 0;
+
+            color: #40534A;
+
+            text-decoration: none;
+
+            font-size: 18px;
+
+            padding: 10px 16px;
+
+            border-radius: 20px;
+
+            white-space: nowrap;
+
+            transition:
+                color 0.25s ease,
+                background-color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .menu a:hover {
+            color: #527A66;
+
+            background-color: #E4F4EC;
+
+            transform: translateY(-2px);
+        }
+
+        .menu a.active {
+            color: #527A66;
+
+            background-color: #DCEFE5;
+
+            box-shadow:
+                inset 0 0 0 1px #C5E3D3;
+        }
+
+
+        /* =========================
+           ส่วนหน้าแรก
+        ========================= */
+
+        .home-container {
+            min-height: calc(100vh - 70px);
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 50px 20px;
+        }
+
+
+        .welcome-card {
+            position: relative;
+
+            width: 90%;
+            max-width: 900px;
+
+            background: rgba(255, 255, 255, 0.94);
+
+            border-radius: 35px;
+
+            padding: 65px 55px;
+
+            text-align: center;
+
+            border: 2px solid #D8EEE2;
+
+            box-shadow:
+                0 15px 40px rgba(64, 83, 74, 0.12);
+        }
+
+
+        /* แถบด้านบนของการ์ด */
+
+        .welcome-card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 100px;
+            height: 6px;
+
+            background-color: #A8D2BB;
+
+            border-radius: 0 0 10px 10px;
+        }
+
+
+        /* =========================
+           ตกแต่งเล็ก ๆ
+        ========================= */
+
+        .decoration {
+            position: absolute;
+
+            font-size: 25px;
+
+            color: #8DBBA3;
+
+            opacity: 0.7;
+        }
+
+        .decoration.one {
+            top: 25px;
+            left: 35px;
+        }
+
+        .decoration.two {
+            top: 30px;
+            right: 40px;
+        }
+
+        .decoration.three {
+            bottom: 25px;
+            left: 45px;
+        }
+
+        .decoration.four {
+            bottom: 25px;
+            right: 45px;
+        }
+
+
+        /* =========================
+           ข้อความ
+        ========================= */
+
+        .welcome-card h1 {
+            margin: 0;
+
+            font-size: 52px;
+
+            color: #527A66;
+        }
+
+        .welcome-card h2 {
+            margin: 8px 0 25px;
+
+            font-size: 28px;
+
+            font-weight: normal;
+
+            color: #40534A;
+        }
+
+        .line {
+            width: 80px;
+            height: 3px;
+
+            margin: 0 auto 25px;
+
+            background-color: #A8D2BB;
+
+            border-radius: 10px;
+        }
+
+        .intro-title {
+            font-size: 25px;
+
+            color: #527A66;
+
+            margin-bottom: 15px;
+        }
+
+        .description {
+            max-width: 650px;
+
+            margin: 0 auto;
+
+            font-size: 20px;
+
+            line-height: 1.8;
+
+            color: #53665D;
+        }
+
+
+        /* =========================
+           ปุ่ม
+        ========================= */
+
+        .buttons {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            margin-top: 35px;
+
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 12px 25px;
+
+            background-color: #DCEFE5;
+
+            color: #527A66;
+
+            text-decoration: none;
+
+            font-size: 19px;
+
+            border: 2px solid #C5E3D3;
+
+            border-radius: 25px;
+
+            transition:
+                transform 0.25s ease,
+                background-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+
+            background-color: #E4F4EC;
+
+            box-shadow:
+                0 7px 18px rgba(64, 83, 74, 0.10);
+        }
+
+
+        /* =========================
+           ชื่อเจ้าของ Portfolio
+        ========================= */
+
+        .name {
+            margin-top: 35px;
+
+            font-size: 23px;
+
+            color: #527A66;
+        }
+
+        .name strong {
+            font-size: 27px;
+        }
+
+
+        /* =========================
+           ปุ่มไปหน้าถัดไป
+        ========================= */
+
+        .page-navigation {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            margin-top: 45px;
+        }
+
+        .next-button {
+            display: inline-block;
+
+            padding: 12px 25px;
+
+            background-color: #DCEFE5;
+
+            color: #527A66;
+
+            text-decoration: none;
+
+            font-size: 19px;
+
+            border: 2px solid #C5E3D3;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 5px 15px rgba(64, 83, 74, 0.08);
+
+            transition:
+                transform 0.25s ease,
+                background-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .next-button:hover {
+            transform: translateY(-3px);
+
+            background-color: #E4F4EC;
+
+            box-shadow:
+                0 8px 20px rgba(64, 83, 74, 0.12);
+        }
+
+
+        /* =========================
+           มือถือ
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .menu {
+                justify-content: flex-start;
+
+                padding: 0 12px;
+
+                gap: 2px;
+            }
+
+            .menu a {
+                font-size: 16px;
+
+                padding: 9px 13px;
+            }
+
+            .home-container {
+                padding: 35px 15px;
+            }
+
+            .welcome-card {
+                width: 100%;
+
+                padding: 50px 25px;
+
+                border-radius: 28px;
+            }
+
+            .welcome-card h1 {
+                font-size: 40px;
+            }
+
+            .welcome-card h2 {
+                font-size: 24px;
+            }
+
+            .intro-title {
+                font-size: 22px;
+            }
+
+            .description {
+                font-size: 18px;
+            }
+
+            .button,
+            .next-button {
+                font-size: 18px;
+
+                padding: 11px 22px;
+            }
+
+            .decoration {
+                font-size: 20px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         เมนู
+    ========================= -->
+
+    <div class="menu">
+
+        <a href="home.html" class="active">
+            🏠 หน้าแรก
+        </a>
+
+        <a href="index.html">
+            📖 คำนำ
+        </a>
+
+        <a href="profile.html">
+            👩🏻‍💻 ประวัติส่วนตัว
+        </a>
+
+        <a href="study.html">
+            🎓 การศึกษาต่อ
+        </a>
+
+        <a href="portfolio.html">
+            🏆 ผลงาน
+        </a>
+
+        <a href="contact.html">
+            📮 ติดต่อ
+        </a>
+
+    </div>
+
+
+    <!-- =========================
+         หน้าแรก
+    ========================= -->
+
+    <main class="home-container">
+
+        <div class="welcome-card">
+
+            <!-- ตกแต่ง -->
+
+            <div class="decoration one">✦</div>
+            <div class="decoration two">✿</div>
+            <div class="decoration three">♡</div>
+            <div class="decoration four">✦</div>
+
+
+            <h1>
+                ยินดีต้อนรับ
+            </h1>
+
+            <h2>
+                เข้าสู่เว็บไซต์ Portfolio
+            </h2>
+
+
+            <div class="line"></div>
+
+
+            <div class="intro-title">
+                ✦ แฟ้มสะสมงานของฉัน ✦
+            </div>
+
+
+            <p class="description">
+                เว็บไซต์นี้จัดทำขึ้นเพื่อรวบรวมประวัติส่วนตัว
+                การศึกษา ผลงาน กิจกรรม และประสบการณ์ต่าง ๆ
+                ที่ได้เรียนรู้และสั่งสมมาตลอดช่วงการศึกษา
+            </p>
+
+
+            <!-- ปุ่มลัด -->
+
+            <div class="buttons">
+
+                <a href="profile.html" class="button">
+                    👩🏻‍💻 รู้จักฉัน
+                </a>
+
+                <a href="portfolio.html" class="button">
+                    🏆 ดูผลงาน
+                </a>
+
+            </div>
+
+
+            <div class="name">
+
+                จัดทำโดย
+
+                <br>
+
+                <strong>
+                    สมิตา บุญนาค
+                </strong>
+
+            </div>
+
+
+            <!-- ปุ่มไปหน้าถัดไป -->
+
+            <div class="page-navigation">
+
+                <a href="index.html" class="next-button">
+                    📖 ไปคำนำ →
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+</body>
+</html>
