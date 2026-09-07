@@ -4,7 +4,6 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +11,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 
-<title>ประวัติส่วนตัว | Samita Portfolio</title>
+<title>ผลงาน | Samita Portfolio</title>
 
 <style>
 
@@ -68,7 +67,6 @@ body {
     font-size: 18px;
 
     padding: 8px 13px;
-
     margin-left: 18px;
 
     border-radius: 15px;
@@ -88,7 +86,7 @@ body {
 
 
 /* =========================
-   ของตกแต่ง
+   ตกแต่ง
 ========================= */
 
 .deco {
@@ -102,94 +100,85 @@ body {
 }
 
 .deco.one {
-    top: 17%;
+    top: 12%;
     left: 7%;
     transform: rotate(-15deg);
 }
 
 .deco.two {
-    top: 27%;
+    top: 18%;
     right: 7%;
     transform: rotate(15deg);
 }
 
 .deco.three {
-    bottom: 15%;
-    left: 10%;
+    bottom: 8%;
+    left: 8%;
     font-size: 22px;
 }
 
 .deco.four {
-    bottom: 12%;
-    right: 10%;
+    bottom: 10%;
+    right: 9%;
     font-size: 22px;
 }
 
 
 /* =========================
-   ส่วนประวัติส่วนตัว
+   หัวข้อ
 ========================= */
 
-.profile-section {
-
-    min-height: 100vh;
-
+.page-header {
     position: relative;
 
-    display: flex;
+    text-align: center;
 
-    align-items: center;
+    padding: 115px 20px 45px;
+}
 
-    justify-content: space-between;
+.page-header h1 {
+    margin: 0;
 
-    gap: 5%;
+    color: #527A66;
 
-    padding: 110px 5% 70px;
+    font-size: 42px;
+}
 
-    overflow: hidden;
+.page-header p {
+    margin: 12px 0 0;
+
+    font-size: 20px;
+
+    color: #5B6D64;
 }
 
 
 /* =========================
-   รูปประวัติ
+   เนื้อหา
 ========================= */
 
-.profile-image {
+.container {
+    width: 90%;
+    max-width: 1050px;
 
-    width: 40%;
+    margin: 0 auto;
 
-    height: auto;
-
-    display: block;
-
-    border-radius: 28px;
-
-    border: 3px solid rgba(255,255,255,0.8);
-
-    box-shadow:
-        0 8px 25px rgba(70,105,88,0.15);
-
-    transition: 0.3s;
-}
-
-.profile-image:hover {
-    transform: translateY(-4px);
+    padding-bottom: 80px;
 }
 
 
 /* =========================
-   การ์ดข้อมูล
+   การ์ดผลงาน
 ========================= */
 
-.profile-card {
-
-    width: 55%;
-
+.project-card {
     position: relative;
 
     background: rgba(255,255,255,0.97);
 
-    padding: 38px 42px;
+    padding: 35px 40px;
+
+    margin-bottom: 45px;
 
     border-radius: 30px;
 
@@ -199,11 +188,7 @@ body {
         0 8px 25px rgba(70,105,88,0.13);
 }
 
-
-/* เส้นตกแต่งบนการ์ด */
-
-.profile-card::before {
-
+.project-card::before {
     content: "";
 
     position: absolute;
@@ -219,186 +204,97 @@ body {
     border-radius: 0 0 10px 10px;
 }
 
-
-.profile-card h1 {
-
+.project-card h2 {
     color: #527A66;
 
-    font-size: 36px;
+    font-size: 29px;
 
-    margin: 5px 0 28px;
+    margin: 5px 0 15px;
 }
 
-
-.profile-card p {
-
-    font-size: 20px;
-
-    line-height: 1.75;
-
-    margin: 15px 0;
-
-    color: #4B5D54;
-}
-
-
-.profile-card strong {
-    color: #527A66;
-}
-
-
-/* =========================
-   ส่วนจุดเด่นและทักษะ
-========================= */
-
-.skills-section {
-
-    min-height: 100vh;
-
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 5%;
-
-    padding: 80px 5%;
-
-    overflow: hidden;
-}
-
-
-/* =========================
-   การ์ดทักษะ
-========================= */
-
-.skills-card {
-
-    width: 55%;
-
-    position: relative;
-
-    background: rgba(255,255,255,0.97);
-
-    padding: 38px 42px;
-
-    border-radius: 30px;
-
-    border: 2px solid rgba(205,233,220,0.8);
-
-    box-shadow:
-        0 8px 25px rgba(70,105,88,0.13);
-}
-
-
-.skills-card::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 35px;
-
-    width: 65px;
-    height: 5px;
-
-    background: #A8D2BB;
-
-    border-radius: 0 0 10px 10px;
-}
-
-
-.skills-card h2 {
-
-    color: #527A66;
-
-    font-size: 32px;
-
-    margin: 5px 0 28px;
-}
-
-
-.skills-card p {
-
-    font-size: 20px;
+.project-card p {
+    font-size: 19px;
 
     line-height: 1.7;
 
-    margin: 17px 0;
-
     color: #4B5D54;
-}
 
-
-.skills-card strong {
-    color: #527A66;
+    margin: 10px 0 22px;
 }
 
 
 /* =========================
-   รูปกิจกรรม
+   รูปผลงาน
 ========================= */
 
-.skills-image {
+.project-images {
+    display: grid;
 
-    width: 40%;
+    grid-template-columns: repeat(2, 1fr);
 
-    height: 600px;
+    gap: 15px;
 
-    object-fit: cover;
+    margin-top: 20px;
+}
 
-    object-position: center center;
+.project-images img {
+    width: 100%;
 
-    border-radius: 28px;
+    height: 300px;
 
-    border: 3px solid rgba(255,255,255,0.8);
+    object-fit: contain;
+
+    background: #F7FCF9;
+
+    border-radius: 20px;
+
+    border: 2px solid #DCEFE5;
 
     box-shadow:
-        0 8px 25px rgba(70,105,88,0.15);
+        0 5px 15px rgba(70,105,88,0.10);
 
     transition: 0.3s;
 }
 
-.skills-image:hover {
+.project-images img:hover {
     transform: translateY(-4px);
 }
 
 
 /* =========================
-   คติประจำใจ
+   โรงเรือนไก่
 ========================= */
 
-.motto-section {
-
-    min-height: 350px;
-
-    position: relative;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    padding: 60px 20px;
-
-    overflow: hidden;
+.technology-images img {
+    height: 300px;
 }
 
 
-.motto-card {
+/* =========================
+   หัวข้อย่อย
+========================= */
 
-    position: relative;
+.section-title {
+    text-align: center;
 
-    max-width: 800px;
+    color: #527A66;
 
+    font-size: 34px;
+
+    margin: 65px 0 30px;
+}
+
+
+/* =========================
+   เกียรติบัตร
+========================= */
+
+.certificate {
     background: rgba(255,255,255,0.97);
 
-    padding: 40px 70px;
+    padding: 35px 40px;
+
+    margin-bottom: 35px;
 
     border-radius: 30px;
 
@@ -406,40 +302,100 @@ body {
 
     box-shadow:
         0 8px 25px rgba(70,105,88,0.13);
-
-    text-align: center;
 }
 
-
-.motto-card::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 70px;
-    height: 5px;
-
-    background: #A8D2BB;
-
-    border-radius: 0 0 10px 10px;
-}
-
-
-.motto-card p {
+.certificate h2 {
+    color: #527A66;
 
     font-size: 27px;
 
+    margin: 0 0 12px;
+}
+
+.certificate p {
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #4B5D54;
+}
+
+.certificate img {
+    display: block;
+
+    width: 100%;
+
+    max-width: 600px;
+
+    max-height: 650px;
+
+    object-fit: contain;
+
+    margin: 22px auto 0;
+
+    border-radius: 18px;
+
+    border: 2px solid #DCEFE5;
+
+    box-shadow:
+        0 5px 15px rgba(70,105,88,0.10);
+}
+
+
+/* =========================
+   ประสบการณ์
+========================= */
+
+.experience {
+    background: rgba(255,255,255,0.97);
+
+    padding: 35px 40px;
+
+    margin-bottom: 35px;
+
+    border-radius: 30px;
+
+    border: 2px solid rgba(205,233,220,0.8);
+
+    box-shadow:
+        0 8px 25px rgba(70,105,88,0.13);
+}
+
+.experience h2 {
     color: #527A66;
 
-    margin: 0;
+    font-size: 27px;
 
-    line-height: 1.6;
+    margin: 0 0 12px;
+}
+
+.experience p {
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #4B5D54;
+}
+
+.experience img {
+    display: block;
+
+    width: 100%;
+
+    max-width: 700px;
+
+    max-height: 600px;
+
+    object-fit: contain;
+
+    margin: 22px auto 0;
+
+    border-radius: 18px;
+
+    border: 2px solid #DCEFE5;
+
+    box-shadow:
+        0 5px 15px rgba(70,105,88,0.10);
 }
 
 
@@ -457,31 +413,10 @@ body {
         margin-left: 8px;
     }
 
-    .profile-section,
-    .skills-section {
-        gap: 4%;
-        padding-left: 4%;
-        padding-right: 4%;
-    }
-
-    .profile-card,
-    .skills-card {
-        width: 56%;
+    .project-card,
+    .certificate,
+    .experience {
         padding: 30px;
-    }
-
-    .profile-image {
-        width: 40%;
-    }
-
-    .skills-image {
-        width: 40%;
-        height: 550px;
-    }
-
-    .profile-card p,
-    .skills-card p {
-        font-size: 18px;
     }
 
 }
@@ -494,7 +429,6 @@ body {
 @media (max-width: 700px) {
 
     .menu {
-
         height: 60px;
 
         padding: 0 8px;
@@ -507,7 +441,6 @@ body {
     }
 
     .menu a {
-
         font-size: 15px;
 
         margin-left: 5px;
@@ -517,97 +450,63 @@ body {
         flex-shrink: 0;
     }
 
-
-    .profile-section,
-    .skills-section {
-
-        min-height: auto;
-
-        flex-direction: column;
-
-        padding: 90px 5% 50px;
-
-        gap: 30px;
+    .page-header {
+        padding: 95px 15px 35px;
     }
 
+    .page-header h1 {
+        font-size: 32px;
+    }
 
-    .profile-image {
+    .page-header p {
+        font-size: 17px;
+    }
 
-        width: 90%;
+    .container {
+        width: 92%;
+    }
 
+    .project-card,
+    .certificate,
+    .experience {
+        padding: 28px 22px;
+
+        border-radius: 25px;
+    }
+
+    .project-card h2 {
+        font-size: 25px;
+    }
+
+    .project-card p,
+    .certificate p,
+    .experience p {
+        font-size: 17px;
+    }
+
+    .project-images {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .project-images img,
+    .technology-images img {
         height: auto;
 
-        order: 1;
+        max-height: 500px;
     }
 
-
-    .profile-card {
-
-        width: 90%;
-
-        order: 2;
-
-        padding: 28px 25px;
-    }
-
-
-    .skills-card {
-
-        width: 90%;
-
-        order: 1;
-
-        padding: 28px 25px;
-    }
-
-
-    .skills-image {
-
-        width: 90%;
-
-        height: 500px;
-
-        order: 2;
-    }
-
-
-    .profile-card h1 {
+    .section-title {
         font-size: 29px;
+
+        margin: 50px 0 25px;
     }
 
-    .skills-card h2 {
-        font-size: 27px;
+    .certificate h2,
+    .experience h2 {
+        font-size: 24px;
     }
-
-    .profile-card p,
-    .skills-card p {
-
-        font-size: 17px;
-
-        line-height: 1.65;
-    }
-
-
-    .motto-section {
-
-        min-height: 280px;
-
-        padding: 50px 20px;
-    }
-
-
-    .motto-card {
-
-        width: 90%;
-
-        padding: 32px 20px;
-    }
-
-
-    .motto-card p {
-        font-size: 22px;
-    }
-
 
     .deco {
         font-size: 20px;
@@ -633,7 +532,7 @@ body {
         คำนำ
     </a>
 
-    <a href="profile.html" class="active">
+    <a href="profile.html">
         ประวัติส่วนตัว
     </a>
 
@@ -641,7 +540,7 @@ body {
         การศึกษาต่อ
     </a>
 
-    <a href="portfolio.html">
+    <a href="portfolio.html" class="active">
         ผลงาน
     </a>
 
@@ -652,147 +551,268 @@ body {
 </div>
 
 
-
 <!-- =========================
-     ส่วนที่ 1
+     หัวข้อ
 ========================= -->
 
-<section class="profile-section">
-
+<header class="page-header">
 
     <div class="deco one">✦</div>
-
     <div class="deco two">✿</div>
 
-    <div class="deco three">♡</div>
+    <h1>🏆 ผลงานและประสบการณ์</h1>
 
-    <div class="deco four">✦</div>
+    <p>
+        ผลงาน กิจกรรม และประสบการณ์ที่ได้เรียนรู้และพัฒนาตนเอง
+    </p>
 
-
-    <img
-        src="IMG_2890.jpeg"
-        class="profile-image"
-        alt="รูปประวัติส่วนตัว"
-    >
+</header>
 
 
-    <div class="profile-card">
-
-        <h1>
-            👤 ประวัติส่วนตัว
-        </h1>
-
-        <p>
-            <strong>ชื่อ :</strong>
-            สมิตา บุญนาค (Samita Boonnark)
-        </p>
-
-        <p>
-            <strong>ระดับการศึกษา :</strong>
-            มัธยมศึกษาปีที่ 6
-        </p>
-
-        <p>
-            <strong>แผนการเรียน :</strong>
-            เตรียมวิศวกรรมศาสตร์ (Pre-Engineering) ⚙️
-        </p>
-
-        <p>
-            <strong>ความสนใจ :</strong>
-            วิทยาศาสตร์ เทคโนโลยี
-            วิศวกรรมศาสตร์
-            และนวัตกรรมทางการแพทย์
-        </p>
-
-        <p>
-            <strong>งานอดิเรก :</strong>
-            เรียนรู้สิ่งใหม่ ๆ
-            ทำโครงงาน
-            และศึกษาด้านเทคโนโลยี
-        </p>
-
-    </div>
-
-</section>
-
+<div class="container">
 
 
 <!-- =========================
-     ส่วนที่ 2
+     ผลงานด้านวิทยาศาสตร์
 ========================= -->
 
-<section class="skills-section">
+<div class="project-card">
 
+    <h2>
+        🧼 โครงงานเรื่อง “Jel-Pop สบู่เด้งดึ๋งพกพา”
+    </h2>
 
-    <div class="deco one">✦</div>
+    <p>
+        โครงงานสบู่เด้งดึ๋งพกพา เป็นการนำความรู้ทางวิทยาศาสตร์
+        มาประยุกต์ใช้ในการสร้างผลิตภัณฑ์ที่สามารถพกพาได้สะดวก
+        พร้อมทั้งได้ฝึกการทดลอง การแก้ไขปัญหา การทำงานเป็นทีม
+        และการนำเสนอผลงาน
+    </p>
 
-    <div class="deco two">♡</div>
+    <div class="project-images">
 
+        <img
+            src="สำเนาของ สำเนาของ โปสเตอร์นำเสนอ - 1.png"
+            alt="โปสเตอร์โครงงาน Jel-Pop"
+        >
 
-    <div class="skills-card">
-
-        <h2>
-            ⭐ จุดเด่นและทักษะ
-        </h2>
-
-        <p>
-            <strong>• การเป็นผู้นำ</strong><br>
-            สามารถรับผิดชอบงาน
-            และช่วยวางแผนการทำงานร่วมกับผู้อื่น
-        </p>
-
-        <p>
-            <strong>• การนำเสนอ</strong><br>
-            สามารถสื่อสารและนำเสนอข้อมูล
-            ให้ผู้อื่นเข้าใจได้อย่างชัดเจน
-        </p>
-
-        <p>
-            <strong>• การทำงานเป็นทีม</strong><br>
-            สามารถทำงานร่วมกับผู้อื่น
-            รับฟังความคิดเห็น
-            และช่วยกันแก้ไขปัญหา
-        </p>
-
-        <p>
-            <strong>• การเรียนรู้สิ่งใหม่</strong><br>
-            มีความสนใจในการเรียนรู้
-            และพัฒนาความสามารถของตนเองอยู่เสมอ
-        </p>
+        <img
+            src="โครงงานเรื่อง “Jel-Pop สบู่เด้งดึ๋งพกพา”.png"
+            alt="โครงงาน Jel-Pop"
+        >
 
     </div>
 
-
-    <img
-        src="IMG_2883.jpeg"
-        class="skills-image"
-        alt="รูปกิจกรรม"
-    >
-
-</section>
-
+</div>
 
 
 <!-- =========================
-     คติประจำใจ
+     ผลงานด้านเทคโนโลยี
 ========================= -->
 
-<section class="motto-section">
+<div class="project-card">
 
-    <div class="deco one">✿</div>
+    <h2>
+        🐔 โครงงาน “โรงเรือนเลี้ยงไก่อัจฉริยะ”
+    </h2>
 
-    <div class="deco two">✦</div>
+    <p>
+        โครงงานโรงเรือนเลี้ยงไก่อัจฉริยะ เป็นการประยุกต์ใช้เทคโนโลยี
+        IoT เพื่อช่วยดูแลโรงเรือน โดยมีระบบควบคุมอุณหภูมิอัตโนมัติ
+        ระบบให้น้ำอัตโนมัติ และระบบควบคุมอาหารผ่านโทรศัพท์มือถือ
+        ทำให้ระบบสามารถทำงานได้อย่างอัตโนมัติ
+        และได้เรียนรู้เกี่ยวกับ IoT ระบบอัตโนมัติ
+        การออกแบบระบบ และการแก้ไขปัญหา
+    </p>
 
+    <div class="project-images technology-images">
 
-    <div class="motto-card">
+        <img
+            src="IMG_2901.jpeg"
+            alt="โรงเรือนเลี้ยงไก่อัจฉริยะ"
+        >
 
-        <p>
-            “ทำในสิ่งที่ตัวเองตั้งใจให้ดีที่สุด“
-        </p>
+        <img
+            src="IMG_2900.jpeg"
+            alt="ระบบโรงเรือนเลี้ยงไก่อัจฉริยะ"
+        >
 
     </div>
 
-</section>
+</div>
+
+
+<!-- =========================
+     เกียรติบัตร
+========================= -->
+
+<h2 class="section-title">
+    🏅 เกียรติบัตร
+</h2>
+
+
+<div class="certificate">
+
+    <h2>
+        💻 การแข่งขันโครงงานคอมพิวเตอร์
+    </h2>
+
+    <p>
+        ได้รับรางวัลระดับเหรียญทอง
+        รองชนะเลิศอันดับที่ 1
+        จากการแข่งขันโครงงานคอมพิวเตอร์
+        ได้ฝึกทักษะด้านการพัฒนาโครงงาน
+        การทำงานร่วมกับผู้อื่น และการนำเสนอผลงาน
+    </p>
+
+    <img
+        src="IMG_2903.jpeg"
+        alt="เกียรติบัตรการแข่งขันโครงงานคอมพิวเตอร์"
+    >
+
+</div>
+
+
+<div class="certificate">
+
+    <h2>
+        🦷 กิจกรรมแนะแนวและเปิดประสบการณ์ด้านทันตกรรม
+    </h2>
+
+    <p>
+        เข้าร่วมกิจกรรมแนะแนวและเปิดประสบการณ์
+        เกี่ยวกับการศึกษาต่อและการทำงานด้านทันตกรรม
+        ณ SC Dental Clinic บ้านบึง จังหวัดชลบุรี
+        รุ่นที่ 2 วันที่ 27 มีนาคม 2569
+    </p>
+
+    <img
+        src="IMG_2904.jpeg"
+        alt="เกียรติบัตรกิจกรรมด้านทันตกรรม"
+    >
+
+</div>
+
+
+<div class="certificate">
+
+    <h2>
+        🧬 CMU MOOC : Basic Human Anatomy
+    </h2>
+
+    <p>
+        ผ่านการเรียนรู้หลักสูตร Basic Human Anatomy
+        ของคณะแพทยศาสตร์ มหาวิทยาลัยเชียงใหม่
+        ทำให้ได้เรียนรู้เกี่ยวกับกายวิภาคศาสตร์ของมนุษย์
+        และช่วยสร้างความสนใจด้านวิทยาศาสตร์และการแพทย์
+    </p>
+
+    <img
+        src="IMG_2905.jpeg"
+        alt="เกียรติบัตร CMU MOOC Basic Human Anatomy"
+    >
+
+</div>
+
+
+<!-- =========================
+     ประสบการณ์
+========================= -->
+
+<h2 class="section-title">
+    🌱 ประสบการณ์และกิจกรรม
+</h2>
+
+
+<div class="experience">
+
+    <h2>
+        👩‍🏫 หัวหน้าห้อง
+    </h2>
+
+    <p>
+        รับผิดชอบหน้าที่หัวหน้าห้อง
+        ช่วยประสานงานระหว่างครูและเพื่อนในห้อง
+        ฝึกการวางแผน การสื่อสาร ความรับผิดชอบ
+        และการทำงานร่วมกับผู้อื่น
+    </p>
+
+    <img
+        src="IMG_2906.jpeg"
+        alt="กิจกรรมหัวหน้าห้อง"
+    >
+
+</div>
+
+
+<div class="experience">
+
+    <h2>
+        ⚙️ Staff งาน Science Day
+    </h2>
+
+    <p>
+        เป็น Staff ประจำฐานวิทยาศาสตร์
+        ในกิจกรรม Science Day
+        ฐานการเคลื่อนที่แบบหมุน
+        ได้ฝึกการเตรียมฐานกิจกรรม
+        การอธิบายหลักการทางฟิสิกส์
+        การสื่อสาร การนำเสนอ และการทำงานเป็นทีม
+    </p>
+
+    <img
+        src="IMG_2907.jpeg"
+        alt="Staff Science Day"
+    >
+
+</div>
+
+
+<div class="experience">
+
+    <h2>
+        🏗️ K-Engineering World Tour and Competency Challenge 2026
+    </h2>
+
+    <p>
+        เข้าร่วมกิจกรรม K-Engineering World Tour and
+        Competency Challenge 2026
+        ได้เรียนรู้เกี่ยวกับวิศวกรรม เทคโนโลยี
+        และแนวทางการศึกษาต่อ
+        รวมถึงได้รับแรงบันดาลใจในการพัฒนาตนเอง
+    </p>
+
+    <img
+        src="IMG_2908.jpeg"
+        alt="K-Engineering World Tour"
+    >
+
+</div>
+
+
+<div class="experience">
+
+    <h2>
+        🧮 Staff งาน Mathematics Week
+    </h2>
+
+    <p>
+        เป็น Staff ในกิจกรรม Mathematics Week
+        ฐานการแข่งขันคิดเลขเร็ว
+        ได้ฝึกความรับผิดชอบ การทำงานเป็นทีม
+        การจัดกิจกรรม การแก้ไขปัญหา
+        และการประสานงานภายในงาน
+    </p>
+
+    <img
+        src="IMG_2910.jpeg"
+        alt="Staff Mathematics Week"
+    >
+
+</div>
+
+
+</div>
 
 
 </body>
