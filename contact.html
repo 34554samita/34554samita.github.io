@@ -1,597 +1,653 @@
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ติดต่อ | สมิตา บุญนาค</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <style>
 
-<title>ติดต่อ | Samita</title>
+        * {
+            box-sizing: border-box;
+        }
 
-<style>
+        body {
+            margin: 0;
+            padding-top: 70px;
 
-* {
-    box-sizing: border-box;
-}
+            font-family: "Itim", cursive;
 
-html {
-    scroll-behavior: smooth;
-    scrollbar-gutter: stable;
-}
+            background-color: #CDE9DC;
+            color: #40534A;
 
-body {
-    margin: 0;
-    padding-top: 70px;
+            min-height: 100vh;
+        }
 
-    font-family: "Itim", cursive;
 
-    background:
-        radial-gradient(
-            circle at 8% 15%,
-            rgba(255,255,255,0.65) 0 45px,
-            transparent 46px
-        ),
-        radial-gradient(
-            circle at 92% 25%,
-            rgba(255,255,255,0.45) 0 35px,
-            transparent 36px
-        ),
-        #CDE9DC;
+        /* =========================
+           เมนูด้านบน
+        ========================= */
 
-    color: #40534A;
-}
+        .menu {
+            position: fixed;
 
+            top: 0;
+            left: 0;
 
-/* =========================
-   เมนูด้านบน
-========================= */
+            width: 100%;
+            height: 70px;
 
-.menu {
-    position: fixed;
+            background: rgba(255, 255, 255, 0.96);
 
-    top: 0;
-    left: 0;
+            box-shadow:
+                0 4px 15px rgba(64, 83, 74, 0.10);
 
-    width: 100%;
-    height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-    background: rgba(255,255,255,0.96);
+            padding: 0 20px;
+            gap: 8px;
 
-    box-shadow:
-        0 4px 15px rgba(64,83,74,0.10);
+            z-index: 1000;
 
-    display: flex;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
 
-    justify-content: center;
-    align-items: center;
+        .menu a {
+            flex-shrink: 0;
 
-    padding: 0 20px;
+            color: #40534A;
 
-    gap: 8px;
+            text-decoration: none;
 
-    z-index: 1000;
+            font-size: 18px;
 
-    overflow-x: auto;
-    overflow-y: hidden;
-}
+            padding: 10px 16px;
 
-.menu a {
-    flex-shrink: 0;
+            border-radius: 20px;
 
-    color: #40534A;
+            white-space: nowrap;
 
-    text-decoration: none;
+            transition:
+                color 0.25s ease,
+                background-color 0.25s ease,
+                transform 0.25s ease;
+        }
 
-    font-size: 18px;
+        .menu a:hover {
+            color: #527A66;
 
-    padding: 10px 16px;
+            background-color: #E4F4EC;
 
-    border-radius: 20px;
+            transform: translateY(-2px);
+        }
 
-    white-space: nowrap;
+        .menu a.active {
+            color: #527A66;
 
-    transition:
-        color 0.25s ease,
-        background-color 0.25s ease,
-        transform 0.25s ease;
-}
+            background-color: #DCEFE5;
 
-.menu a:hover {
-    color: #527A66;
+            box-shadow:
+                inset 0 0 0 1px #C5E3D3;
+        }
 
-    background-color: #E4F4EC;
 
-    transform: translateY(-2px);
-}
+        /* =========================
+           เนื้อหาหลัก
+        ========================= */
 
-.menu a.active {
-    color: #527A66;
+        .container {
+            min-height: calc(100vh - 70px);
 
-    background-color: #DCEFE5;
+            display: flex;
 
-    box-shadow:
-        inset 0 0 0 1px #C5E3D3;
-}
+            justify-content: center;
+            align-items: center;
 
+            padding: 50px 20px;
+        }
 
-/* =========================
-   ของตกแต่ง
-========================= */
 
-.decor {
-    position: fixed;
+        /* =========================
+           การ์ดติดต่อ
+        ========================= */
 
-    color: #76A98D;
+        .contact-card {
+            position: relative;
 
-    opacity: 0.55;
+            width: 90%;
+            max-width: 850px;
 
-    pointer-events: none;
+            background: rgba(255, 255, 255, 0.94);
 
-    z-index: 0;
-}
+            border: 2px solid #D8EEE2;
 
-.decor.one {
-    top: 110px;
-    left: 5%;
+            border-radius: 35px;
 
-    font-size: 28px;
-}
+            padding: 60px 50px;
 
-.decor.two {
-    top: 180px;
-    right: 6%;
+            text-align: center;
 
-    font-size: 22px;
-}
+            box-shadow:
+                0 15px 40px rgba(64, 83, 74, 0.12);
+        }
 
-.decor.three {
-    bottom: 15%;
-    left: 7%;
 
-    font-size: 25px;
-}
+        /* แถบด้านบน */
 
-.decor.four {
-    bottom: 10%;
-    right: 8%;
+        .contact-card::before {
+            content: "";
 
-    font-size: 30px;
-}
+            position: absolute;
 
+            top: 0;
+            left: 50%;
 
-/* =========================
-   เนื้อหาหลัก
-========================= */
+            transform: translateX(-50%);
 
-.container {
-    width: 90%;
-    max-width: 1000px;
+            width: 100px;
+            height: 6px;
 
-    min-height: calc(100vh - 70px);
+            background-color: #A8D2BB;
 
-    margin: auto;
+            border-radius: 0 0 10px 10px;
+        }
 
-    padding: 55px 0 80px;
 
-    display: flex;
+        /* =========================
+           ตกแต่ง
+        ========================= */
 
-    align-items: center;
-    justify-content: center;
+        .decoration {
+            position: absolute;
 
-    position: relative;
+            color: #8DBBA3;
 
-    z-index: 1;
-}
+            opacity: 0.7;
 
+            font-size: 25px;
+        }
 
-/* =========================
-   หัวข้อ
-========================= */
+        .decoration.one {
+            top: 25px;
+            left: 35px;
+        }
 
-.contact-box {
-    width: 100%;
+        .decoration.two {
+            top: 30px;
+            right: 40px;
+        }
 
-    background: rgba(255,255,255,0.96);
+        .decoration.three {
+            bottom: 30px;
+            left: 40px;
+        }
 
-    border: 2px solid #E4F4EC;
+        .decoration.four {
+            bottom: 30px;
+            right: 40px;
+        }
 
-    border-radius: 32px;
 
-    padding: 50px 60px;
+        /* =========================
+           หัวข้อ
+        ========================= */
 
-    text-align: center;
+        h1 {
+            margin: 0;
 
-    box-shadow:
-        0 12px 30px rgba(64,83,74,0.12);
+            font-size: 48px;
 
-    position: relative;
+            color: #527A66;
+        }
 
-    overflow: hidden;
-}
+        .subtitle {
+            margin-top: 8px;
 
-.contact-box::before {
-    content: "";
+            font-size: 21px;
 
-    position: absolute;
+            color: #687C72;
+        }
 
-    top: 0;
-    left: 45px;
-    right: 45px;
+        .line {
+            width: 80px;
+            height: 3px;
 
-    height: 6px;
+            background-color: #A8D2BB;
 
-    background: #A8D2BB;
+            border-radius: 10px;
 
-    border-radius: 0 0 12px 12px;
-}
+            margin: 20px auto 35px;
+        }
 
-.contact-box h1 {
-    margin: 0 0 12px;
 
-    color: #527A66;
+        /* =========================
+           ข้อมูลติดต่อ
+        ========================= */
 
-    font-size: 42px;
-}
+        .contact-list {
+            display: flex;
 
-.contact-box > p {
-    margin: 0 auto 35px;
+            flex-direction: column;
 
-    color: #648071;
+            gap: 18px;
 
-    font-size: 20px;
-}
+            max-width: 650px;
 
-.title-line {
-    width: 90px;
+            margin: 0 auto;
+        }
 
-    height: 5px;
+        .contact-item {
+            display: flex;
 
-    margin: 18px auto 35px;
+            align-items: center;
 
-    background: #A8D2BB;
+            text-align: left;
 
-    border-radius: 20px;
-}
+            background-color: #F7FCF9;
 
+            border: 2px solid #D8EEE2;
 
-/* =========================
-   ข้อมูลติดต่อ
-========================= */
+            border-radius: 22px;
 
-.contact-list {
-    display: flex;
+            padding: 18px 25px;
 
-    flex-direction: column;
+            transition:
+                transform 0.25s ease,
+                background-color 0.25s ease;
+        }
 
-    gap: 20px;
+        .contact-item:hover {
+            transform: translateY(-3px);
 
-    max-width: 700px;
+            background-color: #E4F4EC;
+        }
 
-    margin: auto;
-}
+        .contact-icon {
+            width: 55px;
+            height: 55px;
 
-.contact-item {
-    display: flex;
+            display: flex;
 
-    align-items: center;
+            justify-content: center;
+            align-items: center;
 
-    text-align: left;
+            flex-shrink: 0;
 
-    padding: 20px 25px;
+            background-color: #DCEFE5;
 
-    background: #F7FCF9;
+            border-radius: 50%;
 
-    border: 2px solid #E4F4EC;
+            font-size: 27px;
 
-    border-radius: 22px;
+            margin-right: 18px;
+        }
 
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
+        .contact-info {
+            display: flex;
 
-.contact-item:hover {
-    transform: translateY(-3px);
+            flex-direction: column;
+        }
 
-    box-shadow:
-        0 8px 20px rgba(64,83,74,0.09);
-}
+        .contact-label {
+            font-size: 18px;
 
-.contact-icon {
-    width: 55px;
-    height: 55px;
+            color: #527A66;
+        }
 
-    flex-shrink: 0;
+        .contact-value {
+            font-size: 20px;
 
-    display: flex;
+            color: #40534A;
 
-    align-items: center;
-    justify-content: center;
+            word-break: break-word;
+        }
 
-    margin-right: 18px;
+        .contact-value a {
+            color: #40534A;
 
-    background: #E4F4EC;
+            text-decoration: none;
+        }
 
-    border-radius: 18px;
+        .contact-value a:hover {
+            color: #527A66;
+        }
 
-    font-size: 28px;
-}
 
-.contact-info {
-    display: flex;
+        /* =========================
+           ข้อความปิดท้าย
+        ========================= */
 
-    flex-direction: column;
+        .closing {
+            margin-top: 35px;
 
-    gap: 3px;
-}
+            font-size: 20px;
 
-.contact-info strong {
-    color: #527A66;
+            line-height: 1.7;
 
-    font-size: 21px;
-}
+            color: #687C72;
+        }
 
-.contact-info span,
-.contact-info a {
-    color: #4E6258;
 
-    font-size: 19px;
+        /* =========================
+           ปุ่มกลับหน้าแรก
+        ========================= */
 
-    text-decoration: none;
-}
+        .page-navigation {
+            display: flex;
 
-.contact-info a:hover {
-    color: #527A66;
-}
+            justify-content: center;
+            align-items: center;
 
+            margin-top: 35px;
+        }
 
-/* =========================
-   ข้อความท้าย
-========================= */
+        .next-button {
+            display: inline-block;
 
-.end-message {
-    margin-top: 35px;
+            padding: 12px 27px;
 
-    padding: 20px 25px;
+            background-color: #DCEFE5;
 
-    background: #EAF6EF;
+            color: #527A66;
 
-    border-radius: 22px;
+            text-decoration: none;
 
-    color: #648071;
+            font-size: 19px;
 
-    font-size: 18px;
+            border: 2px solid #C5E3D3;
 
-    line-height: 1.7;
-}
+            border-radius: 25px;
 
+            box-shadow:
+                0 5px 15px rgba(64, 83, 74, 0.08);
 
-/* =========================
-   Responsive
-========================= */
+            transition:
+                transform 0.25s ease,
+                background-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
 
-@media (max-width: 800px) {
+        .next-button:hover {
+            transform: translateY(-3px);
 
-    .menu {
-        justify-content: flex-start;
+            background-color: #E4F4EC;
 
-        padding: 0 12px;
+            box-shadow:
+                0 8px 20px rgba(64, 83, 74, 0.12);
+        }
 
-        gap: 2px;
-    }
 
-    .menu a {
-        font-size: 16px;
+        /* =========================
+           มือถือ
+        ========================= */
 
-        padding: 9px 13px;
-    }
+        @media (max-width: 800px) {
 
-    .container {
-        width: 90%;
+            .menu {
+                justify-content: flex-start;
 
-        padding-top: 40px;
-    }
+                padding: 0 12px;
 
-    .contact-box {
-        padding: 40px 22px;
-    }
+                gap: 2px;
+            }
 
-    .contact-box h1 {
-        font-size: 33px;
-    }
+            .menu a {
+                font-size: 16px;
 
-    .contact-box > p {
-        font-size: 18px;
-    }
+                padding: 9px 13px;
+            }
 
-    .contact-item {
-        padding: 17px;
-    }
+            .container {
+                padding: 35px 15px;
+            }
 
-    .contact-icon {
-        width: 48px;
-        height: 48px;
+            .contact-card {
+                width: 100%;
 
-        margin-right: 13px;
+                padding: 50px 25px;
 
-        font-size: 23px;
-    }
+                border-radius: 28px;
+            }
 
-    .contact-info strong {
-        font-size: 19px;
-    }
+            h1 {
+                font-size: 40px;
+            }
 
-    .contact-info span,
-    .contact-info a {
-        font-size: 17px;
-        word-break: break-word;
-    }
+            .subtitle {
+                font-size: 19px;
+            }
 
-    .decor {
-        display: none;
-    }
-}
+            .contact-item {
+                padding: 15px;
 
-</style>
+                border-radius: 18px;
+            }
 
+            .contact-icon {
+                width: 48px;
+                height: 48px;
+
+                font-size: 23px;
+
+                margin-right: 13px;
+            }
+
+            .contact-label {
+                font-size: 17px;
+            }
+
+            .contact-value {
+                font-size: 18px;
+            }
+
+            .closing {
+                font-size: 18px;
+            }
+
+            .next-button {
+                font-size: 18px;
+
+                padding: 11px 23px;
+            }
+
+            .decoration {
+                font-size: 20px;
+            }
+
+        }
+
+    </style>
 </head>
 
 
 <body>
 
 
-<!-- =========================
-     เมนู
-========================= -->
+    <!-- =========================
+         เมนูด้านบน
+    ========================= -->
 
-<div class="menu">
+    <div class="menu">
 
-    <a href="index.html">
-        คำนำ
-    </a>
+        <a href="home.html">
+            🏠 หน้าแรก
+        </a>
 
-    <a href="profile.html">
-        ประวัติส่วนตัว
-    </a>
+        <a href="index.html">
+            📖 คำนำ
+        </a>
 
-    <a href="study.html">
-        การศึกษาต่อ
-    </a>
+        <a href="profile.html">
+            👩🏻‍💻 ประวัติส่วนตัว
+        </a>
 
-    <a href="portfolio.html">
-        ผลงาน
-    </a>
+        <a href="study.html">
+            🎓 การศึกษาต่อ
+        </a>
 
-    <a href="contact.html" class="active">
-        ติดต่อ
-    </a>
+        <a href="portfolio.html">
+            🏆 ผลงาน
+        </a>
 
-</div>
-
-
-<!-- =========================
-     ของตกแต่ง
-========================= -->
-
-<div class="decor one">✦</div>
-<div class="decor two">✿</div>
-<div class="decor three">♡</div>
-<div class="decor four">✦</div>
-
-
-<!-- =========================
-     เนื้อหาหลัก
-========================= -->
-
-<div class="container">
-
-    <div class="contact-box">
-
-        <h1>
+        <a href="contact.html" class="active">
             📮 ติดต่อ
-        </h1>
-
-        <p>
-            ช่องทางสำหรับติดต่อและติดตามผลงานของฉัน
-        </p>
-
-        <div class="title-line"></div>
-
-
-        <div class="contact-list">
-
-
-            <!-- Email -->
-
-            <div class="contact-item">
-
-                <div class="contact-icon">
-                    📧
-                </div>
-
-                <div class="contact-info">
-
-                    <strong>
-                        Email
-                    </strong>
-
-                    <a href="mailto:chttngtta@gmail.com">
-                        chttngtta@gmail.com
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- Instagram -->
-
-            <div class="contact-item">
-
-                <div class="contact-icon">
-                    📷
-                </div>
-
-                <div class="contact-info">
-
-                    <strong>
-                        Instagram
-                    </strong>
-
-                    <a href="https://www.instagram.com/onlytortor/" target="_blank">
-                        @onlytortor
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- Phone -->
-
-            <div class="contact-item">
-
-                <div class="contact-icon">
-                    📱
-                </div>
-
-                <div class="contact-info">
-
-                    <strong>
-                        โทรศัพท์
-                    </strong>
-
-                    <span>
-                        087-100-1454
-                    </span>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-        <div class="end-message">
-
-            ✦ ขอบคุณที่เข้ามาเยี่ยมชมแฟ้มสะสมงานของฉัน ♡
-            <br>
-            หากสนใจผลงานหรือมีข้อสงสัย
-            สามารถติดต่อผ่านช่องทางด้านบนได้เลย
-
-        </div>
+        </a>
 
     </div>
 
-</div>
+
+    <!-- =========================
+         เนื้อหาหลัก
+    ========================= -->
+
+    <main class="container">
+
+        <section class="contact-card">
+
+
+            <!-- ตกแต่ง -->
+
+            <div class="decoration one">✦</div>
+            <div class="decoration two">✿</div>
+            <div class="decoration three">♡</div>
+            <div class="decoration four">✦</div>
+
+
+            <!-- หัวข้อ -->
+
+            <h1>
+                📮 ติดต่อ
+            </h1>
+
+            <div class="subtitle">
+                ช่องทางการติดต่อและข้อมูลสำหรับติดต่อ
+            </div>
+
+            <div class="line"></div>
+
+
+            <!-- =========================
+                 ช่องทางติดต่อ
+            ========================= -->
+
+            <div class="contact-list">
+
+
+                <!-- Email -->
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        📧
+                    </div>
+
+                    <div class="contact-info">
+
+                        <div class="contact-label">
+                            Email
+                        </div>
+
+                        <div class="contact-value">
+                            <a href="mailto:chttngtta@gmail.com">
+                                chttngtta@gmail.com
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Instagram -->
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        📷
+                    </div>
+
+                    <div class="contact-info">
+
+                        <div class="contact-label">
+                            Instagram
+                        </div>
+
+                        <div class="contact-value">
+                            <a
+                                href="https://www.instagram.com/onlytortor/"
+                                target="_blank"
+                            >
+                                @onlytortor
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Phone -->
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        📞
+                    </div>
+
+                    <div class="contact-info">
+
+                        <div class="contact-label">
+                            โทรศัพท์
+                        </div>
+
+                        <div class="contact-value">
+                            <a href="tel:0871001454">
+                                087-100-1454
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- ข้อความ -->
+
+            <div class="closing">
+                ขอบคุณที่เข้ามาเยี่ยมชมแฟ้มสะสมงานของฉัน ♡
+                <br>
+                หวังว่าเว็บไซต์นี้จะทำให้ทุกคนได้รู้จักฉันมากขึ้น
+            </div>
+
+
+            <!-- =========================
+                 ปุ่มกลับหน้าแรก
+            ========================= -->
+
+            <div class="page-navigation">
+
+                <a href="home.html" class="next-button">
+                    🏠 กลับหน้าแรก
+                </a>
+
+            </div>
+
+
+        </section>
+
+    </main>
 
 
 </body>
-
 </html>
