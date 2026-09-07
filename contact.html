@@ -1,79 +1,428 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
+
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
-<title>ติดต่อ</title>
+
+<title>ติดต่อ | Samita</title>
+
 <style>
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Itim", cursive;
     background-color: #CDE9DC;
-    color: #333;
+    color: #40534A;
     margin: 0;
-    padding-top: 80px;
+    padding-top: 68px;
 }
+
+/* =========================
+   เมนูด้านบน
+========================= */
+
 .menu {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 65px;
-    background: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: 68px;
+
+    background: rgba(255,255,255,0.96);
+    box-shadow: 0 3px 12px rgba(64,83,74,0.10);
+
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 70px;
-    box-sizing: border-box;
+
+    padding: 0 55px;
+    gap: 8px;
+
     z-index: 1000;
 }
 
 .menu a {
-    color: #333;
+    color: #40534A;
     text-decoration: none;
     font-size: 18px;
-    width: 100px;
-    text-align: center;
-    margin-left: 30px;
+
+    padding: 10px 16px;
+    border-radius: 18px;
+
+    transition: 0.25s;
+    white-space: nowrap;
 }
+
+.menu a:hover {
+    background-color: #E4F4EC;
+    color: #527A66;
+}
+
+.menu a.active {
+    background-color: #DCEFE5;
+    color: #527A66;
+}
+
+/* =========================
+   ของตกแต่ง
+========================= */
+
+.decoration {
+    position: fixed;
+    font-size: 24px;
+    color: #8DB9A3;
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+.decoration.one {
+    top: 120px;
+    left: 8%;
+}
+
+.decoration.two {
+    top: 230px;
+    right: 8%;
+}
+
+.decoration.three {
+    bottom: 15%;
+    left: 10%;
+}
+
+.decoration.four {
+    bottom: 10%;
+    right: 10%;
+}
+
+/* =========================
+   เนื้อหาหลัก
+========================= */
+
 .container {
-    max-width: 800px;
+    width: 86%;
+    max-width: 900px;
     margin: 0 auto;
+
+    padding: 65px 0 80px;
+
     text-align: center;
-    padding: 30px;
 }
-.project-card {
-    background: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+/* =========================
+   หัวข้อ
+========================= */
+
+.title-box {
+    margin-bottom: 35px;
 }
-.project-card p {
+
+.title-box h1 {
+    color: #40534A;
+    font-size: 42px;
+    margin: 0 0 10px;
+}
+
+.title-box p {
+    color: #648071;
     font-size: 20px;
-    line-height: 1.6;
+    margin: 0;
 }
-h1 {
-    color: #2c3e50;
+
+/* =========================
+   กล่องติดต่อ
+========================= */
+
+.project-card {
+    position: relative;
+
+    background: rgba(255,255,255,0.95);
+
+    padding: 35px 40px;
+    margin: 0 auto;
+
+    max-width: 700px;
+
+    border-radius: 28px;
+
+    border: 2px solid #E4F4EC;
+
+    box-shadow: 0 8px 22px rgba(64,83,74,0.10);
+
+    text-align: left;
+
+    transition: 0.25s;
 }
+
+.project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(64,83,74,0.13);
+}
+
+/* แถบด้านบน */
+
+.project-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 30px;
+    right: 30px;
+
+    height: 5px;
+
+    background: #A8D2BB;
+
+    border-radius: 0 0 10px 10px;
+}
+
+/* =========================
+   ข้อมูลติดต่อ
+========================= */
+
+.contact-item {
+    display: flex;
+    align-items: center;
+
+    background-color: #F3FAF6;
+
+    padding: 18px 22px;
+    margin: 16px 0;
+
+    border-radius: 18px;
+
+    font-size: 21px;
+
+    transition: 0.2s;
+}
+
+.contact-item:hover {
+    background-color: #E4F4EC;
+    transform: translateX(4px);
+}
+
+.contact-icon {
+    font-size: 27px;
+    width: 45px;
+}
+
+.contact-label {
+    color: #527A66;
+    margin-right: 8px;
+}
+
+.contact-value {
+    color: #40534A;
+}
+
+/* =========================
+   ข้อความปิดท้าย
+========================= */
+
+.end-box {
+    margin: 30px auto 0;
+
+    max-width: 650px;
+
+    background: rgba(255,255,255,0.82);
+
+    padding: 20px;
+
+    border-radius: 22px;
+
+    color: #648071;
+
+    font-size: 19px;
+
+    box-shadow: 0 6px 16px rgba(64,83,74,0.07);
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 800px) {
+
+    .menu {
+        justify-content: flex-start;
+        padding: 0 15px;
+        overflow-x: auto;
+        gap: 2px;
+    }
+
+    .menu a {
+        font-size: 16px;
+        padding: 9px 13px;
+    }
+
+    .container {
+        width: 90%;
+        padding-top: 45px;
+    }
+
+    .title-box h1 {
+        font-size: 34px;
+    }
+
+    .title-box p {
+        font-size: 18px;
+    }
+
+    .project-card {
+        padding: 30px 20px;
+    }
+
+    .contact-item {
+        font-size: 18px;
+        padding: 16px;
+    }
+
+    .contact-icon {
+        font-size: 24px;
+        width: 40px;
+    }
+
+    .decoration {
+        display: none;
+    }
+}
+
 </style>
+
 </head>
+
+
 <body>
+
+<!-- =========================
+     เมนู
+========================= -->
+
 <div class="menu">
-    <a href="profile.html">ประวัติส่วนตัว</a>
-    <a href="study.html">การศึกษาต่อ</a>
-    <a href="portfolio.html">ผลงาน</a>
-    <a href="contact.html">ติดต่อ</a>
+
+    <a href="index.html">
+        คำนำ
+    </a>
+
+    <a href="profile.html">
+        ประวัติส่วนตัว
+    </a>
+
+    <a href="study.html">
+        การศึกษาต่อ
+    </a>
+
+    <a href="portfolio.html">
+        ผลงาน
+    </a>
+
+    <a href="contact.html" class="active">
+        ติดต่อ
+    </a>
+
 </div>
+
+
+<!-- =========================
+     ของตกแต่ง
+========================= -->
+
+<div class="decoration one">✦</div>
+<div class="decoration two">✿</div>
+<div class="decoration three">♡</div>
+<div class="decoration four">✦</div>
+
+
+<!-- =========================
+     เนื้อหาหลัก
+========================= -->
+
 <div class="container">
-<h1>ติดต่อ 📩</h1>
-<div class="project-card">
-<p>📧 Email : chttngtta@gmail.com</p>
-<p>📱 Instagram : @onlytortor</p>
-<p>📞 Phone-Number : 087-100-1454</p>
+
+    <div class="title-box">
+
+        <h1>📩 ติดต่อ</h1>
+
+        <p>
+            ช่องทางสำหรับติดต่อและพูดคุย
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         ข้อมูลติดต่อ
+    ========================= -->
+
+    <div class="project-card">
+
+        <div class="contact-item">
+
+            <div class="contact-icon">📧</div>
+
+            <div>
+                <span class="contact-label">Email :</span>
+                <span class="contact-value">
+                    chttngtta@gmail.com
+                </span>
+            </div>
+
+        </div>
+
+
+        <div class="contact-item">
+
+            <div class="contact-icon">📱</div>
+
+            <div>
+                <span class="contact-label">Instagram :</span>
+                <span class="contact-value">
+                    @onlytortor
+                </span>
+            </div>
+
+        </div>
+
+
+        <div class="contact-item">
+
+            <div class="contact-icon">📞</div>
+
+            <div>
+                <span class="contact-label">Phone :</span>
+                <span class="contact-value">
+                    087-100-1454
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="end-box">
+
+        ✦ ขอบคุณที่เข้ามาเยี่ยมชมแฟ้มสะสมงานของฉันนะคะ ♡ ✦
+
+    </div>
+
 </div>
-</div>
+
 </body>
+
 </html>
