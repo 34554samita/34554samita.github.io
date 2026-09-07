@@ -5,12 +5,14 @@
 
 <meta charset="UTF-8">
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 
-<title>ประวัติส่วนตัว</title>
+<title>ประวัติส่วนตัว | Samita Portfolio</title>
 
 <style>
 
@@ -29,13 +31,13 @@ html {
 body {
     margin: 0;
     font-family: "Itim", cursive;
-    background-color: #CDE9DC;
-    color: #333;
+    background: #CDE9DC;
+    color: #40534A;
 }
 
 
 /* =========================
-   แถบเมนู
+   เมนู
 ========================= */
 
 .menu {
@@ -44,63 +46,115 @@ body {
     left: 0;
 
     width: 100%;
-    height: 65px;
+    height: 68px;
 
-    background: white;
-
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.96);
 
     display: flex;
     justify-content: flex-end;
     align-items: center;
 
-    padding-right: 70px;
+    padding-right: 65px;
+
+    box-shadow: 0 3px 12px rgba(75, 110, 94, 0.12);
 
     z-index: 1000;
 }
 
 .menu a {
-    color: #333;
+    color: #40534A;
     text-decoration: none;
 
     font-size: 18px;
 
-    width: 100px;
-    text-align: center;
+    padding: 8px 13px;
 
-    margin-left: 30px;
+    margin-left: 18px;
+
+    border-radius: 15px;
+
+    transition: 0.25s;
 }
 
 .menu a:hover {
-    color: #3498db;
+    background: #E4F4EC;
+    color: #5D8A73;
+}
+
+
+/* หน้าที่กำลังเปิด */
+
+.menu a.active {
+    background: #DCEFE5;
+    color: #527A66;
 }
 
 
 /* =========================
-   ประวัติส่วนตัว
-   รูปซ้าย 40%
-   ข้อมูลขวา 55%
+   ของตกแต่งพื้นหลัง
+========================= */
+
+.deco {
+    position: absolute;
+
+    color: rgba(82, 122, 102, 0.35);
+
+    pointer-events: none;
+
+    font-size: 26px;
+}
+
+.deco.one {
+    top: 18%;
+    left: 7%;
+    transform: rotate(-15deg);
+}
+
+.deco.two {
+    top: 28%;
+    right: 7%;
+    transform: rotate(15deg);
+}
+
+.deco.three {
+    bottom: 15%;
+    left: 10%;
+    font-size: 22px;
+}
+
+.deco.four {
+    bottom: 12%;
+    right: 10%;
+    font-size: 22px;
+}
+
+
+/* =========================
+   ส่วนประวัติ
 ========================= */
 
 .profile-section {
 
     min-height: 100vh;
 
-    background-color: #CDE9DC;
+    position: relative;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 5%;
 
-    padding: 100px 5% 60px 5%;
+    padding: 110px 5% 70px;
+
+    overflow: hidden;
 }
 
 
 /* =========================
-   รูปด้านซ้าย
-   ไม่ซูม ไม่ตัด ไม่เกิดพื้นที่ว่าง
+   รูปประวัติ
 ========================= */
 
 .profile-image {
@@ -111,42 +165,75 @@ body {
 
     object-fit: initial;
 
-    border-radius: 25px;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-
     display: block;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 8px 25px rgba(70, 105, 88, 0.15);
+
+    border: 3px solid rgba(255, 255, 255, 0.8);
+
+    transition: 0.3s;
+}
+
+.profile-image:hover {
+    transform: translateY(-4px);
 }
 
 
 /* =========================
-   กรอบข้อมูลด้านขวา
+   การ์ดข้อมูล
 ========================= */
 
 .profile-card {
 
     width: 55%;
 
-    background: white;
+    background: rgba(255, 255, 255, 0.97);
 
-    padding: 35px;
+    padding: 38px 42px;
 
-    border-radius: 25px;
+    border-radius: 30px;
 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+    box-shadow:
+        0 8px 25px rgba(70, 105, 88, 0.13);
 
-    text-align: left;
+    border: 2px solid rgba(205, 233, 220, 0.8);
+
+    position: relative;
+}
+
+
+/* แถบด้านบนการ์ด */
+
+.profile-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 35px;
+
+    width: 65px;
+    height: 5px;
+
+    background: #A8D2BB;
+
+    border-radius: 0 0 10px 10px;
 }
 
 
 .profile-card h1 {
 
-    color: #2c3e50;
+    color: #527A66;
 
-    font-size: 34px;
+    font-size: 36px;
 
-    margin-top: 0;
-    margin-bottom: 25px;
+    margin-top: 5px;
+
+    margin-bottom: 28px;
 }
 
 
@@ -154,23 +241,28 @@ body {
 
     font-size: 20px;
 
-    line-height: 1.7;
+    line-height: 1.75;
 
     margin: 15px 0;
+
+    color: #4B5D54;
+}
+
+
+.profile-card strong {
+    color: #527A66;
 }
 
 
 /* =========================
    จุดเด่นและทักษะ
-   ข้อความซ้าย
-   รูปขวา
 ========================= */
 
 .skills-section {
 
     min-height: 100vh;
 
-    background-color: #CDE9DC;
+    position: relative;
 
     display: flex;
 
@@ -181,35 +273,61 @@ body {
     gap: 5%;
 
     padding: 80px 5%;
+
+    overflow: hidden;
 }
 
 
-/* กรอบข้อความ */
+/* =========================
+   การ์ดทักษะ
+========================= */
 
 .skills-card {
 
     width: 55%;
 
-    background: white;
+    background: rgba(255, 255, 255, 0.97);
 
-    padding: 35px;
+    padding: 38px 42px;
 
-    border-radius: 25px;
+    border-radius: 30px;
 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+    box-shadow:
+        0 8px 25px rgba(70, 105, 88, 0.13);
 
-    text-align: left;
+    border: 2px solid rgba(205, 233, 220, 0.8);
+
+    position: relative;
+}
+
+
+.skills-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 35px;
+
+    width: 65px;
+    height: 5px;
+
+    background: #A8D2BB;
+
+    border-radius: 0 0 10px 10px;
 }
 
 
 .skills-card h2 {
 
-    color: #2c3e50;
+    color: #527A66;
 
-    font-size: 30px;
+    font-size: 32px;
 
-    margin-top: 0;
-    margin-bottom: 25px;
+    margin-top: 5px;
+
+    margin-bottom: 28px;
 }
 
 
@@ -219,11 +337,20 @@ body {
 
     line-height: 1.7;
 
-    margin: 12px 0;
+    margin: 17px 0;
+
+    color: #4B5D54;
 }
 
 
-/* รูปด้านขวา */
+.skills-card strong {
+    color: #527A66;
+}
+
+
+/* =========================
+   รูปทักษะ
+========================= */
 
 .skills-image {
 
@@ -235,9 +362,18 @@ body {
 
     object-position: center center;
 
-    border-radius: 25px;
+    border-radius: 28px;
 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+    box-shadow:
+        0 8px 25px rgba(70, 105, 88, 0.15);
+
+    border: 3px solid rgba(255, 255, 255, 0.8);
+
+    transition: 0.3s;
+}
+
+.skills-image:hover {
+    transform: translateY(-4px);
 }
 
 
@@ -249,7 +385,7 @@ body {
 
     min-height: 350px;
 
-    background-color: #CDE9DC;
+    position: relative;
 
     display: flex;
 
@@ -258,18 +394,25 @@ body {
     align-items: center;
 
     padding: 60px 20px;
+
+    overflow: hidden;
 }
 
 
 .motto-card {
 
-    background: white;
+    position: relative;
 
-    padding: 35px 70px;
+    background: rgba(255, 255, 255, 0.97);
 
-    border-radius: 25px;
+    padding: 40px 70px;
 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+    border-radius: 30px;
+
+    box-shadow:
+        0 8px 25px rgba(70, 105, 88, 0.13);
+
+    border: 2px solid rgba(205, 233, 220, 0.8);
 
     text-align: center;
 
@@ -277,13 +420,37 @@ body {
 }
 
 
+/* แถบด้านบน */
+
+.motto-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 70px;
+    height: 5px;
+
+    background: #A8D2BB;
+
+    border-radius: 0 0 10px 10px;
+}
+
+
 .motto-card p {
 
-    font-size: 26px;
+    font-size: 27px;
 
-    color: #2c3e50;
+    color: #527A66;
 
     margin: 0;
+
+    line-height: 1.6;
 }
 
 
@@ -293,46 +460,38 @@ body {
 
 @media (max-width: 900px) {
 
+    .menu {
+        padding-right: 25px;
+    }
+
+    .menu a {
+        margin-left: 8px;
+    }
+
     .profile-section,
     .skills-section {
-
         gap: 4%;
-
         padding-left: 4%;
         padding-right: 4%;
     }
 
     .profile-card,
     .skills-card {
-
         width: 56%;
-
-        padding: 28px;
+        padding: 30px;
     }
 
-    /* รูปประวัติส่วนตัว */
     .profile-image {
-
         width: 40%;
-
-        height: auto;
-
-        object-fit: initial;
     }
 
-    /* รูปจุดเด่น */
     .skills-image {
-
         width: 40%;
-
         height: 550px;
-
-        object-fit: cover;
     }
 
     .profile-card p,
     .skills-card p {
-
         font-size: 18px;
     }
 
@@ -349,16 +508,24 @@ body {
 
         height: 60px;
 
-        padding-right: 10px;
+        padding: 0 8px;
+
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        white-space: nowrap;
     }
 
     .menu a {
 
-        width: auto;
-
         font-size: 15px;
 
-        margin-left: 12px;
+        margin-left: 5px;
+
+        padding: 7px 10px;
+
+        flex-shrink: 0;
     }
 
 
@@ -369,13 +536,11 @@ body {
 
         flex-direction: column;
 
-        padding: 90px 5% 50px 5%;
+        padding: 90px 5% 50px;
 
         gap: 30px;
     }
 
-
-    /* รูปบน */
 
     .profile-image {
 
@@ -383,15 +548,9 @@ body {
 
         height: auto;
 
-        object-fit: initial;
-
-        object-position: center;
-
         order: 1;
     }
 
-
-    /* ข้อมูลบน */
 
     .profile-card {
 
@@ -399,11 +558,9 @@ body {
 
         order: 2;
 
-        padding: 25px;
+        padding: 28px 25px;
     }
 
-
-    /* ข้อมูลล่าง */
 
     .skills-card {
 
@@ -411,11 +568,9 @@ body {
 
         order: 1;
 
-        padding: 25px;
+        padding: 28px 25px;
     }
 
-
-    /* รูปล่าง */
 
     .skills-image {
 
@@ -423,17 +578,13 @@ body {
 
         height: 500px;
 
-        object-fit: cover;
-
-        object-position: center;
-
         order: 2;
     }
 
 
     .profile-card h1 {
 
-        font-size: 28px;
+        font-size: 29px;
     }
 
 
@@ -448,7 +599,15 @@ body {
 
         font-size: 17px;
 
-        line-height: 1.6;
+        line-height: 1.65;
+    }
+
+
+    .motto-section {
+
+        min-height: 280px;
+
+        padding: 50px 20px;
     }
 
 
@@ -456,13 +615,19 @@ body {
 
         width: 90%;
 
-        padding: 30px 20px;
+        padding: 32px 20px;
     }
 
 
     .motto-card p {
 
         font-size: 22px;
+    }
+
+
+    .deco {
+
+        font-size: 20px;
     }
 
 }
@@ -481,27 +646,47 @@ body {
 
 <div class="menu">
 
-    <a href="profile.html">ประวัติส่วนตัว</a>
+    <a href="index.html">คำนำ</a>
 
-    <a href="study.html">การศึกษาต่อ</a>
+    <a href="profile.html" class="active">
+        ประวัติส่วนตัว
+    </a>
 
-    <a href="portfolio.html">ผลงาน</a>
+    <a href="study.html">
+        การศึกษาต่อ
+    </a>
 
-    <a href="contact.html">ติดต่อ</a>
+    <a href="portfolio.html">
+        ผลงาน
+    </a>
+
+    <a href="contact.html">
+        ติดต่อ
+    </a>
 
 </div>
 
 
 
 <!-- =========================
-     ส่วนที่ 1
-     รูปซ้าย / ข้อมูลขวา
+     ส่วนประวัติส่วนตัว
 ========================= -->
 
 <section class="profile-section">
 
 
-    <!-- รูปประวัติส่วนตัว -->
+    <!-- ของตกแต่ง -->
+
+    <div class="deco one">✦</div>
+
+    <div class="deco two">✿</div>
+
+    <div class="deco three">♡</div>
+
+    <div class="deco four">✦</div>
+
+
+    <!-- รูปประวัติ -->
 
     <img
         src="IMG_2890.jpeg"
@@ -510,7 +695,7 @@ body {
     >
 
 
-    <!-- กรอบข้อมูล -->
+    <!-- ข้อมูล -->
 
     <div class="profile-card">
 
@@ -518,20 +703,24 @@ body {
             👤 ประวัติส่วนตัว
         </h1>
 
+
         <p>
             <strong>ชื่อ :</strong>
             สมิตา บุญนาค (Samita Boonnark)
         </p>
+
 
         <p>
             <strong>ระดับการศึกษา :</strong>
             มัธยมศึกษาปีที่ 6
         </p>
 
+
         <p>
             <strong>แผนการเรียน :</strong>
             เตรียมวิศวกรรมศาสตร์ (Pre-Engineering) ⚙️
         </p>
+
 
         <p>
             <strong>ความสนใจ :</strong>
@@ -539,6 +728,7 @@ body {
             วิศวกรรมศาสตร์
             และนวัตกรรมทางการแพทย์
         </p>
+
 
         <p>
             <strong>งานอดิเรก :</strong>
@@ -554,12 +744,20 @@ body {
 
 
 <!-- =========================
-     ส่วนที่ 2
-     ข้อมูลซ้าย / รูปขวา
+     ส่วนจุดเด่นและทักษะ
 ========================= -->
 
 <section class="skills-section">
 
+
+    <!-- ของตกแต่ง -->
+
+    <div class="deco one">✦</div>
+
+    <div class="deco two">♡</div>
+
+
+    <!-- ข้อมูล -->
 
     <div class="skills-card">
 
@@ -567,11 +765,13 @@ body {
             ⭐ จุดเด่นและทักษะ
         </h2>
 
+
         <p>
             <strong>• การเป็นผู้นำ</strong><br>
             สามารถรับผิดชอบงาน
             และช่วยวางแผนการทำงานร่วมกับผู้อื่น
         </p>
+
 
         <p>
             <strong>• การนำเสนอ</strong><br>
@@ -579,12 +779,14 @@ body {
             ให้ผู้อื่นเข้าใจได้อย่างชัดเจน
         </p>
 
+
         <p>
             <strong>• การทำงานเป็นทีม</strong><br>
             สามารถทำงานร่วมกับผู้อื่น
             รับฟังความคิดเห็น
             และช่วยกันแก้ไขปัญหา
         </p>
+
 
         <p>
             <strong>• การเรียนรู้สิ่งใหม่</strong><br>
@@ -612,6 +814,12 @@ body {
 ========================= -->
 
 <section class="motto-section">
+
+
+    <div class="deco one">✿</div>
+
+    <div class="deco two">✦</div>
+
 
     <div class="motto-card">
 
