@@ -5,14 +5,20 @@
 
 <meta charset="UTF-8">
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 
-<title>คำนำ</title>
+<title>คำนำ | Samita Portfolio</title>
 
 <style>
+
+/* =========================
+   พื้นฐาน
+========================= */
 
 * {
     box-sizing: border-box;
@@ -25,13 +31,13 @@ html {
 body {
     margin: 0;
     font-family: "Itim", cursive;
-    background-color: #CDE9DC;
-    color: #333;
+    background: #CDE9DC;
+    color: #40534A;
 }
 
 
 /* =========================
-   แถบเมนู
+   เมนูด้านบน
 ========================= */
 
 .menu {
@@ -40,35 +46,50 @@ body {
     left: 0;
 
     width: 100%;
-    height: 65px;
+    height: 68px;
 
-    background: white;
-
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.96);
 
     display: flex;
     justify-content: flex-end;
     align-items: center;
 
-    padding-right: 70px;
+    padding-right: 65px;
+
+    box-shadow: 0 3px 12px rgba(75, 110, 94, 0.12);
 
     z-index: 1000;
 }
 
 .menu a {
-    color: #333;
+    position: relative;
+
+    color: #40534A;
+
     text-decoration: none;
 
     font-size: 18px;
 
-    width: 100px;
-    text-align: center;
+    padding: 8px 13px;
 
-    margin-left: 30px;
+    margin-left: 18px;
+
+    border-radius: 15px;
+
+    transition: 0.25s;
 }
 
 .menu a:hover {
-    color: #3498db;
+    background: #E4F4EC;
+    color: #5D8A73;
+}
+
+
+/* หน้าที่กำลังเปิดอยู่ */
+
+.menu a.active {
+    background: #DCEFE5;
+    color: #527A66;
 }
 
 
@@ -80,7 +101,7 @@ body {
 
     min-height: 100vh;
 
-    background-color: #CDE9DC;
+    position: relative;
 
     display: flex;
 
@@ -88,55 +109,239 @@ body {
 
     align-items: center;
 
-    padding: 100px 5% 60px;
+    padding: 110px 5% 70px;
+
+    overflow: hidden;
 }
+
+
+/* ของตกแต่งเล็ก ๆ */
+
+.deco {
+    position: absolute;
+
+    color: rgba(82, 122, 102, 0.35);
+
+    font-size: 28px;
+
+    pointer-events: none;
+}
+
+.deco.one {
+    top: 18%;
+    left: 9%;
+    transform: rotate(-15deg);
+}
+
+.deco.two {
+    top: 27%;
+    right: 10%;
+    transform: rotate(15deg);
+}
+
+.deco.three {
+    bottom: 17%;
+    left: 13%;
+    font-size: 22px;
+}
+
+.deco.four {
+    bottom: 12%;
+    right: 13%;
+    font-size: 24px;
+}
+
+
+/* =========================
+   กล่องคำนำ
+========================= */
 
 .intro-card {
 
-    width: 80%;
+    position: relative;
 
-    max-width: 900px;
+    width: 82%;
 
-    background: white;
+    max-width: 920px;
 
-    padding: 55px 70px;
+    background: rgba(255, 255, 255, 0.97);
 
-    border-radius: 30px;
+    padding: 55px 70px 50px;
 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+    border-radius: 32px;
+
+    box-shadow:
+        0 10px 30px rgba(70, 105, 88, 0.13);
+
+    border: 2px solid rgba(205, 233, 220, 0.8);
 
     text-align: center;
 }
 
+
+/* เส้นตกแต่งด้านบน */
+
+.intro-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90px;
+    height: 5px;
+
+    background: #A8D2BB;
+
+    border-radius: 0 0 10px 10px;
+}
+
+
+/* =========================
+   หัวข้อ
+========================= */
+
 .intro-card h1 {
 
-    color: #2c3e50;
+    color: #527A66;
 
-    font-size: 40px;
+    font-size: 42px;
 
-    margin-top: 0;
-
-    margin-bottom: 35px;
+    margin: 5px 0 35px;
 }
+
+
+/* เส้นเล็กใต้หัวข้อ */
+
+.title-line {
+
+    width: 55px;
+    height: 3px;
+
+    background: #B8DCC7;
+
+    border-radius: 10px;
+
+    margin: -20px auto 30px;
+}
+
+
+/* =========================
+   เนื้อหา
+========================= */
 
 .intro-card p {
 
-    font-size: 21px;
+    font-size: 20px;
 
     line-height: 2;
 
     text-align: left;
 
     margin: 18px 0;
+
+    color: #4B5D54;
 }
 
-.intro-card .ending {
 
-    text-align: right;
+/* ย่อหน้าแรก */
 
-    margin-top: 35px;
+.intro-card p:first-of-type {
+    margin-top: 0;
+}
 
-    font-size: 20px;
+
+/* =========================
+   ผู้จัดทำ
+========================= */
+
+.ending {
+
+    text-align: center !important;
+
+    margin-top: 35px !important;
+
+    padding-top: 25px;
+
+    border-top: 1px dashed #B8DCC7;
+
+    font-size: 19px !important;
+
+    color: #60786B !important;
+}
+
+.ending strong {
+
+    display: inline-block;
+
+    margin-top: 5px;
+
+    font-size: 24px;
+
+    color: #527A66;
+}
+
+
+/* =========================
+   ตกแต่งมุมเล็ก ๆ
+========================= */
+
+.corner {
+
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: #DCEFE5;
+}
+
+.corner.top-left {
+    top: 24px;
+    left: 28px;
+}
+
+.corner.top-right {
+    top: 24px;
+    right: 28px;
+}
+
+.corner.bottom-left {
+    bottom: 24px;
+    left: 28px;
+}
+
+.corner.bottom-right {
+    bottom: 24px;
+    right: 28px;
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 900px) {
+
+    .menu {
+        padding-right: 25px;
+    }
+
+    .menu a {
+        margin-left: 8px;
+    }
+
+    .intro-card {
+        width: 90%;
+        padding: 50px 50px;
+    }
+
 }
 
 
@@ -150,45 +355,74 @@ body {
 
         height: 60px;
 
-        padding-right: 10px;
+        padding: 0 8px;
+
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        white-space: nowrap;
     }
 
     .menu a {
 
-        width: auto;
-
         font-size: 15px;
 
-        margin-left: 12px;
+        margin-left: 5px;
+
+        padding: 7px 10px;
+
+        flex-shrink: 0;
     }
+
 
     .intro-section {
 
-        padding: 90px 5% 50px;
+        padding: 90px 4% 50px;
     }
+
 
     .intro-card {
 
-        width: 95%;
+        width: 96%;
 
-        padding: 35px 25px;
+        padding: 40px 25px;
+
+        border-radius: 25px;
     }
+
 
     .intro-card h1 {
 
-        font-size: 30px;
+        font-size: 32px;
+
+        margin-bottom: 30px;
     }
+
 
     .intro-card p {
 
         font-size: 17px;
 
-        line-height: 1.8;
+        line-height: 1.85;
     }
 
-    .intro-card .ending {
 
-        font-size: 17px;
+    .ending {
+
+        font-size: 17px !important;
+    }
+
+
+    .ending strong {
+
+        font-size: 22px;
+    }
+
+
+    .deco {
+
+        font-size: 22px;
     }
 
 }
@@ -196,6 +430,7 @@ body {
 </style>
 
 </head>
+
 
 <body>
 
@@ -206,7 +441,7 @@ body {
 
 <div class="menu">
 
-    <a href="index.html">คำนำ</a>
+    <a href="index.html" class="active">คำนำ</a>
 
     <a href="profile.html">ประวัติส่วนตัว</a>
 
@@ -219,23 +454,54 @@ body {
 </div>
 
 
+
 <!-- =========================
-     คำนำ
+     หน้าคำนำ
 ========================= -->
 
 <section class="intro-section">
 
+
+    <!-- ของตกแต่ง -->
+
+    <div class="deco one">✦</div>
+
+    <div class="deco two">✿</div>
+
+    <div class="deco three">♡</div>
+
+    <div class="deco four">✦</div>
+
+
+    <!-- กล่องคำนำ -->
+
     <div class="intro-card">
+
+
+        <!-- จุดตกแต่งมุม -->
+
+        <div class="corner top-left"></div>
+
+        <div class="corner top-right"></div>
+
+        <div class="corner bottom-left"></div>
+
+        <div class="corner bottom-right"></div>
+
 
         <h1>
             📖 คำนำ
         </h1>
+
+        <div class="title-line"></div>
+
 
         <p>
             แฟ้มสะสมงานเล่มนี้จัดทำขึ้นเพื่อรวบรวมประวัติส่วนตัว
             การศึกษา ผลงาน กิจกรรม และประสบการณ์ต่าง ๆ
             ที่ได้เรียนรู้และสั่งสมมาตลอดช่วงการศึกษา
         </p>
+
 
         <p>
             ภายในแฟ้มสะสมงานประกอบด้วยข้อมูลเกี่ยวกับตัวผู้จัดทำ
@@ -245,6 +511,7 @@ body {
             ความรู้ ความสามารถ และการทำงานร่วมกับผู้อื่น
         </p>
 
+
         <p>
             ผู้จัดทำหวังว่าแฟ้มสะสมงานเล่มนี้
             จะช่วยแสดงให้เห็นถึงความตั้งใจ ความสามารถ
@@ -253,10 +520,15 @@ body {
             และเป้าหมายในการศึกษาต่อในอนาคต
         </p>
 
+
         <p class="ending">
+
             จัดทำโดย<br>
+
             <strong>สมิตา บุญนาค</strong>
+
         </p>
+
 
     </div>
 
