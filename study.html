@@ -2,16 +2,22 @@
 <html lang="th">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 
 <title>การศึกษาต่อ | Samita</title>
 
 <style>
+
+/* =========================
+   พื้นฐาน
+========================= */
 
 * {
     box-sizing: border-box;
@@ -22,12 +28,19 @@ html {
 }
 
 body {
-    font-family: "Itim", cursive;
-    background-color: #CDE9DC;
-    color: #40534A;
     margin: 0;
-    padding-top: 68px;
+    padding-top: 70px;
+
+    font-family: "Itim", cursive;
+
+    background:
+        radial-gradient(circle at 8% 15%, rgba(255,255,255,0.65) 0 45px, transparent 46px),
+        radial-gradient(circle at 92% 25%, rgba(255,255,255,0.45) 0 35px, transparent 36px),
+        #CDE9DC;
+
+    color: #40534A;
 }
+
 
 /* =========================
    เมนูด้านบน
@@ -35,19 +48,25 @@ body {
 
 .menu {
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
-    height: 68px;
+    height: 70px;
 
     background: rgba(255,255,255,0.96);
-    box-shadow: 0 3px 12px rgba(64,83,74,0.10);
+
+    box-shadow:
+        0 4px 15px rgba(64,83,74,0.10);
 
     display: flex;
+
     justify-content: flex-end;
     align-items: center;
 
     padding: 0 55px;
+
     gap: 8px;
 
     z-index: 1000;
@@ -55,68 +74,107 @@ body {
 
 .menu a {
     color: #40534A;
+
     text-decoration: none;
+
     font-size: 18px;
 
     padding: 10px 16px;
-    border-radius: 18px;
 
-    transition: 0.25s;
+    border-radius: 20px;
+
+    transition: all 0.25s ease;
+
     white-space: nowrap;
 }
 
 .menu a:hover {
-    background-color: #E4F4EC;
     color: #527A66;
+
+    background-color: #E4F4EC;
+
+    transform: translateY(-2px);
 }
 
 .menu a.active {
-    background-color: #DCEFE5;
     color: #527A66;
+
+    background-color: #DCEFE5;
+
+    box-shadow:
+        inset 0 0 0 1px #C5E3D3;
 }
+
 
 /* =========================
-   ตกแต่งพื้นหลัง
+   ของตกแต่งพื้นหลัง
 ========================= */
 
-.decoration {
+.decor {
     position: fixed;
-    font-size: 24px;
-    color: #8DB9A3;
+
+    color: #76A98D;
+
     opacity: 0.55;
+
     pointer-events: none;
+
+    z-index: 0;
 }
 
-.decoration.one {
-    top: 105px;
-    left: 6%;
+.decor.one {
+    top: 110px;
+    left: 5%;
+
+    font-size: 28px;
 }
 
-.decoration.two {
-    top: 210px;
-    right: 7%;
+.decor.two {
+    top: 180px;
+    right: 6%;
+
+    font-size: 22px;
 }
 
-.decoration.three {
-    bottom: 12%;
-    left: 8%;
+.decor.three {
+    bottom: 15%;
+    left: 7%;
+
+    font-size: 25px;
 }
 
-.decoration.four {
-    bottom: 8%;
+.decor.four {
+    bottom: 10%;
     right: 8%;
+
+    font-size: 30px;
 }
+
+.decor.five {
+    top: 48%;
+    left: 3%;
+
+    font-size: 18px;
+}
+
 
 /* =========================
    เนื้อหาหลัก
 ========================= */
 
 .container {
+    position: relative;
+
     width: 86%;
     max-width: 950px;
-    margin: 0 auto;
-    padding: 55px 0 70px;
+
+    margin: auto;
+
+    padding: 55px 0 80px;
+
+    z-index: 1;
 }
+
 
 /* =========================
    หัวข้อ
@@ -124,20 +182,40 @@ body {
 
 .title-box {
     text-align: center;
-    margin-bottom: 38px;
+
+    margin-bottom: 42px;
 }
 
 .title-box h1 {
+    margin: 0;
+
+    font-size: 42px;
+
     color: #40534A;
-    font-size: 40px;
-    margin: 0 0 10px;
 }
 
 .title-box p {
+    margin-top: 12px;
+
     font-size: 20px;
+
     color: #648071;
-    margin: 0;
 }
+
+
+/* เส้นตกแต่งใต้หัวข้อ */
+
+.title-line {
+    width: 90px;
+    height: 5px;
+
+    background: #A8D2BB;
+
+    border-radius: 20px;
+
+    margin: 18px auto 0;
+}
+
 
 /* =========================
    การ์ดแต่ละคณะ
@@ -146,36 +224,42 @@ body {
 .project-card {
     position: relative;
 
-    background: rgba(255,255,255,0.95);
+    background: rgba(255,255,255,0.96);
 
-    padding: 28px 32px;
-    margin: 25px 0;
+    padding: 30px 35px;
 
-    border-radius: 26px;
+    margin: 28px 0;
+
+    border-radius: 28px;
 
     border: 2px solid #E4F4EC;
 
-    box-shadow: 0 8px 20px rgba(64,83,74,0.10);
+    box-shadow:
+        0 8px 22px rgba(64,83,74,0.10);
 
-    text-align: left;
+    overflow: hidden;
 
-    transition: 0.25s;
+    transition: all 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(64,83,74,0.13);
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 14px 28px rgba(64,83,74,0.13);
 }
 
-/* แถบสีด้านบนการ์ด */
+
+/* แถบด้านบน */
 
 .project-card::before {
     content: "";
+
     position: absolute;
 
     top: 0;
-    left: 28px;
-    right: 28px;
+    left: 35px;
+    right: 35px;
 
     height: 5px;
 
@@ -184,49 +268,111 @@ body {
     border-radius: 0 0 10px 10px;
 }
 
+
+/* วงกลมตกแต่งมุม */
+
+.project-card::after {
+    content: "✦";
+
+    position: absolute;
+
+    right: 25px;
+    top: 20px;
+
+    font-size: 22px;
+
+    color: #A8D2BB;
+
+    opacity: 0.8;
+}
+
+
 /* =========================
    หัวข้อคณะ
 ========================= */
 
 .project-card h2 {
+    margin: 10px 40px 22px 0;
+
     color: #527A66;
-    font-size: 27px;
-    margin: 10px 0 20px;
+
+    font-size: 28px;
 }
 
+
 /* =========================
-   ข้อความ
+   เนื้อหา
 ========================= */
 
 .project-card p {
+    margin: 13px 0;
+
     font-size: 20px;
+
     line-height: 1.8;
-    margin: 12px 0;
+
+    color: #4E6258;
 }
 
 .project-card strong {
     color: #527A66;
 }
 
+
+/* =========================
+   กล่องเลขคณะ
+========================= */
+
+.card-number {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    margin-right: 8px;
+
+    background-color: #E4F4EC;
+
+    color: #527A66;
+
+    border-radius: 50%;
+
+    font-size: 19px;
+
+    vertical-align: middle;
+}
+
+
 /* =========================
    กล่องปิดท้าย
 ========================= */
 
 .end-box {
+    margin: 38px auto 0;
+
+    max-width: 750px;
+
+    padding: 24px 30px;
+
+    background: rgba(255,255,255,0.82);
+
+    border: 2px solid #E4F4EC;
+
+    border-radius: 25px;
+
     text-align: center;
 
-    background: rgba(255,255,255,0.88);
-
-    padding: 22px;
-    margin-top: 35px;
-
-    border-radius: 22px;
-
-    color: #648071;
     font-size: 19px;
 
-    box-shadow: 0 6px 16px rgba(64,83,74,0.08);
+    color: #648071;
+
+    box-shadow:
+        0 6px 18px rgba(64,83,74,0.08);
 }
+
 
 /* =========================
    Responsive
@@ -236,23 +382,28 @@ body {
 
     .menu {
         justify-content: flex-start;
-        padding: 0 15px;
+
+        padding: 0 12px;
+
         overflow-x: auto;
+
         gap: 2px;
     }
 
     .menu a {
         font-size: 16px;
+
         padding: 9px 13px;
     }
 
     .container {
         width: 90%;
+
         padding-top: 40px;
     }
 
     .title-box h1 {
-        font-size: 32px;
+        font-size: 33px;
     }
 
     .title-box p {
@@ -260,7 +411,7 @@ body {
     }
 
     .project-card {
-        padding: 25px 22px;
+        padding: 28px 22px;
     }
 
     .project-card h2 {
@@ -269,9 +420,11 @@ body {
 
     .project-card p {
         font-size: 18px;
+
+        line-height: 1.7;
     }
 
-    .decoration {
+    .decor {
         display: none;
     }
 }
@@ -282,6 +435,7 @@ body {
 
 
 <body>
+
 
 <!-- =========================
      เมนู
@@ -316,10 +470,15 @@ body {
      ของตกแต่ง
 ========================= -->
 
-<div class="decoration one">✦</div>
-<div class="decoration two">✿</div>
-<div class="decoration three">♡</div>
-<div class="decoration four">✦</div>
+<div class="decor one">✦</div>
+
+<div class="decor two">✿</div>
+
+<div class="decor three">♡</div>
+
+<div class="decor four">✦</div>
+
+<div class="decor five">•</div>
 
 
 <!-- =========================
@@ -328,113 +487,164 @@ body {
 
 <div class="container">
 
+
+    <!-- หัวข้อ -->
+
     <div class="title-box">
 
-        <h1>🎓 ความสนใจในการศึกษาต่อ</h1>
+        <h1>
+            🎓 ความสนใจในการศึกษาต่อ
+        </h1>
 
         <p>
             คณะที่ฉันสนใจและเป้าหมายในการศึกษาต่อในอนาคต
         </p>
 
+        <div class="title-line"></div>
+
     </div>
 
 
     <!-- =========================
-         วิศวกรรมชีวการแพทย์
+         การ์ดที่ 1
     ========================= -->
 
     <div class="project-card">
 
-        <h2>🧬 วิศวกรรมชีวการแพทย์</h2>
+        <h2>
+
+            <span class="card-number">
+                01
+            </span>
+
+            🧬 วิศวกรรมชีวการแพทย์
+
+        </h2>
 
         <p>
+
             ฉันมีความสนใจในการศึกษาต่อด้าน
+
             <strong>
                 วิศวกรรมชีวการแพทย์
                 (Biomedical Engineering)
             </strong>
+
         </p>
 
         <p>
+
             เป็นศาสตร์ที่ผสมผสานระหว่าง
             วิศวกรรมศาสตร์ วิทยาศาสตร์
             และเทคโนโลยีทางการแพทย์
+
         </p>
 
         <p>
+
             ฉันสนใจการนำความรู้ด้านวิศวกรรม
             และเทคโนโลยีมาพัฒนาอุปกรณ์
             หรือนวัตกรรมที่สามารถช่วยแก้ไขปัญหา
             และพัฒนาคุณภาพชีวิตของผู้คน
+
         </p>
 
     </div>
 
 
     <!-- =========================
-         เภสัชศาสตร์
+         การ์ดที่ 2
     ========================= -->
 
     <div class="project-card">
 
-        <h2>💊 คณะเภสัชศาสตร์</h2>
+        <h2>
+
+            <span class="card-number">
+                02
+            </span>
+
+            💊 คณะเภสัชศาสตร์
+
+        </h2>
 
         <p>
+
             ฉันมีความสนใจในด้าน
+
             <strong>
                 เภสัชศาสตร์ (Pharmacy)
             </strong>
+
             เพราะเป็นศาสตร์ที่เกี่ยวข้องกับยา
             การดูแลสุขภาพ และการรักษาผู้ป่วย
+
         </p>
 
         <p>
+
             ฉันสนใจการเรียนรู้เกี่ยวกับยา
             การออกฤทธิ์ของยา
             และการนำความรู้ไปใช้เพื่อช่วยดูแล
             และพัฒนาสุขภาพของผู้คน
+
         </p>
 
     </div>
 
 
     <!-- =========================
-         สหเวชศาสตร์
+         การ์ดที่ 3
     ========================= -->
 
     <div class="project-card">
 
-        <h2>🧪 คณะสหเวชศาสตร์</h2>
+        <h2>
+
+            <span class="card-number">
+                03
+            </span>
+
+            🧪 คณะสหเวชศาสตร์
+
+        </h2>
 
         <p>
+
             ฉันมีความสนใจในด้าน
+
             <strong>
                 สหเวชศาสตร์ (Allied Health Sciences)
             </strong>
+
             ซึ่งเกี่ยวข้องกับการตรวจวินิจฉัย
             การฟื้นฟู และการดูแลสุขภาพ
+
         </p>
 
         <p>
+
             ฉันสนใจการนำความรู้ทางวิทยาศาสตร์
             และเทคโนโลยีมาประยุกต์ใช้
             ในการดูแลสุขภาพ
             และช่วยส่งเสริมคุณภาพชีวิตของผู้คน
+
         </p>
 
     </div>
 
 
     <!-- =========================
-         ปิดท้าย
+         กล่องปิดท้าย
     ========================= -->
 
     <div class="end-box">
 
         ✦ ฉันตั้งใจพัฒนาความรู้และทักษะของตนเอง
-        เพื่อเตรียมพร้อมสำหรับการศึกษาต่อในอนาคต ✦
+        เพื่อเตรียมพร้อมสำหรับการศึกษาต่อในอนาคต ♡
 
     </div>
+
 
 </div>
 
