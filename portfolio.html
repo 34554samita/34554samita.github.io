@@ -16,6 +16,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             padding-top: 70px;
@@ -24,6 +28,216 @@
 
             background-color: #CDE9DC;
             color: #40534A;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           พื้นหลังตกแต่ง
+        ========================= */
+
+        .background-decoration {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.55;
+        }
+
+        .circle-one {
+            width: 280px;
+            height: 280px;
+            background: #B8DEC9;
+            top: 100px;
+            left: -100px;
+        }
+
+        .circle-two {
+            width: 220px;
+            height: 220px;
+            background: #E5F3E9;
+            right: -70px;
+            bottom: 80px;
+        }
+
+        .circle-three {
+            width: 130px;
+            height: 130px;
+            background: #A8D2BB;
+            right: 12%;
+            top: 115px;
+            opacity: 0.25;
+        }
+
+
+        /* เมฆ */
+
+        .cloud {
+            position: fixed;
+            color: #FFFFFF;
+            font-size: 85px;
+            opacity: 0.45;
+            pointer-events: none;
+            z-index: -1;
+            filter: blur(0.3px);
+        }
+
+        .cloud-one {
+            top: 105px;
+            left: 5%;
+        }
+
+        .cloud-two {
+            right: 4%;
+            bottom: 120px;
+            font-size: 70px;
+        }
+
+
+        /* ดอกไม้ */
+
+        .bg-flower {
+            position: fixed;
+            color: #7FA992;
+            opacity: 0.45;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .flower-one {
+            top: 18%;
+            left: 8%;
+            font-size: 35px;
+            transform: rotate(-15deg);
+        }
+
+        .flower-two {
+            top: 48%;
+            right: 7%;
+            font-size: 28px;
+            transform: rotate(15deg);
+        }
+
+        .flower-three {
+            bottom: 12%;
+            left: 7%;
+            font-size: 32px;
+        }
+
+
+        /* ใบไม้ */
+
+        .bg-leaf {
+            position: fixed;
+            opacity: 0.45;
+            pointer-events: none;
+            z-index: -1;
+            font-size: 38px;
+        }
+
+        .leaf-one {
+            top: 30%;
+            left: 3%;
+            transform: rotate(-25deg);
+        }
+
+        .leaf-two {
+            top: 68%;
+            right: 4%;
+            transform: rotate(20deg);
+        }
+
+        .leaf-three {
+            bottom: 8%;
+            right: 13%;
+            transform: rotate(-15deg);
+        }
+
+
+        /* ประกาย */
+
+        .bg-sparkle {
+            position: fixed;
+            color: #527A66;
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: -1;
+
+            animation: sparkleFloat 4s ease-in-out infinite;
+        }
+
+        .sparkle-one {
+            top: 20%;
+            right: 20%;
+            font-size: 25px;
+        }
+
+        .sparkle-two {
+            top: 42%;
+            left: 18%;
+            font-size: 20px;
+            animation-delay: 1s;
+        }
+
+        .sparkle-three {
+            bottom: 25%;
+            right: 22%;
+            font-size: 28px;
+            animation-delay: 2s;
+        }
+
+        .sparkle-four {
+            bottom: 18%;
+            left: 25%;
+            font-size: 22px;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes sparkleFloat {
+
+            0%, 100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.3;
+            }
+
+            50% {
+                transform: translateY(-8px) scale(1.1);
+                opacity: 0.55;
+            }
+
+        }
+
+
+        /* จุดเล็ก ๆ */
+
+        .dots {
+            position: fixed;
+            color: #7FA992;
+            font-size: 16px;
+            opacity: 0.45;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .dots.one {
+            top: 22%;
+            left: 10%;
+        }
+
+        .dots.two {
+            top: 35%;
+            right: 12%;
+        }
+
+        .dots.three {
+            bottom: 18%;
+            left: 15%;
+        }
+
+        .dots.four {
+            bottom: 30%;
+            right: 7%;
         }
 
 
@@ -116,6 +330,32 @@
             text-align: center;
 
             margin-bottom: 45px;
+
+            position: relative;
+        }
+
+        .page-header::before {
+            content: "✦";
+            position: absolute;
+            left: 18%;
+            top: 5px;
+
+            font-size: 24px;
+            color: #7FA992;
+
+            animation: sparkleFloat 4s ease-in-out infinite;
+        }
+
+        .page-header::after {
+            content: "✿";
+            position: absolute;
+            right: 18%;
+            top: 15px;
+
+            font-size: 25px;
+            color: #A8D2BB;
+
+            transform: rotate(-12deg);
         }
 
         .page-header h1 {
@@ -151,7 +391,7 @@
         ========================= */
 
         .project-card {
-            background: rgba(255, 255, 255, 0.94);
+            background: rgba(255, 255, 255, 0.95);
 
             border: 2px solid #D8EEE2;
 
@@ -163,6 +403,36 @@
 
             box-shadow:
                 0 12px 35px rgba(64, 83, 74, 0.10);
+
+            position: relative;
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .project-card::after {
+            content: "✦";
+            position: absolute;
+
+            right: 22px;
+            bottom: 8px;
+
+            font-size: 55px;
+
+            color: #E4F4EC;
+
+            transform: rotate(12deg);
+
+            pointer-events: none;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 17px 40px rgba(64, 83, 74, 0.14);
         }
 
         .project-card h2 {
@@ -194,6 +464,9 @@
             grid-template-columns: repeat(2, 1fr);
 
             gap: 20px;
+
+            position: relative;
+            z-index: 1;
         }
 
         .project-images img {
@@ -210,6 +483,17 @@
             border-radius: 20px;
 
             display: block;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .project-images img:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 8px 20px rgba(64, 83, 74, 0.12);
         }
 
 
@@ -221,6 +505,8 @@
             text-align: center;
 
             margin: 60px 0 30px;
+
+            position: relative;
         }
 
         .section-title h2 {
@@ -241,7 +527,7 @@
 
 
         .certificate-card {
-            background: rgba(255, 255, 255, 0.94);
+            background: rgba(255, 255, 255, 0.95);
 
             border: 2px solid #D8EEE2;
 
@@ -253,6 +539,36 @@
 
             box-shadow:
                 0 12px 35px rgba(64, 83, 74, 0.10);
+
+            position: relative;
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .certificate-card::after {
+            content: "♡";
+            position: absolute;
+
+            right: 25px;
+            bottom: 12px;
+
+            font-size: 55px;
+
+            color: #E4F4EC;
+
+            transform: rotate(-10deg);
+
+            pointer-events: none;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 17px 40px rgba(64, 83, 74, 0.13);
         }
 
         .certificate-card h3 {
@@ -297,6 +613,20 @@
             border: 3px solid #CDE9DC;
 
             border-radius: 20px;
+
+            position: relative;
+            z-index: 1;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .certificate-card img:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 8px 20px rgba(64, 83, 74, 0.12);
         }
 
 
@@ -305,7 +635,7 @@
         ========================= */
 
         .experience-card {
-            background: rgba(255, 255, 255, 0.94);
+            background: rgba(255, 255, 255, 0.95);
 
             border: 2px solid #D8EEE2;
 
@@ -317,6 +647,36 @@
 
             box-shadow:
                 0 12px 35px rgba(64, 83, 74, 0.10);
+
+            position: relative;
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .experience-card::after {
+            content: "✿";
+            position: absolute;
+
+            right: 22px;
+            bottom: 10px;
+
+            font-size: 58px;
+
+            color: #E4F4EC;
+
+            transform: rotate(-12deg);
+
+            pointer-events: none;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 17px 40px rgba(64, 83, 74, 0.13);
         }
 
         .experience-card h3 {
@@ -361,6 +721,20 @@
             border: 3px solid #CDE9DC;
 
             border-radius: 20px;
+
+            position: relative;
+            z-index: 1;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .experience-card img:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 8px 20px rgba(64, 83, 74, 0.12);
         }
 
 
@@ -437,6 +811,16 @@
                 padding: 35px 15px 25px;
             }
 
+            .page-header::before {
+                left: 5%;
+                top: 0;
+            }
+
+            .page-header::after {
+                right: 5%;
+                top: 10px;
+            }
+
             .page-header h1 {
                 font-size: 40px;
             }
@@ -471,11 +855,25 @@
                 font-size: 32px;
             }
 
+            .section-title p {
+                font-size: 18px;
+            }
+
             .certificate-card,
             .experience-card {
                 padding: 25px;
 
                 border-radius: 25px;
+            }
+
+            .certificate-card h3,
+            .experience-card h3 {
+                font-size: 24px;
+            }
+
+            .certificate-card p,
+            .experience-card p {
+                font-size: 17px;
             }
 
             .certificate-card img,
@@ -488,6 +886,41 @@
 
                 padding: 11px 22px;
             }
+
+
+            /* ลดของตกแต่งบนมือถือ */
+
+            .circle-one {
+                width: 190px;
+                height: 190px;
+            }
+
+            .circle-two {
+                width: 160px;
+                height: 160px;
+            }
+
+            .circle-three {
+                width: 90px;
+                height: 90px;
+            }
+
+            .cloud {
+                font-size: 60px;
+            }
+
+            .cloud-two {
+                font-size: 50px;
+            }
+
+            .bg-flower {
+                font-size: 25px;
+            }
+
+            .bg-leaf {
+                font-size: 28px;
+            }
+
         }
 
     </style>
@@ -495,6 +928,36 @@
 
 
 <body>
+
+
+    <!-- =========================
+         พื้นหลังตกแต่ง
+    ========================= -->
+
+    <div class="background-decoration circle-one"></div>
+    <div class="background-decoration circle-two"></div>
+    <div class="background-decoration circle-three"></div>
+
+    <div class="cloud cloud-one">☁</div>
+    <div class="cloud cloud-two">☁</div>
+
+    <div class="bg-flower flower-one">✿</div>
+    <div class="bg-flower flower-two">✿</div>
+    <div class="bg-flower flower-three">✿</div>
+
+    <div class="bg-leaf leaf-one">🍃</div>
+    <div class="bg-leaf leaf-two">🍃</div>
+    <div class="bg-leaf leaf-three">🍃</div>
+
+    <div class="bg-sparkle sparkle-one">✦</div>
+    <div class="bg-sparkle sparkle-two">✦</div>
+    <div class="bg-sparkle sparkle-three">✧</div>
+    <div class="bg-sparkle sparkle-four">✦</div>
+
+    <div class="dots one">• •</div>
+    <div class="dots two">• •</div>
+    <div class="dots three">• •</div>
+    <div class="dots four">• •</div>
 
 
     <!-- =========================
