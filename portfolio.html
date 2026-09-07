@@ -11,13 +11,9 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 
-<title>ผลงาน | Samita Portfolio</title>
+<title>ผลงาน | Samita</title>
 
 <style>
-
-/* =========================
-   พื้นฐาน
-========================= */
 
 * {
     box-sizing: border-box;
@@ -25,12 +21,28 @@
 
 html {
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
 }
 
 body {
     margin: 0;
+    padding-top: 70px;
+
     font-family: "Itim", cursive;
-    background: #CDE9DC;
+
+    background:
+        radial-gradient(
+            circle at 8% 15%,
+            rgba(255,255,255,0.65) 0 45px,
+            transparent 46px
+        ),
+        radial-gradient(
+            circle at 92% 25%,
+            rgba(255,255,255,0.45) 0 35px,
+            transparent 36px
+        ),
+        #CDE9DC;
+
     color: #40534A;
 }
 
@@ -41,86 +53,132 @@ body {
 
 .menu {
     position: fixed;
+
     top: 0;
     left: 0;
 
     width: 100%;
-    height: 68px;
+    height: 70px;
 
-    background: rgba(255, 255, 255, 0.96);
+    background: rgba(255,255,255,0.96);
+
+    box-shadow:
+        0 4px 15px rgba(64,83,74,0.10);
 
     display: flex;
-    justify-content: flex-end;
+
+    justify-content: center;
     align-items: center;
 
-    padding-right: 65px;
+    padding: 0 20px;
 
-    box-shadow: 0 3px 12px rgba(75, 110, 94, 0.12);
+    gap: 8px;
 
     z-index: 1000;
+
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .menu a {
+    flex-shrink: 0;
+
     color: #40534A;
+
     text-decoration: none;
 
     font-size: 18px;
 
-    padding: 8px 13px;
-    margin-left: 18px;
+    padding: 10px 16px;
 
-    border-radius: 15px;
+    border-radius: 20px;
 
-    transition: 0.25s;
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        transform 0.25s ease;
 }
 
 .menu a:hover {
-    background: #E4F4EC;
-    color: #5D8A73;
+    color: #527A66;
+
+    background-color: #E4F4EC;
+
+    transform: translateY(-2px);
 }
 
 .menu a.active {
-    background: #DCEFE5;
     color: #527A66;
+
+    background-color: #DCEFE5;
+
+    box-shadow:
+        inset 0 0 0 1px #C5E3D3;
 }
 
 
 /* =========================
-   ตกแต่ง
+   ของตกแต่ง
 ========================= */
 
-.deco {
-    position: absolute;
+.decor {
+    position: fixed;
 
-    color: rgba(82, 122, 102, 0.32);
+    color: #76A98D;
+
+    opacity: 0.55;
 
     pointer-events: none;
 
-    font-size: 26px;
+    z-index: 0;
 }
 
-.deco.one {
-    top: 12%;
+.decor.one {
+    top: 110px;
+    left: 5%;
+
+    font-size: 28px;
+}
+
+.decor.two {
+    top: 180px;
+    right: 6%;
+
+    font-size: 22px;
+}
+
+.decor.three {
+    bottom: 15%;
     left: 7%;
-    transform: rotate(-15deg);
+
+    font-size: 25px;
 }
 
-.deco.two {
-    top: 18%;
-    right: 7%;
-    transform: rotate(15deg);
-}
-
-.deco.three {
-    bottom: 8%;
-    left: 8%;
-    font-size: 22px;
-}
-
-.deco.four {
+.decor.four {
     bottom: 10%;
-    right: 9%;
-    font-size: 22px;
+    right: 8%;
+
+    font-size: 30px;
+}
+
+
+/* =========================
+   เนื้อหาหลัก
+========================= */
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 55px 0 80px;
+
+    position: relative;
+
+    z-index: 1;
 }
 
 
@@ -129,41 +187,59 @@ body {
 ========================= */
 
 .page-header {
-    position: relative;
-
     text-align: center;
 
-    padding: 115px 20px 45px;
+    margin-bottom: 45px;
 }
 
 .page-header h1 {
     margin: 0;
 
-    color: #527A66;
-
     font-size: 42px;
+
+    color: #40534A;
 }
 
 .page-header p {
-    margin: 12px 0 0;
+    margin-top: 12px;
 
     font-size: 20px;
 
-    color: #5B6D64;
+    color: #648071;
+}
+
+.title-line {
+    width: 90px;
+    height: 5px;
+
+    margin: 18px auto 0;
+
+    background: #A8D2BB;
+
+    border-radius: 20px;
 }
 
 
 /* =========================
-   เนื้อหา
+   หัวข้อแต่ละหมวด
 ========================= */
 
-.container {
-    width: 90%;
-    max-width: 1050px;
+.section-title {
+    margin: 50px 0 25px;
 
-    margin: 0 auto;
+    text-align: left;
 
-    padding-bottom: 80px;
+    color: #527A66;
+
+    font-size: 30px;
+}
+
+.section-title span {
+    display: inline-block;
+
+    margin-right: 10px;
+
+    color: #A8D2BB;
 }
 
 
@@ -172,20 +248,33 @@ body {
 ========================= */
 
 .project-card {
-    position: relative;
+    background: rgba(255,255,255,0.96);
 
-    background: rgba(255,255,255,0.97);
-
-    padding: 35px 40px;
-
-    margin-bottom: 45px;
+    border: 2px solid #E4F4EC;
 
     border-radius: 30px;
 
-    border: 2px solid rgba(205,233,220,0.8);
+    padding: 35px;
+
+    margin-bottom: 30px;
 
     box-shadow:
-        0 8px 25px rgba(70,105,88,0.13);
+        0 10px 25px rgba(64,83,74,0.10);
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 30px rgba(64,83,74,0.13);
 }
 
 .project-card::before {
@@ -194,32 +283,36 @@ body {
     position: absolute;
 
     top: 0;
-    left: 35px;
+    left: 40px;
+    right: 40px;
 
-    width: 65px;
     height: 5px;
 
     background: #A8D2BB;
 
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 12px 12px;
 }
 
 .project-card h2 {
+    margin: 8px 0 15px;
+
     color: #527A66;
 
     font-size: 29px;
-
-    margin: 5px 0 15px;
 }
 
 .project-card p {
+    margin: 12px 0;
+
+    color: #4E6258;
+
     font-size: 19px;
 
-    line-height: 1.7;
+    line-height: 1.8;
+}
 
-    color: #4B5D54;
-
-    margin: 10px 0 22px;
+.project-card strong {
+    color: #527A66;
 }
 
 
@@ -228,60 +321,40 @@ body {
 ========================= */
 
 .project-images {
-    display: grid;
+    display: flex;
 
-    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
 
-    gap: 15px;
+    gap: 25px;
 
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .project-images img {
-    width: 100%;
+    width: 48%;
 
-    height: 300px;
+    max-height: 500px;
 
     object-fit: contain;
 
     background: #F7FCF9;
 
-    border-radius: 20px;
+    border: 3px solid #E4F4EC;
 
-    border: 2px solid #DCEFE5;
+    border-radius: 22px;
+
+    padding: 5px;
 
     box-shadow:
-        0 5px 15px rgba(70,105,88,0.10);
+        0 7px 18px rgba(64,83,74,0.08);
 
-    transition: 0.3s;
+    transition:
+        transform 0.3s ease;
 }
 
 .project-images img:hover {
-    transform: translateY(-4px);
-}
-
-
-/* =========================
-   โรงเรือนไก่
-========================= */
-
-.technology-images img {
-    height: 300px;
-}
-
-
-/* =========================
-   หัวข้อย่อย
-========================= */
-
-.section-title {
-    text-align: center;
-
-    color: #527A66;
-
-    font-size: 34px;
-
-    margin: 65px 0 30px;
+    transform: scale(1.015);
 }
 
 
@@ -290,55 +363,81 @@ body {
 ========================= */
 
 .certificate {
-    background: rgba(255,255,255,0.97);
+    background: rgba(255,255,255,0.96);
 
-    padding: 35px 40px;
-
-    margin-bottom: 35px;
+    border: 2px solid #E4F4EC;
 
     border-radius: 30px;
 
-    border: 2px solid rgba(205,233,220,0.8);
+    padding: 35px;
+
+    margin-bottom: 30px;
+
+    text-align: center;
 
     box-shadow:
-        0 8px 25px rgba(70,105,88,0.13);
+        0 10px 25px rgba(64,83,74,0.10);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.certificate::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 40px;
+    right: 40px;
+
+    height: 5px;
+
+    background: #A8D2BB;
+
+    border-radius: 0 0 12px 12px;
 }
 
 .certificate h2 {
+    margin: 8px 0 12px;
+
     color: #527A66;
 
     font-size: 27px;
-
-    margin: 0 0 12px;
 }
 
 .certificate p {
+    margin: 10px auto;
+
+    max-width: 850px;
+
+    color: #4E6258;
+
     font-size: 18px;
 
     line-height: 1.7;
-
-    color: #4B5D54;
 }
 
 .certificate img {
-    display: block;
+    width: auto;
 
-    width: 100%;
-
-    max-width: 600px;
+    max-width: 100%;
 
     max-height: 650px;
 
     object-fit: contain;
 
-    margin: 22px auto 0;
+    border-radius: 20px;
 
-    border-radius: 18px;
+    border: 3px solid #E4F4EC;
 
-    border: 2px solid #DCEFE5;
+    padding: 5px;
+
+    background: #F7FCF9;
 
     box-shadow:
-        0 5px 15px rgba(70,105,88,0.10);
+        0 7px 18px rgba(64,83,74,0.08);
 }
 
 
@@ -347,171 +446,153 @@ body {
 ========================= */
 
 .experience {
-    background: rgba(255,255,255,0.97);
+    background: rgba(255,255,255,0.96);
 
-    padding: 35px 40px;
-
-    margin-bottom: 35px;
+    border: 2px solid #E4F4EC;
 
     border-radius: 30px;
 
-    border: 2px solid rgba(205,233,220,0.8);
+    padding: 35px;
+
+    margin-bottom: 30px;
+
+    text-align: center;
 
     box-shadow:
-        0 8px 25px rgba(70,105,88,0.13);
+        0 10px 25px rgba(64,83,74,0.10);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.experience::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 40px;
+    right: 40px;
+
+    height: 5px;
+
+    background: #A8D2BB;
+
+    border-radius: 0 0 12px 12px;
 }
 
 .experience h2 {
+    margin: 8px 0 12px;
+
     color: #527A66;
 
     font-size: 27px;
-
-    margin: 0 0 12px;
 }
 
 .experience p {
+    margin: 10px auto;
+
+    max-width: 850px;
+
+    color: #4E6258;
+
     font-size: 18px;
 
     line-height: 1.7;
-
-    color: #4B5D54;
 }
 
 .experience img {
-    display: block;
+    width: auto;
 
-    width: 100%;
-
-    max-width: 700px;
+    max-width: 100%;
 
     max-height: 600px;
 
     object-fit: contain;
 
-    margin: 22px auto 0;
+    border-radius: 20px;
 
-    border-radius: 18px;
+    border: 3px solid #E4F4EC;
 
-    border: 2px solid #DCEFE5;
+    padding: 5px;
+
+    background: #F7FCF9;
 
     box-shadow:
-        0 5px 15px rgba(70,105,88,0.10);
+        0 7px 18px rgba(64,83,74,0.08);
 }
 
 
 /* =========================
-   Tablet
+   Responsive
 ========================= */
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
 
     .menu {
-        padding-right: 25px;
-    }
-
-    .menu a {
-        margin-left: 8px;
-    }
-
-    .project-card,
-    .certificate,
-    .experience {
-        padding: 30px;
-    }
-
-}
-
-
-/* =========================
-   Mobile
-========================= */
-
-@media (max-width: 700px) {
-
-    .menu {
-        height: 60px;
-
-        padding: 0 8px;
-
         justify-content: flex-start;
 
-        overflow-x: auto;
+        padding: 0 12px;
 
-        white-space: nowrap;
+        gap: 2px;
     }
 
     .menu a {
-        font-size: 15px;
+        font-size: 16px;
 
-        margin-left: 5px;
-
-        padding: 7px 10px;
-
-        flex-shrink: 0;
-    }
-
-    .page-header {
-        padding: 95px 15px 35px;
-    }
-
-    .page-header h1 {
-        font-size: 32px;
-    }
-
-    .page-header p {
-        font-size: 17px;
+        padding: 9px 13px;
     }
 
     .container {
-        width: 92%;
+        width: 90%;
+
+        padding-top: 40px;
+    }
+
+    .page-header h1 {
+        font-size: 33px;
+    }
+
+    .page-header p {
+        font-size: 18px;
+    }
+
+    .section-title {
+        font-size: 26px;
     }
 
     .project-card,
     .certificate,
     .experience {
         padding: 28px 22px;
-
-        border-radius: 25px;
     }
 
-    .project-card h2 {
-        font-size: 25px;
-    }
-
-    .project-card p,
-    .certificate p,
-    .experience p {
-        font-size: 17px;
-    }
-
-    .project-images {
-        grid-template-columns: 1fr;
-
-        gap: 15px;
-    }
-
-    .project-images img,
-    .technology-images img {
-        height: auto;
-
-        max-height: 500px;
-    }
-
-    .section-title {
-        font-size: 29px;
-
-        margin: 50px 0 25px;
-    }
-
+    .project-card h2,
     .certificate h2,
     .experience h2 {
         font-size: 24px;
     }
 
-    .deco {
-        font-size: 20px;
+    .project-card p,
+    .certificate p,
+    .experience p {
+        font-size: 18px;
     }
 
+    .project-images {
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .project-images img {
+        width: 100%;
+    }
+
+    .decor {
+        display: none;
+    }
 }
 
 </style>
@@ -552,268 +633,327 @@ body {
 
 
 <!-- =========================
-     หัวข้อ
+     ของตกแต่ง
 ========================= -->
 
-<header class="page-header">
+<div class="decor one">✦</div>
+<div class="decor two">✿</div>
+<div class="decor three">♡</div>
+<div class="decor four">✦</div>
 
-    <div class="deco one">✦</div>
-    <div class="deco two">✿</div>
 
-    <h1>🏆 ผลงานและประสบการณ์</h1>
-
-    <p>
-        ผลงาน กิจกรรม และประสบการณ์ที่ได้เรียนรู้และพัฒนาตนเอง
-    </p>
-
-</header>
-
+<!-- =========================
+     เนื้อหาหลัก
+========================= -->
 
 <div class="container">
 
 
-<!-- =========================
-     ผลงานด้านวิทยาศาสตร์
-========================= -->
+    <!-- หัวข้อ -->
 
-<div class="project-card">
+    <div class="page-header">
 
-    <h2>
-        🧼 โครงงานเรื่อง “Jel-Pop สบู่เด้งดึ๋งพกพา”
-    </h2>
+        <h1>
+            🏆 ผลงานและประสบการณ์
+        </h1>
 
-    <p>
-        โครงงานสบู่เด้งดึ๋งพกพา เป็นการนำความรู้ทางวิทยาศาสตร์
-        มาประยุกต์ใช้ในการสร้างผลิตภัณฑ์ที่สามารถพกพาได้สะดวก
-        พร้อมทั้งได้ฝึกการทดลอง การแก้ไขปัญหา การทำงานเป็นทีม
-        และการนำเสนอผลงาน
-    </p>
+        <p>
+            ผลงาน กิจกรรม และประสบการณ์ที่ได้เรียนรู้ตลอดช่วงการศึกษา
+        </p>
 
-    <div class="project-images">
-
-        <img
-            src="สำเนาของ สำเนาของ โปสเตอร์นำเสนอ - 1.png"
-            alt="โปสเตอร์โครงงาน Jel-Pop"
-        >
-
-        <img
-            src="โครงงานเรื่อง “Jel-Pop สบู่เด้งดึ๋งพกพา”.png"
-            alt="โครงงาน Jel-Pop"
-        >
+        <div class="title-line"></div>
 
     </div>
 
-</div>
 
+    <!-- =========================
+         ผลงานด้านวิทยาศาสตร์
+    ========================= -->
 
-<!-- =========================
-     ผลงานด้านเทคโนโลยี
-========================= -->
-
-<div class="project-card">
-
-    <h2>
-        🐔 โครงงาน “โรงเรือนเลี้ยงไก่อัจฉริยะ”
+    <h2 class="section-title">
+        <span>01</span>
+        🔬 ผลงานด้านวิทยาศาสตร์
     </h2>
 
-    <p>
-        โครงงานโรงเรือนเลี้ยงไก่อัจฉริยะ เป็นการประยุกต์ใช้เทคโนโลยี
-        IoT เพื่อช่วยดูแลโรงเรือน โดยมีระบบควบคุมอุณหภูมิอัตโนมัติ
-        ระบบให้น้ำอัตโนมัติ และระบบควบคุมอาหารผ่านโทรศัพท์มือถือ
-        ทำให้ระบบสามารถทำงานได้อย่างอัตโนมัติ
-        และได้เรียนรู้เกี่ยวกับ IoT ระบบอัตโนมัติ
-        การออกแบบระบบ และการแก้ไขปัญหา
-    </p>
 
-    <div class="project-images technology-images">
+    <div class="project-card">
 
-        <img
-            src="IMG_2901.jpeg"
-            alt="โรงเรือนเลี้ยงไก่อัจฉริยะ"
-        >
+        <h2>
+            🧼 โครงงานเรื่อง “Jel-Pop สบู่เด้งดึ๋งพกพา”
+        </h2>
 
-        <img
-            src="IMG_2900.jpeg"
-            alt="ระบบโรงเรือนเลี้ยงไก่อัจฉริยะ"
-        >
+        <p>
+            โครงงานการพัฒนา
+            <strong>สบู่เด้งดึ๋งพกพา</strong>
+            โดยนำความรู้ทางวิทยาศาสตร์มาประยุกต์ใช้
+            ผ่านการทดลองและปรับปรุงผลิตภัณฑ์
+        </p>
+
+        <p>
+            จากโครงงานนี้ได้ฝึกทักษะด้านการทดลอง
+            การแก้ไขปัญหา การคิดวิเคราะห์
+            และการทำงานร่วมกับผู้อื่น
+        </p>
+
+        <div class="project-images">
+
+            <img
+                src="สำเนาของ สำเนาของ โปสเตอร์นำเสนอ - 1.png"
+                alt="โปสเตอร์โครงงาน Jel-Pop"
+            >
+
+            <img
+                src="โครงงานเรื่อง “Jel-Pop สบู่เด้งดึ๋งพกพา”.png"
+                alt="โครงงาน Jel-Pop"
+            >
+
+        </div>
 
     </div>
 
-</div>
 
+    <!-- =========================
+         ผลงานด้านเทคโนโลยี
+    ========================= -->
 
-<!-- =========================
-     เกียรติบัตร
-========================= -->
-
-<h2 class="section-title">
-    🏅 เกียรติบัตร
-</h2>
-
-
-<div class="certificate">
-
-    <h2>
-        💻 การแข่งขันโครงงานคอมพิวเตอร์
+    <h2 class="section-title">
+        <span>02</span>
+        💻 ผลงานด้านเทคโนโลยี
     </h2>
 
-    <p>
-        ได้รับรางวัลระดับเหรียญทอง
-        รองชนะเลิศอันดับที่ 1
-        จากการแข่งขันโครงงานคอมพิวเตอร์
-        ได้ฝึกทักษะด้านการพัฒนาโครงงาน
-        การทำงานร่วมกับผู้อื่น และการนำเสนอผลงาน
-    </p>
 
-    <img
-        src="IMG_2903.jpeg"
-        alt="เกียรติบัตรการแข่งขันโครงงานคอมพิวเตอร์"
-    >
+    <div class="project-card">
 
-</div>
+        <h2>
+            🐔 โครงงาน “โรงเรือนเลี้ยงไก่อัจฉริยะ”
+        </h2>
+
+        <p>
+            โครงงานพัฒนา
+            <strong>โรงเรือนเลี้ยงไก่อัจฉริยะ</strong>
+            โดยนำระบบ IoT มาประยุกต์ใช้
+            เพื่อช่วยควบคุมและจัดการระบบภายในโรงเรือน
+        </p>
+
+        <p>
+            ระบบสามารถควบคุมอุณหภูมิ
+            ระบบให้น้ำอัตโนมัติ
+            และควบคุมการให้อาหารผ่านโทรศัพท์มือถือ
+            โดยระบบทำงานแบบอัตโนมัติ
+        </p>
+
+        <p>
+            จากโครงงานนี้ได้เรียนรู้เกี่ยวกับ IoT
+            ระบบอัตโนมัติ การออกแบบระบบ
+            และการแก้ไขปัญหาจากการทดลองจริง
+        </p>
+
+        <div class="project-images">
+
+            <img
+                src="IMG_2901.jpeg"
+                alt="โรงเรือนเลี้ยงไก่อัจฉริยะ"
+            >
+
+            <img
+                src="IMG_2900.jpeg"
+                alt="โครงงานโรงเรือนเลี้ยงไก่อัจฉริยะ"
+            >
+
+        </div>
+
+    </div>
 
 
-<div class="certificate">
+    <!-- =========================
+         เกียรติบัตร
+    ========================= -->
 
-    <h2>
-        🦷 กิจกรรมแนะแนวและเปิดประสบการณ์ด้านทันตกรรม
+    <h2 class="section-title">
+        <span>03</span>
+        🏅 เกียรติบัตร
     </h2>
 
-    <p>
-        เข้าร่วมกิจกรรมแนะแนวและเปิดประสบการณ์
-        เกี่ยวกับการศึกษาต่อและการทำงานด้านทันตกรรม
-        ณ SC Dental Clinic บ้านบึง จังหวัดชลบุรี
-        รุ่นที่ 2 วันที่ 27 มีนาคม 2569
-    </p>
 
-    <img
-        src="IMG_2904.jpeg"
-        alt="เกียรติบัตรกิจกรรมด้านทันตกรรม"
-    >
+    <div class="certificate">
 
-</div>
+        <img
+            src="IMG_2903.jpeg"
+            alt="เกียรติบัตรการแข่งขันโครงงานคอมพิวเตอร์"
+        >
+
+        <h2>
+            💻 การแข่งขันโครงงานคอมพิวเตอร์
+        </h2>
+
+        <p>
+            ได้รับรางวัลระดับเหรียญทอง
+            รองชนะเลิศอันดับที่ 1
+            จากการแข่งขันด้านโครงงานคอมพิวเตอร์และการพัฒนาซอฟต์แวร์
+        </p>
+
+    </div>
 
 
-<div class="certificate">
+    <div class="certificate">
 
-    <h2>
-        🧬 CMU MOOC : Basic Human Anatomy
+        <img
+            src="IMG_2904.jpeg"
+            alt="เกียรติบัตรกิจกรรมแนะแนวทันตแพทย์"
+        >
+
+        <h2>
+            🦷 กิจกรรมแนะแนวและเปิดประสบการณ์ด้านทันตแพทย์
+        </h2>
+
+        <p>
+            เข้าร่วมกิจกรรมแนะแนวและเปิดประสบการณ์
+            เกี่ยวกับการศึกษาต่อและการทำงานด้านทันตแพทย์
+            ณ SC Dental Clinic บ้านบึง จังหวัดชลบุรี
+        </p>
+
+    </div>
+
+
+    <div class="certificate">
+
+        <img
+            src="IMG_2905.jpeg"
+            alt="เกียรติบัตร CMU MOOC Basic Human Anatomy"
+        >
+
+        <h2>
+            🧠 CMU MOOC – Basic Human Anatomy
+        </h2>
+
+        <p>
+            ศึกษาความรู้พื้นฐานด้านกายวิภาคศาสตร์
+            และเรียนรู้เกี่ยวกับโครงสร้างของร่างกายมนุษย์
+            ผ่านหลักสูตรของคณะแพทยศาสตร์
+            มหาวิทยาลัยเชียงใหม่
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         ประสบการณ์
+    ========================= -->
+
+    <h2 class="section-title">
+        <span>04</span>
+        ✨ กิจกรรมและประสบการณ์
     </h2>
 
-    <p>
-        ผ่านการเรียนรู้หลักสูตร Basic Human Anatomy
-        ของคณะแพทยศาสตร์ มหาวิทยาลัยเชียงใหม่
-        ทำให้ได้เรียนรู้เกี่ยวกับกายวิภาคศาสตร์ของมนุษย์
-        และช่วยสร้างความสนใจด้านวิทยาศาสตร์และการแพทย์
-    </p>
 
-    <img
-        src="IMG_2905.jpeg"
-        alt="เกียรติบัตร CMU MOOC Basic Human Anatomy"
-    >
+    <div class="experience">
 
-</div>
+        <img
+            src="IMG_2906.jpeg"
+            alt="กิจกรรมหัวหน้าห้อง"
+        >
 
+        <h2>
+            👑 หัวหน้าห้อง
+        </h2>
 
-<!-- =========================
-     ประสบการณ์
-========================= -->
+        <p>
+            รับผิดชอบหน้าที่หัวหน้าห้อง
+            ประสานงานระหว่างครูและเพื่อน
+            รวมถึงช่วยวางแผนและจัดการงานต่าง ๆ
+            ภายในห้องเรียน
+        </p>
 
-<h2 class="section-title">
-    🌱 ประสบการณ์และกิจกรรม
-</h2>
+        <p>
+            กิจกรรมนี้ช่วยพัฒนาทักษะด้านความรับผิดชอบ
+            การสื่อสาร การทำงานเป็นทีม
+            และการแก้ไขปัญหา
+        </p>
 
-
-<div class="experience">
-
-    <h2>
-        👩‍🏫 หัวหน้าห้อง
-    </h2>
-
-    <p>
-        รับผิดชอบหน้าที่หัวหน้าห้อง
-        ช่วยประสานงานระหว่างครูและเพื่อนในห้อง
-        ฝึกการวางแผน การสื่อสาร ความรับผิดชอบ
-        และการทำงานร่วมกับผู้อื่น
-    </p>
-
-    <img
-        src="IMG_2906.jpeg"
-        alt="กิจกรรมหัวหน้าห้อง"
-    >
-
-</div>
+    </div>
 
 
-<div class="experience">
+    <div class="experience">
 
-    <h2>
-        ⚙️ Staff งาน Science Day
-    </h2>
+        <img
+            src="IMG_2907.jpeg"
+            alt="กิจกรรมวันวิทยาศาสตร์"
+        >
 
-    <p>
-        เป็น Staff ประจำฐานวิทยาศาสตร์
-        ในกิจกรรม Science Day
-        ฐานการเคลื่อนที่แบบหมุน
-        ได้ฝึกการเตรียมฐานกิจกรรม
-        การอธิบายหลักการทางฟิสิกส์
-        การสื่อสาร การนำเสนอ และการทำงานเป็นทีม
-    </p>
+        <h2>
+            🔬 Staff งานวันวิทยาศาสตร์
+        </h2>
 
-    <img
-        src="IMG_2907.jpeg"
-        alt="Staff Science Day"
-    >
+        <p>
+            เป็นทีมงานประจำฐานฟิสิกส์
+            เรื่อง <strong>การเคลื่อนที่แบบหมุน</strong>
+            มีส่วนร่วมในการเตรียมฐานกิจกรรม
+            และอธิบายหลักการทางฟิสิกส์ให้ผู้เข้าร่วม
+        </p>
 
-</div>
+        <p>
+            ได้พัฒนาทักษะการสื่อสาร
+            การนำเสนอ และการทำงานร่วมกับทีม
+        </p>
 
-
-<div class="experience">
-
-    <h2>
-        🏗️ K-Engineering World Tour and Competency Challenge 2026
-    </h2>
-
-    <p>
-        เข้าร่วมกิจกรรม K-Engineering World Tour and
-        Competency Challenge 2026
-        ได้เรียนรู้เกี่ยวกับวิศวกรรม เทคโนโลยี
-        และแนวทางการศึกษาต่อ
-        รวมถึงได้รับแรงบันดาลใจในการพัฒนาตนเอง
-    </p>
-
-    <img
-        src="IMG_2908.jpeg"
-        alt="K-Engineering World Tour"
-    >
-
-</div>
+    </div>
 
 
-<div class="experience">
+    <div class="experience">
 
-    <h2>
-        🧮 Staff งาน Mathematics Week
-    </h2>
+        <img
+            src="IMG_2908.jpeg"
+            alt="K-Engineering World Tour and Competency Challenge 2026"
+        >
 
-    <p>
-        เป็น Staff ในกิจกรรม Mathematics Week
-        ฐานการแข่งขันคิดเลขเร็ว
-        ได้ฝึกความรับผิดชอบ การทำงานเป็นทีม
-        การจัดกิจกรรม การแก้ไขปัญหา
-        และการประสานงานภายในงาน
-    </p>
+        <h2>
+            ⚙️ K-Engineering World Tour and Competency Challenge 2026
+        </h2>
 
-    <img
-        src="IMG_2910.jpeg"
-        alt="Staff Mathematics Week"
-    >
+        <p>
+            เข้าร่วมกิจกรรมที่เกี่ยวข้องกับวิศวกรรมศาสตร์
+            และเทคโนโลยี ได้เรียนรู้แนวทางการศึกษา
+            และเปิดมุมมองเกี่ยวกับการเรียนต่อด้านวิศวกรรม
+        </p>
 
-</div>
+        <p>
+            กิจกรรมนี้ช่วยสร้างแรงบันดาลใจ
+            และทำให้เห็นแนวทางในการพัฒนาตนเอง
+            เพื่อเตรียมพร้อมสำหรับการศึกษาต่อในอนาคต
+        </p>
+
+    </div>
+
+
+    <div class="experience">
+
+        <img
+            src="IMG_2910.jpeg"
+            alt="กิจกรรมสัปดาห์คณิตศาสตร์"
+        >
+
+        <h2>
+            🧮 Staff งานสัปดาห์คณิตศาสตร์
+        </h2>
+
+        <p>
+            เป็นทีมงานในการจัดกิจกรรม
+            การแข่งขันคิดเลขเร็ว
+            มีส่วนร่วมในการเตรียมงาน
+            ดูแลกิจกรรม และประสานงานภายในทีม
+        </p>
+
+        <p>
+            ได้ฝึกความรับผิดชอบ
+            การทำงานเป็นทีม
+            การจัดการกิจกรรม
+            และการแก้ไขปัญหาเฉพาะหน้า
+        </p>
+
+    </div>
 
 
 </div>
-
 
 </body>
 
